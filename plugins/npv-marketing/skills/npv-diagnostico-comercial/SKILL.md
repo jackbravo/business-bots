@@ -1,0 +1,52 @@
+---
+name: npv-diagnostico-comercial
+description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobiliario de NPV, revisar su contexto y distinguir causas de pocos leads, baja calificación, pocas visitas o ventas lentas mediante evidencia y preguntas mínimas. Usar también para evaluar si conviene reconsiderar el segmento. No activa por consultas inmobiliarias ajenas a NPV ni sustituye la producción de campañas o su publicación.
+---
+
+# Arranque y diagnóstico comercial NPV
+
+Producir un diagnóstico provisional útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Mantener la metodología reutilizable: obtener nombres, enlaces, precios, inventarios y restricciones del proyecto actual; nunca incrustar datos de un desarrollo como valores por defecto.
+
+## Empezar con contexto, no con un formulario
+
+1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, pedir solo su nombre o índice.
+2. Consultar el índice y la definición del desarrollo, si están disponibles y su lectura está autorizada. Leer las fuentes relevantes para la decisión; no recorrer todos los archivos o pestañas por defecto. Para lectura y actualización de Drive, usar [protocolo de fuentes](references/fuentes-y-continuidad.md).
+3. Incorporar decisiones, restricciones de lectura y pendientes vigentes. No volver a preguntar información resuelta. Una restricción sigue vigente hasta que el usuario la cambie; una autorización ya dada no necesita repetirse.
+4. Formular la pregunta comercial: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
+5. Presentar primero lo que se puede inferir y sus límites. Un diagnóstico puede empezar con información cualitativa.
+
+## Pedir solo lo que cambia una decisión
+
+Elegir normalmente de una a tres preguntas por turno, adaptadas al caso. Cada pregunta debe explicar qué hipótesis o decisión permite distinguir. No presentar el catálogo de datos como requisitos obligatorios ni exigir cinco insumos antes de empezar.
+
+Considerar objetivo/plazo, inventario-precios vigente, evidencia del embudo, inversión y leads por canal, y compradores recientes como posibles insumos, no como un checklist obligatorio. La autorización de lectura solo se plantea para una fuente cuya lectura sea necesaria y no esté autorizada; no es una fase universal del análisis.
+
+Si un dato no existe, ofrecer una alternativa proporcional: una muestra anonimizada, un rango identificado como estimación, entrevistas breves o una prueba de captación/seguimiento. Explicar qué conclusión queda limitada. Pausar únicamente la decisión que depende del dato faltante; continuar el resto del trabajo.
+
+Dejar de preguntar cuando haya evidencia suficiente para recomendar un próximo paso reversible con límites explícitos. No perseguir certeza total ni rellenar perfiles por completitud.
+
+## Diagnosticar sin adelantar la respuesta
+
+Consultar [criterios de diagnóstico](references/criterios-diagnostico.md) para distinguir volumen, adecuación del comprador, contacto, visitas y cierre, o al interpretar datos de campañas y leads.
+
+Relacionar las señales con hipótesis de producto, precio/condiciones, segmento, canal, mensaje, confianza y proceso comercial. Evaluar solo las que la evidencia del caso haga relevantes. No concluir que es necesario cambiar de segmento porque bajaron las ventas; tratarlo como una alternativa contrastable.
+
+Para cada hipótesis relevante, registrar evidencia a favor, contradicciones, incertidumbre y la observación o prueba que la confirmaría o debilitaría. Priorizar por respaldo e impacto de comprobarla; evitar porcentajes de probabilidad inventados. Si no hay base para ordenar, decirlo y priorizar la siguiente comprobación por utilidad y esfuerzo.
+
+Distinguir hechos documentados, reportes del equipo, resúmenes de agentes, hipótesis y recomendaciones. Fechar fuentes y periodos cuando sean conocidos. Un resumen de otro agente no equivale a validar los datos originales. No convertir ausencia de registro en ausencia de actividad.
+
+Investigar fuentes públicas cuando ayuden a resolver una hipótesis concreta. Verificar vigencia y comparabilidad; la demanda de una zona no demuestra demanda para el producto. No trasladar segmentos de otro desarrollo ni elegir canales por defecto. Antes de usar afirmaciones de rentabilidad, plusvalía, condiciones de compra o amenidades en recomendaciones, verificar su sustento y alcance.
+
+## Entregar y continuar
+
+Ajustar extensión al material disponible. Una salida útil contiene:
+- Pregunta comercial y lectura provisional.
+- Evidencia principal y sus límites.
+- Hipótesis relevantes, sin rankings ficticios.
+- Siguiente dato o prueba decisiva y acción recomendada.
+
+Usar una tabla de hipótesis cuando facilite comparar, no por obligación. Si hay datos suficientes, entregar el diagnóstico en el mismo turno en lugar de terminar con otra entrevista. Si el usuario pide un alcance menor, respetarlo.
+
+Cuando se encargue guardar el avance, actualizar los documentos oficiales mediante el protocolo de fuentes, conservar su identidad y verificar lo escrito. No declarar un acuerdo guardado por haberlo mencionado en el chat.
+
+Cerrar indicando qué decisión ya es posible y qué trabajo sigue: investigar, profundizar perfiles, priorizar segmentos, ajustar oferta/seguimiento o preparar la estrategia. Este piloto implementa arranque y diagnóstico; no afirmar que existen otras skills instaladas, campañas publicadas o integraciones automáticas a anuncios/CRM.

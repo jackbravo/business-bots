@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arranque y diagnóstico comercial NPV"
+  short_description: "Diagnostica ventas con evidencia y preguntas mínimas"
+  default_prompt: "Usa $npv-diagnostico-comercial para revisar el índice de este desarrollo, dar un diagnóstico provisional y pedir solo el siguiente dato decisivo."

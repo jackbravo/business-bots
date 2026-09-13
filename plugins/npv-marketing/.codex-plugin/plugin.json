@@ -1,0 +1,22 @@
+{
+  "name": "npv-marketing",
+  "version": "0.1.0",
+  "description": "Piloto de marketing inmobiliario NPV: arranque y diagnóstico comercial con evidencia y preguntas mínimas.",
+  "author": {
+    "name": "Equipo del piloto NPV"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "NPV Marketing · Piloto",
+    "shortDescription": "Diagnóstico comercial con preguntas mínimas",
+    "longDescription": "Primera versión para iniciar o retomar el diagnóstico de un desarrollo NPV, contrastar hipótesis y definir el siguiente paso. Usa el índice y las fuentes del proyecto; la lectura y edición de Drive requieren la conexión de Google Drive disponible y autorizada. No incluye conexión automática a anuncios o CRM.",
+    "developerName": "Equipo del piloto NPV",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Inicia el diagnóstico con el índice de este desarrollo.",
+      "Tenemos pocos leads: ¿qué necesitamos comprobar?",
+      "Retoma el diagnóstico y pide solo el dato decisivo."
+    ]
+  }
+}
