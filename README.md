@@ -1,0 +1,31 @@
+# Business Bots
+
+Repositorio de plugins y skills para asistentes de trabajo. Cada plugin agrupa una o más skills y se mantiene en su propia carpeta.
+
+## Catálogo
+
+| Plugin | Versión | Contenido |
+| --- | --- | --- |
+| [NPV Marketing](plugins/npv-marketing/) | 0.1.0 | Arranque y diagnóstico comercial inmobiliario, con evidencia y preguntas mínimas. |
+
+El catálogo instalable está en `.agents/plugins/marketplace.json`; sus rutas se resuelven desde la raíz del repositorio. Cada plugin declara sus componentes en `.codex-plugin/plugin.json` y contiene sus skills en `skills/<nombre>/`.
+
+## NPV Marketing
+
+El piloto incluye una skill y dos referencias: criterios de diagnóstico y manejo de fuentes/continuidad. La metodología es reutilizable entre desarrollos; los índices, inventarios, precios, leads y documentos comerciales se mantienen en Google Drive y se proporcionan desde el proyecto de trabajo.
+
+La conexión de Google Drive se configura por separado. Este repositorio no incluye credenciales ni instala automáticamente conectores. Tampoco conecta campañas o CRM automáticamente.
+
+Para empezar, proporcionar el índice del desarrollo y pedir: “Inicia el diagnóstico y solicita solo el siguiente dato decisivo”.
+
+## Añadir más capacidades
+
+- Para ampliar un plugin, añadir una carpeta en `plugins/<plugin>/skills/` con su `SKILL.md` y solo los recursos que necesite.
+- Para una solución independiente, añadir otro plugin en `plugins/<nombre>/` y registrarlo en el catálogo con una ruta relativa.
+- Mantener los nombres de carpetas y manifiestos consistentes. Usar versiones semánticas y actualizar este catálogo al cambiar una versión.
+- Validar el manifiesto, el frontmatter de cada skill y los enlaces relativos antes de publicar cambios.
+- Probar cambios de comportamiento con casos representativos y sin datos personales de clientes.
+
+## Alcance de esta publicación
+
+Esta versión conserva los cinco archivos del piloto original. Se incorpora organización del repositorio y catálogo. Publicar aquí no equivale a instalar el plugin en un workspace; la instalación y su prueba se realizan por separado en el entorno de destino.
