@@ -10,6 +10,25 @@ Repositorio de plugins y skills para asistentes de trabajo. Cada plugin agrupa u
 
 El catálogo instalable está en `.agents/plugins/marketplace.json`; sus rutas se resuelven desde la raíz del repositorio. Cada plugin declara sus componentes en `.codex-plugin/plugin.json` y contiene sus skills en `skills/<nombre>/`.
 
+## Instalar
+
+Clona el repositorio y registra el marketplace local:
+
+```bash
+git clone https://github.com/jackbravo/business-bots.git
+cd business-bots
+bash scripts/install.sh npv-marketing
+```
+
+Abre un hilo nuevo de Codex después de instalar. Para traer cambios posteriores y reinstalar:
+
+```bash
+git pull --ff-only
+bash scripts/install.sh --update npv-marketing
+```
+
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para el ciclo de ramas, validación, cachebusters locales y pruebas.
+
 ## NPV Marketing
 
 El piloto incluye una skill y dos referencias: criterios de diagnóstico y manejo de fuentes/continuidad. La metodología es reutilizable entre desarrollos; los índices, inventarios, precios, leads y documentos comerciales se mantienen en Google Drive y se proporcionan desde el proyecto de trabajo.
