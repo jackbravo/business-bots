@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import pathlib
 import re
@@ -13,7 +14,7 @@ from typing import Any
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
 NAME = re.compile(r"^[A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+)*$")
-MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)\n]+)\)")
 ALLOWED_INSTALLATION = {"NOT_AVAILABLE", "AVAILABLE", "INSTALLED_BY_DEFAULT"}
 ALLOWED_AUTHENTICATION = {"ON_INSTALL", "ON_USE"}
 
@@ -52,10 +53,19 @@ def frontmatter(path: pathlib.Path) -> dict[str, str]:
     return result
 
 
+def link_target(raw: str) -> str:
+    value = raw.strip()
+    if value.startswith("<") and ">" in value:
+        return value[1 : value.index(">")]
+    titled = re.fullmatch(r"(.+?)\s+(?:\"[^\"]*\"|'[^']*')", value)
+    return (titled.group(1) if titled else value).strip()
+
+
 def validate_links(path: pathlib.Path) -> list[str]:
     errors: list[str] = []
     text = path.read_text(encoding="utf-8")
-    for target in MARKDOWN_LINK.findall(text):
+    for raw_target in MARKDOWN_LINK.findall(text):
+        target = link_target(raw_target)
         clean = target.split("#", 1)[0].strip()
         if not clean or "://" in clean or clean.startswith(("mailto:", "#")):
             continue
@@ -64,7 +74,7 @@ def validate_links(path: pathlib.Path) -> list[str]:
     return errors
 
 
-def validate_plugin(entry: dict[str, Any]) -> list[str]:
+def validate_plugin(entry: dict[str, Any], allow_cachebuster: bool) -> list[str]:
     errors: list[str] = []
     plugin_name = entry.get("name")
     if not isinstance(plugin_name, str) or not NAME.fullmatch(plugin_name):
@@ -94,8 +104,11 @@ def validate_plugin(entry: dict[str, Any]) -> list[str]:
     manifest = load_json(manifest_path)
     if manifest.get("name") != plugin_name:
         errors.append(f"{plugin_name}: el nombre del manifiesto no coincide con la carpeta")
-    if not isinstance(manifest.get("version"), str) or not manifest["version"].strip():
+    version = manifest.get("version")
+    if not isinstance(version, str) or not version.strip():
         errors.append(f"{plugin_name}: falta version")
+    elif "+codex." in version and not allow_cachebuster:
+        errors.append(f"{plugin_name}: versión contiene un cachebuster local")
     if not manifest.get("description"):
         errors.append(f"{plugin_name}: falta description")
     if "hooks" in manifest:
@@ -133,6 +146,14 @@ def validate_plugin(entry: dict[str, Any]) -> list[str]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--allow-cachebuster",
+        action="store_true",
+        help="Permite versiones +codex.* durante una reinstalación local",
+    )
+    args = parser.parse_args()
+
     errors: list[str] = []
     marketplace = load_json(MARKETPLACE)
     marketplace_name = marketplace.get("name")
@@ -158,7 +179,7 @@ def main() -> int:
         if isinstance(name, str):
             seen.add(name)
         try:
-            errors.extend(validate_plugin(entry))
+            errors.extend(validate_plugin(entry, args.allow_cachebuster))
         except ValidationError as exc:
             errors.append(str(exc))
 
