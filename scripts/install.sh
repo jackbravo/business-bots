@@ -27,7 +27,11 @@ done
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 marketplace_file="$repo_root/.agents/plugins/marketplace.json"
 
-python3 "$repo_root/scripts/validate.py"
+validate_args=()
+if [[ "$update_only" == true ]]; then
+  validate_args+=(--allow-cachebuster)
+fi
+python3 "$repo_root/scripts/validate.py" "${validate_args[@]}"
 
 marketplace_name="$(python3 - "$marketplace_file" "$plugin_name" <<'PY'
 import json
