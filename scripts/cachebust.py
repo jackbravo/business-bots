@@ -33,7 +33,7 @@ def main() -> int:
     if not isinstance(version, str) or not version.strip():
         raise SystemExit("El manifiesto no contiene una versión válida")
 
-    token = args.token or dt.datetime.now(dt.UTC).strftime("local-%Y%m%d-%H%M%S")
+    token = args.token or dt.datetime.now(dt.timezone.utc).strftime("local-%Y%m%d-%H%M%S")
     if not re.fullmatch(r"[0-9A-Za-z.-]+", token):
         raise SystemExit("El token solo puede contener letras, números, puntos y guiones")
 
