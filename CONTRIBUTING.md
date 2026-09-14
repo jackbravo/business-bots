@@ -42,6 +42,7 @@ bash scripts/install.sh --update npv-marketing
 7. Abre un pull request. Antes de fusionar un cambio publicable, actualiza la versión semántica estable en `plugin.json` y el catálogo del `README.md`.
 
 No incrementes versiones estables solo para forzar una recarga local. El cachebuster conserva la base de la versión y reemplaza cualquier sufijo anterior.
+La validación normal y CI rechazan versiones `+codex.*`; únicamente `install.sh --update` permite ese sufijo durante la reinstalación local.
 
 ## Convenciones
 
