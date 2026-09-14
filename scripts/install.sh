@@ -52,6 +52,9 @@ if [[ "$update_only" == false ]]; then
   codex plugin marketplace add "$repo_root"
 fi
 
+# Codex usa `plugin add` tanto para instalar como para reinstalar: si esta
+# referencia plugin@marketplace ya existe, vuelve a cargarla. El cachebuster
+# cambia la versión local para impedir que Codex reutilice la copia anterior.
 codex plugin add "$plugin_name@$marketplace_name"
 
 echo "Instalado $plugin_name@$marketplace_name. Abre un hilo nuevo para probar los cambios."
