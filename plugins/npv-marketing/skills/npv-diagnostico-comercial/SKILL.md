@@ -1,6 +1,6 @@
 ---
 name: npv-diagnostico-comercial
-description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobiliario de NPV, revisar su contexto y distinguir causas de pocos leads, baja calificación, pocas visitas o ventas lentas mediante evidencia y preguntas mínimas. Usar también para evaluar si conviene reconsiderar el segmento. No activa por consultas inmobiliarias ajenas a NPV ni sustituye la producción de campañas o su publicación.
+description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobiliario de NPV, revisar su contexto y distinguir causas de pocos leads, baja calificación, pocas visitas o ventas lentas mediante evidencia y preguntas mínimas. Usar también para evaluar si conviene reconsiderar el segmento o ayudar al equipo a organizar la información inicial del desarrollo, aunque no exista carpeta ni índice. No activa por consultas inmobiliarias ajenas a NPV ni sustituye la producción de campañas o su publicación.
 ---
 
 # Arranque y diagnóstico comercial NPV
@@ -9,11 +9,21 @@ Producir un diagnóstico provisional útil y el siguiente paso que reduzca una i
 
 ## Empezar con contexto, no con un formulario
 
-1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, pedir solo su nombre o índice.
+1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, pedir solo su nombre; no exigir carpeta ni índice.
 2. Consultar el índice y la definición del desarrollo, si están disponibles y su lectura está autorizada. Leer las fuentes relevantes para la decisión; no recorrer todos los archivos o pestañas por defecto. Para lectura y actualización de Drive, usar [protocolo de fuentes](references/fuentes-y-continuidad.md).
 3. Incorporar decisiones, restricciones de lectura y pendientes vigentes. No volver a preguntar información resuelta. Una restricción sigue vigente hasta que el usuario la cambie; una autorización ya dada no necesita repetirse.
 4. Formular la pregunta comercial: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
 5. Presentar primero lo que se puede inferir y sus límites. Un diagnóstico puede empezar con información cualitativa.
+
+## Entrar con o sin documentos organizados
+
+Si ya existe una carpeta, índice o definición, aprovechar su organización y completar solo lo necesario; no imponer una nueva estructura ni duplicar documentos.
+
+Si hay enlaces, adjuntos sueltos o únicamente una explicación, empezar con ellos. Dar una lectura provisional y pedir el dato comercial decisivo antes de convertir la organización documental en una tarea. No pedir un enlace a un índice que el usuario dice que no existe.
+
+Cuando ayude a guardar avances o trabajar en equipo, explicar brevemente que una carpeta de trabajo y un documento “Inicio del desarrollo” permiten reunir fuentes, mantener su vigencia y retomar decisiones. Ofrecer ayuda para crearlos, sin exigir que el usuario llene una plantilla. Usar la [plantilla de inicio](assets/inicio-del-desarrollo.md) solo cuando se organice la información: completar lo conocido, marcar lo desconocido como “Por confirmar” y omitir filas de ejemplo no utilizadas.
+
+Consultar el protocolo de fuentes para elegir destino y guardar. Si el usuario acepta o ya encargó organizar y guardar, ejecutar dentro de ese alcance. Si prefiere seguir conversando, continuar el diagnóstico sin insistir. Añadir documentos de estrategia, campañas o resultados conforme el trabajo los necesite; no crear todo un árbol vacío de carpetas al inicio.
 
 ## Pedir solo lo que cambia una decisión
 
