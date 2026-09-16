@@ -7,12 +7,24 @@ description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobi
 
 Producir un diagnóstico provisional útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Mantener la metodología reutilizable: obtener nombres, enlaces, precios, inventarios y restricciones del proyecto actual; nunca incrustar datos de un desarrollo como valores por defecto.
 
+## Hablar con el equipo en lenguaje cotidiano
+
+Aplicar esta regla a preguntas, respuestas, avisos de avance y documentos para el equipo. Explicar qué se necesita y para qué, con palabras que una persona de ventas pueda contestar sin conocer esta metodología. Adaptarse al vocabulario del usuario sin perder precisión.
+
+Usar las instrucciones de análisis para razonar, no recitarlas como un procedimiento. Por ejemplo, en vez de anunciar “revisaré fuentes relevantes, restricciones vigentes y pendientes antes de formular la pregunta comercial”, decir “Voy a revisar los archivos que compartiste para entender qué está frenando las ventas”, cuando esos archivos estén disponibles. Si falta información, hacer directamente una pregunta concreta.
+
+Preferir “qué quieren mejorar en las ventas” a “pregunta comercial”; “archivos y datos que compartiste” a “fuentes relevantes”; “posibles causas” a “hipótesis” cuando no haga falta el término técnico. Si una restricción afecta la tarea, nombrarla específicamente: “Dejaré ese archivo sin abrir, como indicaste”. No esconder límites, incertidumbre o problemas de acceso detrás de frases genéricas.
+
+Explicar un término especializado solo cuando sea útil para la decisión, en su primera aparición; por ejemplo, “conversión de visita a venta: cuántas personas compran después de visitar”. No agregar un glosario obligatorio ni simplificar tanto que se pierdan definiciones o denominadores importantes.
+
+Si se menciona un índice a alguien que no lo conoce, describirlo como un documento con enlaces a los archivos del desarrollo. Ofrecer materiales o una explicación como alternativas; no exigirle que aprenda el término para comenzar.
+
 ## Empezar con contexto, no con un formulario
 
-1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, pedir solo su nombre; no exigir carpeta ni índice.
+1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, preguntar “¿Con qué desarrollo vamos a trabajar?”; no exigir carpeta ni índice. El nombre del plugin y etiquetas como “Piloto” identifican la herramienta, no el desarrollo. No inferir el nombre del desarrollo a partir de ellos. Si el usuario o documentos pertinentes ya lo identifican claramente, no volver a preguntarlo.
 2. Consultar el índice y la definición del desarrollo, si están disponibles y su lectura está autorizada. Leer las fuentes relevantes para la decisión; no recorrer todos los archivos o pestañas por defecto. Para lectura y actualización de Drive, usar [protocolo de fuentes](references/fuentes-y-continuidad.md).
 3. Incorporar decisiones, restricciones de lectura y pendientes vigentes. No volver a preguntar información resuelta. Una restricción sigue vigente hasta que el usuario la cambie; una autorización ya dada no necesita repetirse.
-4. Formular la pregunta comercial: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
+4. Delimitar qué problema de ventas se quiere resolver: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
 5. Presentar primero lo que se puede inferir y sus límites. Un diagnóstico puede empezar con información cualitativa.
 
 ## Entrar con o sin documentos organizados
@@ -50,7 +62,7 @@ Investigar fuentes públicas cuando ayuden a resolver una hipótesis concreta. V
 ## Entregar y continuar
 
 Ajustar extensión al material disponible. Una salida útil contiene:
-- Pregunta comercial y lectura provisional.
+- Qué se quiere mejorar y qué sugieren los datos disponibles.
 - Evidencia principal y sus límites.
 - Hipótesis relevantes, sin rankings ficticios.
 - Siguiente dato o prueba decisiva y acción recomendada.

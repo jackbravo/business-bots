@@ -32,6 +32,6 @@ Al recibir un encargo de guardar o actualizar, releer el destino y comprobar el 
 
 Conservar el estado borrador/en revisión/aprobado; no asignar aprobación de NPV por iniciativa propia. Los hechos comerciales los confirma el equipo, no una inferencia del modelo. No pedir autorización repetida para cambios ya incluidos en el encargo.
 
-Registrar el estado mínimo necesario para continuar: desarrollo, pregunta comercial, evidencia y fecha de corte, hipótesis abiertas, decisiones y fundamento, pendientes y siguiente acción. Añadir enlaces a nuevos entregables en el índice cuando corresponda. Los responsables no asignados siguen por designar.
+Registrar el estado mínimo necesario para continuar: desarrollo, problema de ventas que se quiere resolver, evidencia y fecha de corte, hipótesis abiertas, decisiones y fundamento, pendientes y siguiente acción. Añadir enlaces a nuevos entregables en el índice cuando corresponda. Los responsables no asignados siguen por designar.
 
 En otra conversación, recuperar ese estado desde el índice o documento de inicio cuando exista, y del contexto disponible cuando no lo haya, antes de repetir preguntas. Distinguir verificación de lectura/escritura en la sesión de pruebas de acceso de otras personas o de otra conversación; no afirmar haber realizado pruebas no observadas.
