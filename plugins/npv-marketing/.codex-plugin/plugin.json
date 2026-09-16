@@ -1,6 +1,6 @@
 {
   "name": "npv-marketing",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Piloto de marketing inmobiliario NPV: arranque y diagnóstico comercial con evidencia y preguntas mínimas.",
   "author": {
     "name": "Equipo del piloto NPV"
@@ -16,7 +16,7 @@
     "defaultPrompt": [
       "Quiero mejorar el marketing de mi desarrollo. Ayúdame a empezar y dime qué información necesitas.",
       "Tenemos pocos leads: ¿qué necesitamos comprobar?",
-      "Retoma el diagnóstico y pide solo el dato decisivo."
+      "Retomemos lo que vimos. ¿Qué necesitamos saber ahora?"
     ]
   }
 }

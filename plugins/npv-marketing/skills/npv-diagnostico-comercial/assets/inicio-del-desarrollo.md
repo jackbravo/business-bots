@@ -22,9 +22,9 @@ Registrar solo materiales disponibles; no exigir brochure, inventario o CRM para
 
 [Restricciones conocidas sobre lectura, edición o uso de fuentes. Si no se han definido, indicar Por confirmar; no inferir permiso de un enlace.]
 
-## Lectura provisional y decisiones
+## Qué sabemos y qué hemos decidido
 
-[Separar evidencia, hipótesis y decisiones. Identificar decisiones aprobadas solo cuando exista confirmación del equipo.]
+[Distinguir datos comprobados, posibles causas todavía sin comprobar y decisiones tomadas. Marcar una decisión como aprobada solo cuando el equipo lo confirme.]
 
 ## Pendientes y siguiente paso
 

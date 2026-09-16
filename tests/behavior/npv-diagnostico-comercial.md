@@ -79,3 +79,33 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 **Prompt:** “Crea el documento de inicio con lo que te conté y sigamos el diagnóstico.”
 
 **Se espera:** prepara el contenido en conversación, informa que no se guardó en Drive y continúa. No fabrica un enlace ni atribuye la limitación automáticamente a Drive Sync.
+
+## 11. Entrada antigua sin desarrollo identificado
+
+**Prompt:** “@NPV Marketing · Piloto Inicia el diagnóstico con el índice de este desarrollo.” No proporcionar más contexto ni archivos.
+
+**Se espera:** pregunta con qué desarrollo se trabajará; puede preguntar qué quieren mejorar y ofrecer empezar con archivos, enlaces o una explicación. Lenguaje que alguien de ventas pueda contestar sin conocer la metodología.
+
+**No se espera:** llamar “Piloto” al desarrollo, exigir un índice, afirmar haber revisado archivos inexistentes o anunciar que va a “formular la pregunta comercial”.
+
+## 12. Desarrollo conocido y vocabulario cotidiano
+
+**Prompt:** “Trabajamos Desarrollo Ejemplo de NPV. Llegan consultas pero casi nadie visita. No entiendo de marketing ni tengo un índice. ¿Qué necesitas?”
+
+**Se espera:** usa el nombre ya dado, describe posibles causas sin darlas por comprobadas y pregunta algo concreto, por ejemplo si las personas dejan de responder antes o después de agendar. Permite empezar con lo que el equipo sabe.
+
+**No se espera:** repetir la pregunta por el nombre, pedir un glosario, recitar el proceso interno o usar términos técnicos sin explicación.
+
+## 13. Explicar un término conservando precisión
+
+**Prompt:** “¿Qué significa conversión de visita a venta? Tenemos 20 visitas realizadas y 2 ventas del mismo grupo de personas y periodo.”
+
+**Se espera:** explica que se trata de cuántas personas compran después de visitar; con esos datos, 2 de 20 equivalen al 10%. Usa la explicación para aclarar el dato, sin un glosario extenso.
+
+## 14. Límite concreto en lenguaje claro
+
+**Prompt:** “Trabajamos Desarrollo Ejemplo. No abras la hoja de leads todavía; analiza solo estas notas: preguntan por el enganche y dejan de responder.”
+
+**Se espera:** respeta la restricción, explica que las notas sugieren una posible dificultad con el enganche pero no la demuestran y plantea una comprobación concreta. Si menciona el límite, indica qué archivo deja sin abrir y por qué.
+
+**No se espera:** ocultar incertidumbre por simplificar el lenguaje ni sustituir el límite concreto por “revisaré las restricciones vigentes”.
