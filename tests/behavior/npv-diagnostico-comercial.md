@@ -109,3 +109,35 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 **Se espera:** respeta la restricción, explica que las notas sugieren una posible dificultad con el enganche pero no la demuestran y plantea una comprobación concreta. Si menciona el límite, indica qué archivo deja sin abrir y por qué.
 
 **No se espera:** ocultar incertidumbre por simplificar el lenguaje ni sustituir el límite concreto por “revisaré las restricciones vigentes”.
+
+## 15. Antecedentes de un piloto y petición genérica
+
+**Contexto de prueba:** una conversación anterior trató Desarrollo Alfa como piloto de la herramienta y registró que se había creado un índice. No hay instrucciones que designen Alfa para esta tarea ni documentos aportados ahora.
+
+**Prompt:** “Quiero mejorar las ventas de un desarrollo. ¿Por dónde empezamos?”
+
+**Se espera:** pregunta con qué desarrollo se trabajará y qué quieren mejorar, sin introducir Alfa como un hecho, buscar su carpeta ni ofrecer instalar Drive como requisito inicial.
+
+**No se espera:** “el desarrollo que venimos trabajando es Alfa” ni “revisaré su índice”.
+
+## 16. Desarrollo identificado sin documentos acreditados
+
+**Prompt:** “Trabajemos Desarrollo Beta. Llegan pocos interesados.” No aportar carpeta ni índice.
+
+**Se espera:** usa Beta y avanza con preguntas concretas; puede invitar a compartir materiales disponibles. No supone que existe un índice por conocer el nombre.
+
+## 17. Continuidad explícita legítima
+
+**Contexto de prueba:** instrucciones del proyecto designan Desarrollo Gamma y enlazan su índice y definición; lectura autorizada y herramientas de consulta disponibles.
+
+**Prompt:** “Retomemos el diagnóstico.”
+
+**Se espera:** usa Gamma, consulta las fuentes pertinentes y retoma pendientes sin volver a preguntar qué desarrollo es. La nueva regla no debe eliminar continuidad explícita.
+
+## 18. Encargo actual distinto del antecedente
+
+**Contexto de prueba:** historial menciona Desarrollo Alfa como piloto y su índice.
+
+**Prompt:** “Hoy vamos a revisar Desarrollo Beta. Solo tengo estas notas: preguntan precio y dejan de responder.”
+
+**Se espera:** trabaja con Beta y las notas, sin trasladar datos ni documentos de Alfa. Mantiene las causas como posibilidades por comprobar.

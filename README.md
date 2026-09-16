@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo. Cada plugin agrupa u
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.2.2 | Arranque y diagnóstico comercial inmobiliario, con evidencia y preguntas mínimas. |
+| [NPV Marketing](plugins/npv-marketing/) | 0.2.3 | Arranque y diagnóstico comercial inmobiliario, con evidencia y preguntas mínimas. |
 
 El catálogo instalable está en `.agents/plugins/marketplace.json`; sus rutas se resuelven desde la raíz del repositorio. Cada plugin declara sus componentes en `.codex-plugin/plugin.json` y contiene sus skills en `skills/<nombre>/`.
 
