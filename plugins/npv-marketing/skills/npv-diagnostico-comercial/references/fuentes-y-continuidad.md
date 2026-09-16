@@ -2,7 +2,7 @@
 
 ## Ubicación y acceso
 
-Si existe un índice del desarrollo, usarlo como mapa de fuentes oficiales y obtener de él los enlaces actuales. Distinguir un índice existente pero inaccesible de uno que nunca se ha creado. En el primer caso, explicar el problema de acceso y pedir el enlace solo si ayuda a resolverlo; en el segundo, trabajar con los enlaces, adjuntos o relato disponibles. No buscar datos de otros desarrollos por semejanza de nombre.
+Si la existencia y pertinencia del índice están establecidas para esta tarea, usarlo como mapa de fuentes oficiales y obtener de él los enlaces actuales. Un nombre de desarrollo conocido o un recuerdo de otro piloto no acredita la existencia ni vigencia de sus documentos. Distinguir un índice existente pero inaccesible de uno que nunca se ha creado. En el primer caso, explicar el problema de acceso y pedir el enlace solo si ayuda a resolverlo; en el segundo, trabajar con los enlaces, adjuntos o relato disponibles. No buscar datos de otros desarrollos por semejanza de nombre.
 
 Drive es la ubicación oficial inicial de NPV para documentos vivos. Los adjuntos son versiones o cortes, no una sincronización bidireccional. Precio, inventario y entrega deben proceder de la fuente comercial designada y con vigencia conocida para decisiones que dependan de ellos. Registrar discrepancias sin resolverlas por preferencia de formato o mera fecha de modificación.
 
