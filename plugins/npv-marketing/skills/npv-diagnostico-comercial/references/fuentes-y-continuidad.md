@@ -2,11 +2,23 @@
 
 ## Ubicación y acceso
 
-Usar el índice del desarrollo proporcionado por el proyecto o usuario como mapa de fuentes oficiales. Obtener de él los enlaces actuales. Si no está disponible, pedir el enlace y aprovechar los adjuntos ya autorizados mientras tanto. No buscar datos de otros desarrollos por semejanza de nombre.
+Si existe un índice del desarrollo, usarlo como mapa de fuentes oficiales y obtener de él los enlaces actuales. Distinguir un índice existente pero inaccesible de uno que nunca se ha creado. En el primer caso, explicar el problema de acceso y pedir el enlace solo si ayuda a resolverlo; en el segundo, trabajar con los enlaces, adjuntos o relato disponibles. No buscar datos de otros desarrollos por semejanza de nombre.
 
 Drive es la ubicación oficial inicial de NPV para documentos vivos. Los adjuntos son versiones o cortes, no una sincronización bidireccional. Precio, inventario y entrega deben proceder de la fuente comercial designada y con vigencia conocida para decisiones que dependan de ellos. Registrar discrepancias sin resolverlas por preferencia de formato o mera fecha de modificación.
 
 Usar las capacidades y guías de Google Drive, Docs o Sheets disponibles en la sesión. Este plugin no incorpora credenciales ni un conector propio. Si falta acceso, indicar la limitación concreta y trabajar con una copia o resumen aportado, sin prometer lectura en vivo ni escritura. Los permisos del índice no prueban acceso a todos sus enlaces.
+
+## Organizar sin un índice previo
+
+Al recibir el encargo de organizar y guardar, aprovechar la carpeta de destino indicada por el usuario o ya establecida para ese desarrollo. Revisar sus documentos relevantes para evitar duplicados. Si no se conoce destino, preguntar dónde quiere guardarlo y ofrecer crear una carpeta del desarrollo en una ubicación con acceso autorizado. No pedir otra confirmación si el encargo y el destino ya están claros.
+
+Crear inicialmente un solo documento “Inicio del desarrollo” que reúna definición e índice mediante la plantilla enlazada en SKILL.md. Completar a partir del contexto, sin inventar datos, fechas de corte, responsables o aprobaciones. Registrar discrepancias y restricciones vigentes. No es necesario completar todos los campos para avanzar.
+
+Enlazar los originales en sus ubicaciones; no moverlos, copiarlos ni modificar permisos por el mero hecho de organizar. Para adjuntos, identificar nombre, origen y fecha de corte si se conocen; no inventar un enlace de Drive. Si el usuario encarga almacenarlos, guardarlos en el destino autorizado y registrar el enlace resultante.
+
+Verificar el documento creado y devolver su enlace con una indicación sencilla: usarlo para retomar el trabajo y pedir explícitamente que se guarden los avances. Si ya hay índice y definición separados, conservarlos y actualizar su contenido equivalente; no crear un tercer documento de inicio.
+
+Si no está disponible la escritura en Drive, preparar el contenido en la conversación para que el equipo lo guarde. Indicar que todavía no se ha guardado y continuar el diagnóstico. En proyectos compartidos, no equiparar Drive Sync con lectura o edición explícita: usar las capacidades realmente disponibles para esa cuenta, sin prometer sincronización ni generalizar pruebas de otro usuario.
 
 ## Lecturas acotadas
 
@@ -22,4 +34,4 @@ Conservar el estado borrador/en revisión/aprobado; no asignar aprobación de NP
 
 Registrar el estado mínimo necesario para continuar: desarrollo, pregunta comercial, evidencia y fecha de corte, hipótesis abiertas, decisiones y fundamento, pendientes y siguiente acción. Añadir enlaces a nuevos entregables en el índice cuando corresponda. Los responsables no asignados siguen por designar.
 
-En otra conversación, recuperar ese estado desde el índice antes de repetir preguntas. Distinguir verificación de lectura/escritura en la sesión de pruebas de acceso de otras personas o de otra conversación; no afirmar haber realizado pruebas no observadas.
+En otra conversación, recuperar ese estado desde el índice o documento de inicio cuando exista, y del contexto disponible cuando no lo haya, antes de repetir preguntas. Distinguir verificación de lectura/escritura en la sesión de pruebas de acceso de otras personas o de otra conversación; no afirmar haber realizado pruebas no observadas.

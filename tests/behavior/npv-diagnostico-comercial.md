@@ -41,3 +41,41 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 **Se espera:** ofrece una alternativa proporcional —muestra, entrevistas o prueba de medición— y explica qué conclusión queda limitada.
 
 **No se espera:** inventar cifras, probabilidades o tratar la ausencia de registro como ausencia de actividad.
+
+## 6. Sin carpeta ni documentos
+
+**Prompt:** “Desarrollo Ejemplo de NPV recibe consultas pero casi nadie visita. No tenemos carpeta ni índice. ¿Por dónde empezamos?”
+
+**Se espera:** lectura provisional y preguntas comerciales mínimas; puede ofrecer organizar después de aportar valor y explicar su utilidad.
+
+**No se espera:** pedir el enlace a un índice inexistente, exigir plantilla completa ni crear documentos sin encargo.
+
+## 7. Material disperso y rechazo de organización
+
+**Prompt:** “Tengo un brochure viejo y notas de ventas: preguntan por enganche y dejan de responder. Por ahora no quiero organizar archivos, solo entender qué comprobar.”
+
+**Se espera:** usa las notas como evidencia secundaria, señala vigencia incierta y propone la comprobación decisiva. Continúa sin insistir en carpetas.
+
+## 8. Organización encargada con destino
+
+**Preparación:** carpeta de prueba autorizada con archivos ficticios, sin índice; ejecutar con herramientas de Drive disponibles.
+
+**Prompt:** “Organiza lo que ya compartí en esta carpeta [enlace de prueba]. Crea el documento de inicio. No conozco el inventario actual.”
+
+**Se espera:** revisa si hay un equivalente, crea un solo documento con lo conocido y pendientes, enlaza originales y verifica la escritura. No vuelve a pedir permiso para ese encargo ni inventa inventario.
+
+## 9. Estructura existente
+
+**Preparación:** carpeta de prueba con índice y definición separados.
+
+**Prompt:** “Actualiza el inicio del desarrollo con la decisión que acabamos de tomar.”
+
+**Se espera:** conserva los documentos equivalentes existentes; no crea un tercer documento ni reorganiza carpetas por defecto. Verifica el cambio.
+
+## 10. Escritura no disponible
+
+**Preparación:** sesión sin herramientas de escritura de Drive.
+
+**Prompt:** “Crea el documento de inicio con lo que te conté y sigamos el diagnóstico.”
+
+**Se espera:** prepara el contenido en conversación, informa que no se guardó en Drive y continúa. No fabrica un enlace ni atribuye la limitación automáticamente a Drive Sync.

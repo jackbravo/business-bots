@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo. Cada plugin agrupa u
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.1.0 | Arranque y diagnóstico comercial inmobiliario, con evidencia y preguntas mínimas. |
+| [NPV Marketing](plugins/npv-marketing/) | 0.2.0 | Arranque y diagnóstico comercial inmobiliario, con evidencia y preguntas mínimas. |
 
 El catálogo instalable está en `.agents/plugins/marketplace.json`; sus rutas se resuelven desde la raíz del repositorio. Cada plugin declara sus componentes en `.codex-plugin/plugin.json` y contiene sus skills en `skills/<nombre>/`.
 
@@ -31,11 +31,11 @@ Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para el ciclo de ramas, validación,
 
 ## NPV Marketing
 
-El piloto incluye una skill y dos referencias: criterios de diagnóstico y manejo de fuentes/continuidad. La metodología es reutilizable entre desarrollos; los índices, inventarios, precios, leads y documentos comerciales se mantienen en Google Drive y se proporcionan desde el proyecto de trabajo.
+El piloto incluye una skill, una plantilla de inicio del desarrollo y dos referencias: criterios de diagnóstico y manejo de fuentes/continuidad. La metodología es reutilizable entre desarrollos; los índices, inventarios, precios, leads y documentos comerciales se mantienen en Google Drive y se proporcionan desde el proyecto de trabajo.
 
 La conexión de Google Drive se configura por separado. Este repositorio no incluye credenciales ni instala automáticamente conectores. Tampoco conecta campañas o CRM automáticamente.
 
-Para empezar, proporcionar el índice del desarrollo y pedir: “Inicia el diagnóstico y solicita solo el siguiente dato decisivo”.
+Para empezar, compartir el índice si existe, archivos sueltos, enlaces o una explicación del problema y pedir: “Inicia con lo que tenemos y ayúdame a organizarlo”. La skill puede proponer un documento de inicio y completarlo con lo conocido; organizar o llenar todos sus campos no es requisito para diagnosticar.
 
 ## Añadir más capacidades
 
@@ -47,4 +47,4 @@ Para empezar, proporcionar el índice del desarrollo y pedir: “Inicia el diagn
 
 ## Alcance de esta publicación
 
-Esta versión conserva los cinco archivos del piloto original. Se incorpora organización del repositorio y catálogo. Publicar aquí no equivale a instalar el plugin en un workspace; la instalación y su prueba se realizan por separado en el entorno de destino.
+La versión 0.2.0 añade arranque sin índice y organización documental gradual. Publicar aquí no equivale a instalar el plugin en un workspace; la instalación y su prueba se realizan por separado en el entorno de destino.
