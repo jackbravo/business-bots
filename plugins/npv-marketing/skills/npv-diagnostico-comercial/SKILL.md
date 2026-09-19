@@ -22,14 +22,18 @@ Si se menciona un índice a alguien que no lo conoce, describirlo como un docume
 ## Empezar con contexto, no con un formulario
 
 1. Identificar el desarrollo desde la conversación o instrucciones del proyecto. Si es ambiguo, preguntar “¿Con qué desarrollo vamos a trabajar?”; no exigir carpeta ni índice. El nombre del plugin y etiquetas como “Piloto” identifican la herramienta, no el desarrollo. No inferir el nombre del desarrollo a partir de ellos. Si el usuario o documentos pertinentes ya lo identifican claramente, no volver a preguntarlo.
-2. Consultar el índice y la definición del desarrollo, si están disponibles y su lectura está autorizada. Leer las fuentes relevantes para la decisión; no recorrer todos los archivos o pestañas por defecto. Para lectura y actualización de Drive, usar [protocolo de fuentes](references/fuentes-y-continuidad.md).
-3. Incorporar decisiones, restricciones de lectura y pendientes vigentes. No volver a preguntar información resuelta. Una restricción sigue vigente hasta que el usuario la cambie; una autorización ya dada no necesita repetirse.
-4. Delimitar qué problema de ventas se quiere resolver: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
-5. Presentar primero lo que se puede inferir y sus límites. Un diagnóstico puede empezar con información cualitativa.
+2. Antes de hacer preguntas iniciales, buscar la información disponible en los archivos del proyecto. Revisar las fuentes disponibles y autorizadas para reunir lo necesario para empezar el diagnóstico, en lugar de pedirle al equipo datos que ya están escritos. Si en la sesión no hay archivos ni acceso a ellos, decirlo y preguntar directamente; no afirmar haber revisado fuentes inexistentes.
+3. Usar el índice como mapa cuando exista, sin limitar la búsqueda a él ni al documento de definición. Buscar también documentos pertinentes por nombre o contenido: ficha técnica, inventario y disponibilidad, listas de precios, condiciones comerciales y esquemas de pago, definición del desarrollo, reportes de ventas, campañas y resultados, y materiales comerciales. Identificar ampliamente qué existe; leer a fondo solo lo que sirva a la decisión, sin recorrer todas las pestañas por defecto. La ausencia de un archivo en el índice no significa que no exista: si hay acceso a Drive u otra fuente del proyecto, buscar ahí aunque nada lo enlace. Para lectura y actualización de Drive, usar [protocolo de fuentes](references/fuentes-y-continuidad.md).
+4. Extraer de esos archivos los datos necesarios antes de formular preguntas. No volver a preguntar lo que ya esté documentado. Preguntar solamente por lo faltante, lo ambiguo y aquello cuya vigencia importe confirmar; precio, inventario y entrega suelen requerir esa confirmación.
+5. Distinguir siempre un dato encontrado en archivos del proyecto, un dato reportado por el usuario y un dato faltante o por confirmar. Nombrar el archivo y su fecha de corte cuando se conozcan.
+6. Si falta un documento base —por ejemplo una ficha técnica— y ningún otro archivo aporta datos equivalentes, preguntar desde el inicio únicamente por la información crítica para continuar, en vez de asumirla: según el caso, ubicación, tipologías, superficies, amenidades, inventario o precios.
+7. Incorporar decisiones, restricciones de lectura y pendientes vigentes. No volver a preguntar información resuelta. Una restricción sigue vigente hasta que el usuario la cambie; una autorización ya dada no necesita repetirse.
+8. Delimitar qué problema de ventas se quiere resolver: qué resultado preocupa, en qué periodo y para qué inventario. Si aún falta una meta cuantificada, avanzar con una pregunta provisional; no inventar un objetivo ni usarlo como bloqueo general.
+9. Presentar primero lo que se puede inferir y sus límites. Un diagnóstico puede empezar con información cualitativa.
 
 ## Entrar con o sin documentos organizados
 
-Si ya existe una carpeta, índice o definición, aprovechar su organización y completar solo lo necesario; no imponer una nueva estructura ni duplicar documentos.
+Si ya existe una carpeta, índice o definición, aprovechar su organización y completar solo lo necesario; no imponer una nueva estructura ni duplicar documentos. Si aparece un documento claramente pertinente que el índice no enlaza, usarlo como fuente y sugerir, cuando sea útil, incorporarlo al índice. No bloquear el diagnóstico por la falta de organización documental.
 
 Si hay enlaces, adjuntos sueltos o únicamente una explicación, empezar con ellos. Dar una lectura provisional y pedir el dato comercial decisivo antes de convertir la organización documental en una tarea. No pedir un enlace a un índice que el usuario dice que no existe.
 
@@ -39,7 +43,7 @@ Consultar el protocolo de fuentes para elegir destino y guardar. Si el usuario a
 
 ## Pedir solo lo que cambia una decisión
 
-Elegir normalmente de una a tres preguntas por turno, adaptadas al caso. Cada pregunta debe explicar qué hipótesis o decisión permite distinguir. No presentar el catálogo de datos como requisitos obligatorios ni exigir cinco insumos antes de empezar.
+Aplicar este criterio después de revisar la información disponible del proyecto, no antes. Elegir normalmente de una a tres preguntas por turno, adaptadas al caso y sobre datos que los archivos no resuelvan. Cada pregunta debe explicar qué hipótesis o decisión permite distinguir. No presentar el catálogo de datos como requisitos obligatorios ni exigir cinco insumos antes de empezar.
 
 Considerar objetivo/plazo, inventario-precios vigente, evidencia del embudo, inversión y leads por canal, y compradores recientes como posibles insumos, no como un checklist obligatorio. La autorización de lectura solo se plantea para una fuente cuya lectura sea necesaria y no esté autorizada; no es una fase universal del análisis.
 
