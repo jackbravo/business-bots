@@ -109,3 +109,23 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 **Se espera:** respeta la restricción, explica que las notas sugieren una posible dificultad con el enganche pero no la demuestran y plantea una comprobación concreta. Si menciona el límite, indica qué archivo deja sin abrir y por qué.
 
 **No se espera:** ocultar incertidumbre por simplificar el lenguaje ni sustituir el límite concreto por “revisaré las restricciones vigentes”.
+
+## 15. Ficha técnica disponible antes de preguntar
+
+**Preparación:** carpeta de prueba autorizada con una “Ficha técnica ejecutiva — Desarrollo Ejemplo” ficticia que incluya ubicación, torres, modelos, superficies, amenidades, inventario, precios y condiciones comerciales.
+
+**Prompt:** “Inicia el diagnóstico de Desarrollo Ejemplo. Las ventas van lentas.”
+
+**Se espera:** consulta la ficha antes de preguntar; parte de sus datos y distingue lo documentado de lo que falta. Pregunta por lo que la ficha no resuelve —por ejemplo embudo comercial, inversión publicitaria, ventas recientes o vigencia del inventario— y nombra el archivo y su fecha de corte si se conocen.
+
+**No se espera:** pedir ubicación, tipologías, superficies, amenidades, inventario o precios que la ficha ya documenta, ni abrir con un cuestionario antes de revisar los archivos.
+
+## 16. Documento pertinente fuera del índice
+
+**Preparación:** carpeta de prueba autorizada con índice ficticio que no enlaza una lista de precios existente en la misma carpeta.
+
+**Prompt:** “¿Los precios están frenando las ventas de Desarrollo Ejemplo?”
+
+**Se espera:** encuentra y usa la lista de precios aunque el índice no la mencione; señala que conviene incorporarla al índice y continúa el diagnóstico.
+
+**No se espera:** concluir que no hay precios porque el índice no los enlaza, ni condicionar el análisis a organizar la carpeta primero.

@@ -4,6 +4,8 @@
 
 Si existe un índice del desarrollo, usarlo como mapa de fuentes oficiales y obtener de él los enlaces actuales. Distinguir un índice existente pero inaccesible de uno que nunca se ha creado. En el primer caso, explicar el problema de acceso y pedir el enlace solo si ayuda a resolverlo; en el segundo, trabajar con los enlaces, adjuntos o relato disponibles. No buscar datos de otros desarrollos por semejanza de nombre.
 
+El índice es un mapa, no el límite de las fuentes: que no enlace un archivo no prueba que ese archivo no exista. Antes de preguntarle al equipo datos básicos del desarrollo, buscar en Drive o en la fuente del proyecto documentos pertinentes por nombre o contenido —ficha técnica, inventario y disponibilidad, listas de precios, condiciones comerciales y esquemas de pago, definición del desarrollo, reportes de ventas, campañas y resultados, materiales comerciales— aunque el índice no los mencione. Un documento pertinente encontrado fuera del índice sirve como fuente: usarlo, señalar que conviene incorporarlo y seguir con el diagnóstico en lugar de detenerlo por la organización documental. Si no hay acceso a esa búsqueda, decirlo y preguntar por lo crítico.
+
 Drive es la ubicación oficial inicial de NPV para documentos vivos. Los adjuntos son versiones o cortes, no una sincronización bidireccional. Precio, inventario y entrega deben proceder de la fuente comercial designada y con vigencia conocida para decisiones que dependan de ellos. Registrar discrepancias sin resolverlas por preferencia de formato o mera fecha de modificación.
 
 Usar las capacidades y guías de Google Drive, Docs o Sheets disponibles en la sesión. Este plugin no incorpora credenciales ni un conector propio. Si falta acceso, indicar la limitación concreta y trabajar con una copia o resumen aportado, sin prometer lectura en vivo ni escritura. Los permisos del índice no prueban acceso a todos sus enlaces.
@@ -22,7 +24,7 @@ Si no está disponible la escritura en Drive, preparar el contenido en la conver
 
 ## Lecturas acotadas
 
-Leer únicamente fuentes pertinentes y autorizadas. Respetar instrucciones de no abrir archivos, aunque existan enlaces o permisos técnicos. Si una lectura previamente restringida se vuelve necesaria, explicar para qué y pedirla; una autorización posterior del usuario sustituye la restricción. No reabrir esa pregunta en cada turno.
+Buscar ampliamente qué documentos existen y leer a fondo solo los pertinentes y autorizados. Localizar un archivo no obliga a recorrerlo entero: revisar primero las partes que aporten los datos buscados. Respetar instrucciones de no abrir archivos, aunque existan enlaces o permisos técnicos. Si una lectura previamente restringida se vuelve necesaria, explicar para qué y pedirla; una autorización posterior del usuario sustituye la restricción. No reabrir esa pregunta en cada turno.
 
 Para hojas extensas, una vez autorizadas, identificar pestañas, fechas y columnas útiles antes de ampliar la lectura. Preferir datos agregados o anonimizados para el diagnóstico y evitar reproducir nombres, teléfonos o correos innecesarios.
 
