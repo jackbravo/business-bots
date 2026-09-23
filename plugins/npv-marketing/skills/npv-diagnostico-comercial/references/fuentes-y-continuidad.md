@@ -1,37 +1,35 @@
 # Fuentes y continuidad
 
-## Ubicación y acceso
+## Alcance
 
-Si existe un índice del desarrollo, usarlo como mapa de fuentes oficiales y obtener de él los enlaces actuales. Distinguir un índice existente pero inaccesible de uno que nunca se ha creado. En el primer caso, explicar el problema de acceso y pedir el enlace solo si ayuda a resolverlo; en el segundo, trabajar con los enlaces, adjuntos o relato disponibles. No buscar datos de otros desarrollos por semejanza de nombre.
+Trabajar solo con la información del desarrollo actual. No incorporar datos de otros desarrollos salvo que el usuario los señale explícitamente como relevantes.
 
-Drive es la ubicación oficial inicial de NPV para documentos vivos. Los adjuntos son versiones o cortes, no una sincronización bidireccional. Precio, inventario y entrega deben proceder de la fuente comercial designada y con vigencia conocida para decisiones que dependan de ellos. Registrar discrepancias sin resolverlas por preferencia de formato o mera fecha de modificación.
+Si existe un índice, usarlo como mapa de los documentos del desarrollo, no como requisito ni como límite. También pueden ser útiles otros archivos disponibles dentro del mismo proyecto. Si no hay índice, continuar con los materiales disponibles.
 
-Usar las capacidades y guías de Google Drive, Docs o Sheets disponibles en la sesión. Este plugin no incorpora credenciales ni un conector propio. Si falta acceso, indicar la limitación concreta y trabajar con una copia o resumen aportado, sin prometer lectura en vivo ni escritura. Los permisos del índice no prueban acceso a todos sus enlaces.
+Drive es la ubicación inicial de NPV para documentos vivos. Los adjuntos pueden ser copias o cortes. Cuando una decisión dependa de información cambiante como precio, inventario o fecha de entrega, comprobar su vigencia cuando sea necesario.
 
-## Organizar sin un índice previo
+Usar las capacidades de Drive, Docs o Sheets disponibles en la sesión. Si falta acceso a una fuente necesaria, indicar la limitación concreta y continuar con la información disponible.
 
-Al recibir el encargo de organizar y guardar, aprovechar la carpeta de destino indicada por el usuario o ya establecida para ese desarrollo. Revisar sus documentos relevantes para evitar duplicados. Si no se conoce destino, preguntar dónde quiere guardarlo y ofrecer crear una carpeta del desarrollo en una ubicación con acceso autorizado. No pedir otra confirmación si el encargo y el destino ya están claros.
+Respetar instrucciones explícitas del usuario sobre archivos que no deban abrirse o utilizarse.
 
-Crear inicialmente un solo documento “Inicio del desarrollo” que reúna definición e índice mediante la plantilla enlazada en SKILL.md. Completar a partir del contexto, sin inventar datos, fechas de corte, responsables o aprobaciones. Registrar discrepancias y restricciones vigentes. No es necesario completar todos los campos para avanzar.
+## Lectura
 
-Enlazar los originales en sus ubicaciones; no moverlos, copiarlos ni modificar permisos por el mero hecho de organizar. Para adjuntos, identificar nombre, origen y fecha de corte si se conocen; no inventar un enlace de Drive. Si el usuario encarga almacenarlos, guardarlos en el destino autorizado y registrar el enlace resultante.
+Buscar primero la información necesaria y profundizar solo en los documentos o secciones pertinentes. En hojas extensas, localizar las pestañas, fechas o columnas útiles antes de ampliar la lectura.
 
-Verificar el documento creado y devolver su enlace con una indicación sencilla: usarlo para retomar el trabajo y pedir explícitamente que se guarden los avances. Si ya hay índice y definición separados, conservarlos y actualizar su contenido equivalente; no crear un tercer documento de inicio.
+Evitar reproducir datos personales innecesarios para el diagnóstico.
 
-Si no está disponible la escritura en Drive, preparar el contenido en la conversación para que el equipo lo guarde. Indicar que todavía no se ha guardado y continuar el diagnóstico. En proyectos compartidos, no equiparar Drive Sync con lectura o edición explícita: usar las capacidades realmente disponibles para esa cuenta, sin prometer sincronización ni generalizar pruebas de otro usuario.
+## Organización y guardado
 
-## Lecturas acotadas
+Organizar documentos solo cuando el usuario lo pida o cuando ayude claramente a continuar el trabajo. Si ya existe una estructura, conservarla.
 
-Leer únicamente fuentes pertinentes y autorizadas. Respetar instrucciones de no abrir archivos, aunque existan enlaces o permisos técnicos. Si una lectura previamente restringida se vuelve necesaria, explicar para qué y pedirla; una autorización posterior del usuario sustituye la restricción. No reabrir esa pregunta en cada turno.
+Cuando se necesite una estructura inicial, usar una carpeta del desarrollo y un documento “Inicio del desarrollo” basado en la plantilla enlazada desde SKILL.md. Completar lo conocido sin inventar datos.
 
-Para hojas extensas, una vez autorizadas, identificar pestañas, fechas y columnas útiles antes de ampliar la lectura. Preferir datos agregados o anonimizados para el diagnóstico y evitar reproducir nombres, teléfonos o correos innecesarios.
+Al actualizar documentos existentes, conservar su identidad y enlace en lugar de crear copias por cada conversación. Verificar los cambios realizados.
 
-## Actualización colaborativa
+Si no está disponible la escritura en Drive, preparar el contenido en la conversación e indicar que todavía no se ha guardado.
 
-Al recibir un encargo de guardar o actualizar, releer el destino y comprobar el alcance del cambio. Conservar el documento y su enlace; no crear copias paralelas por cada conversación. Aplicar cambios focalizados y verificar su recuperación. Si hay conflicto de versiones, releer y conciliar los cambios compatibles; preguntar solo por una contradicción material no resoluble.
+## Continuidad
 
-Conservar el estado borrador/en revisión/aprobado; no asignar aprobación de NPV por iniciativa propia. Los hechos comerciales los confirma el equipo, no una inferencia del modelo. No pedir autorización repetida para cambios ya incluidos en el encargo.
+Guardar solo el contexto que ayude a retomar el trabajo: desarrollo, problema que se quiere resolver, evidencia relevante, decisiones, pendientes y siguiente acción.
 
-Registrar el estado mínimo necesario para continuar: desarrollo, problema de ventas que se quiere resolver, evidencia y fecha de corte, hipótesis abiertas, decisiones y fundamento, pendientes y siguiente acción. Añadir enlaces a nuevos entregables en el índice cuando corresponda. Los responsables no asignados siguen por designar.
-
-En otra conversación, recuperar ese estado desde el índice o documento de inicio cuando exista, y del contexto disponible cuando no lo haya, antes de repetir preguntas. Distinguir verificación de lectura/escritura en la sesión de pruebas de acceso de otras personas o de otra conversación; no afirmar haber realizado pruebas no observadas.
+Al retomar el diagnóstico, aprovechar ese contexto antes de repetir preguntas.
