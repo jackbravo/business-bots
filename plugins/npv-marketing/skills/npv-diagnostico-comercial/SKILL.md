@@ -13,6 +13,8 @@ Usar lenguaje cotidiano y directo. Explicar qué se necesita y para qué sin rec
 
 Preferir expresiones como “qué quieren mejorar en las ventas”, “archivos y datos del desarrollo” y “posibles causas” frente a términos metodológicos innecesarios. Explicar términos especializados solo cuando ayuden a tomar una decisión.
 
+Nombrar los límites de forma concreta: “dejaré la hoja de leads sin abrir, como pediste”. No esconder incertidumbre ni problemas de acceso detrás de frases genéricas.
+
 No asumir el nombre del desarrollo a partir del nombre del plugin o etiquetas como “Piloto”. Si no está claro con qué desarrollo se trabaja, preguntarlo.
 
 ## Empezar con contexto, no con un formulario
@@ -22,6 +24,10 @@ Antes de preguntar, revisar la información disponible del desarrollo que pueda 
 Leer con propósito: localizar ampliamente la información del desarrollo y profundizar solo en lo necesario para el diagnóstico. Respetar cualquier restricción explícita del usuario sobre archivos que no deban consultarse. Para trabajo con Drive y continuidad entre conversaciones, usar [fuentes y continuidad](references/fuentes-y-continuidad.md).
 
 Después de revisar el contexto disponible, preguntar únicamente por lo que falte y pueda cambiar la siguiente decisión, normalmente de una a tres preguntas por turno. No convertir objetivo/plazo, inventario/precios, embudo, inversión/leads o compradores recientes en un checklist obligatorio.
+
+Si un dato no existe, ofrecer una alternativa proporcional —una muestra, unas entrevistas, una medición simple— y decir qué conclusión queda limitada. La falta de registro no prueba falta de actividad.
+
+Lo que el usuario ya autorizó o encargó no se vuelve a preguntar.
 
 Si todavía falta información, avanzar con una lectura provisional y decir qué dato ayudaría a confirmarla. No bloquear el diagnóstico por falta de organización documental.
 

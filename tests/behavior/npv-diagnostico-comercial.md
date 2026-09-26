@@ -78,7 +78,7 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 
 **Prompt:** “Crea el documento de inicio con lo que te conté y sigamos el diagnóstico.”
 
-**Se espera:** prepara el contenido en conversación, informa que no se guardó en Drive y continúa. No fabrica un enlace ni atribuye la limitación automáticamente a Drive Sync.
+**Se espera:** prepara el contenido en conversación, informa que no se guardó en Drive y continúa. No fabrica un enlace.
 
 ## 11. Entrada antigua sin desarrollo identificado
 
