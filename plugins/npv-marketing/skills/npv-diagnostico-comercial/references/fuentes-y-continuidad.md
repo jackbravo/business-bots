@@ -2,15 +2,13 @@
 
 ## Drive y acceso
 
-Drive es la ubicación inicial de NPV para documentos vivos. Los adjuntos pueden ser copias o cortes. Cuando una decisión dependa de información cambiante como precio, inventario o fecha de entrega, comprobar su vigencia.
+Drive es la ubicación inicial de NPV para documentos vivos. Los adjuntos pueden ser copias o cortes. Cuando una decisión dependa de información cambiante como precio, inventario o fecha de entrega, comprobar su vigencia cuando sea necesario.
 
 Usar las capacidades de Drive, Docs o Sheets disponibles en la sesión. Si falta acceso a una fuente necesaria, indicar la limitación concreta y continuar con la información disponible.
 
 ## Lectura
 
 En hojas extensas, localizar las pestañas, fechas o columnas útiles antes de ampliar la lectura.
-
-Evitar reproducir datos personales innecesarios para el diagnóstico.
 
 ## Organización y guardado
 
