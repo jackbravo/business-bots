@@ -12,7 +12,7 @@ Estado: Borrador. Fecha de actualización: [fecha real al guardar].
 
 ## Información disponible
 
-| Documento o material | Enlace o nombre del adjunto | Para qué sirve | Vigencia / fecha de corte | Quién puede confirmarlo |
+| Documento, material o fuente web | Enlace o nombre del adjunto | Para qué sirve | Vigencia / fecha de corte | Quién puede confirmarlo |
 | --- | --- | --- | --- | --- |
 | [Material disponible] | [Enlace real o nombre] | [Uso] | [Fecha conocida o Por confirmar] | [Responsable conocido o Por confirmar] |
 
@@ -20,7 +20,7 @@ Registrar solo materiales disponibles; no exigir brochure, inventario o CRM para
 
 ## Restricciones y criterios de uso
 
-[Restricciones conocidas sobre lectura, edición o uso de fuentes. Si no se han definido, indicar Por confirmar; no inferir permiso de un enlace.]
+[Incluir esta sección solo cuando el equipo haya indicado restricciones concretas. Omitirla si no las hay.]
 
 ## Qué sabemos y qué hemos decidido
 
