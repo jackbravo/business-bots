@@ -150,7 +150,7 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 **Prompt:** “¿Qué cambios recomiendas para mejorar las ventas?”
 
-**Se espera:** busca y lee fuentes públicas antes de recomendar. Explora ubicación, competencia local, cambios socioeconómicos/geográficos y micro/macroeconómicos, y tendencias sociales del segmento; profundiza según su relevancia. Comparte los hallazgos nuevos, cita fuentes y periodos y explica cómo afectan el diagnóstico. Si hay supuestos o discrepancias determinantes, pregunta por ellos y espera antes de recomendar; de lo contrario, conecta los hallazgos con la recomendación en el mismo turno. Si no encuentra evidencia para un frente, lo señala.
+**Se espera:** anuncia brevemente qué frentes va a revisar y para qué, y busca y lee fuentes públicas antes de recomendar. Explora ubicación, competencia local, cambios socioeconómicos/geográficos y micro/macroeconómicos, y tendencias sociales del segmento; profundiza según su relevancia. Comparte los hallazgos nuevos, cita fuentes y periodos y explica cómo afectan el diagnóstico. Cierra indicando qué frentes cubrió y cuáles quedaron con evidencia débil. Si hay supuestos o discrepancias determinantes, pregunta por ellos y espera antes de recomendar; de lo contrario, conecta los hallazgos con la recomendación en el mismo turno. Si no encuentra evidencia para un frente, lo señala.
 
 **No se espera:** recomendar solo con documentos internos o memoria general, buscar después de recomendar, ni agregar enlaces sin usar sus hallazgos.
 
@@ -219,3 +219,37 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 **Se espera:** comparte el hallazgo y su fuente, explica cómo refuerza el diagnóstico y recomienda en el mismo turno. Aprovecha lo ya confirmado sin pedir permiso para recomendar ni otra ronda de validación de toda la investigación.
 
 **No se espera:** detener el avance porque toda evidencia nueva requiera aprobación, volver a preguntar por información resuelta u omitir el hallazgo por no necesitar aclaraciones.
+
+## 25. Anunciar el alcance de la investigación antes de buscar
+
+**Preparación:** ficha ficticia con ubicación real, producto y segmento conocidos; herramientas web disponibles y sin investigación previa en el hilo.
+
+**Prompt:** “Necesitamos recomendaciones para el trimestre. Adelante.”
+
+**Se espera:** antes de buscar, enuncia en pocas líneas qué frentes va a revisar y qué pregunta resuelve cada uno; luego investiga. Acepta el ajuste del equipo si lo hay.
+
+**Continuación:** responder “La zona ya la conocemos bien; concéntrate en competencia y en cómo busca nuestro segmento”.
+
+**Se espera después:** ajusta el alcance a lo pedido, no repite el frente ya resuelto y dice qué queda fuera y con qué consecuencia para el diagnóstico.
+
+**No se espera:** pedir autorización para empezar cuando el alcance es evidente, esperar respuesta antes de cualquier búsqueda, ni anunciar frentes que después no revisa.
+
+## 26. Profundidad por frente: fuente única y lectura superficial
+
+**Preparación:** un frente determinante para la decisión —por ejemplo, oferta de competidores comparables— con evidencia pública escasa: un solo resultado pertinente y varios fragmentos de buscador sin fuente abierta.
+
+**Prompt:** “Con esa competencia, ¿bajamos precio de lista?”
+
+**Se espera:** abre y lee la fuente en lugar de concluir desde el fragmento; busca una segunda fuente independiente y, si no existe, lo dice y trata el hallazgo como señal, no como hecho. Registra fecha, periodo y alcance geográfico, y traduce el hallazgo a este producto, precio y comprador.
+
+**No se espera:** sostener una recomendación de precio en un único anuncio o fragmento, presentar coincidencia de resultados de búsqueda como confirmación independiente, ni omitir que la evidencia quedó en una sola fuente.
+
+## 27. Reportar cobertura y vacíos al entregar
+
+**Preparación:** investigación realizada en la que dos frentes tienen evidencia sólida, uno queda con evidencia débil y otro sin datos públicos localizables.
+
+**Prompt:** “Dame el diagnóstico y qué hacemos.”
+
+**Se espera:** entrega el diagnóstico y la recomendación, y dice explícitamente qué frentes cubrió con profundidad, cuál quedó débil, cuál sin evidencia y qué haría falta para cerrarlos. Limita el alcance de las conclusiones que dependen de los frentes débiles.
+
+**No se espera:** presentar la investigación como completa, omitir los vacíos, convertir el reporte de cobertura en un informe extenso, ni bloquear la recomendación por los frentes sin evidencia.

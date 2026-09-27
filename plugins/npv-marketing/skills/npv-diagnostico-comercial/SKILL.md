@@ -41,7 +41,11 @@ Si el equipo quiere organizar o guardar avances, ofrecer una carpeta de trabajo 
 
 Antes de cualquier recomendación comercial o de marketing, contrastar los documentos del desarrollo con búsquedas actuales en internet. No basta con el material interno. Explorar ubicación, competencia, cambios del entorno y tendencias sociales del segmento; completar los datos públicos faltantes siguiendo [criterios de diagnóstico](references/criterios-diagnostico.md). Obtener la ubicación del contexto del proyecto; si no está clara, preguntarla antes de buscar.
 
-Acotar la investigación a la decisión. Reutilizar hallazgos ya investigados si siguen vigentes y pertinentes; actualizar lo que pueda haber cambiado. Citar fuentes y fechas o periodos, y explicar cómo respaldan o cuestionan la recomendación, no solo agregar enlaces.
+Antes de buscar, decir en pocas líneas qué frentes se van a revisar y qué pregunta resuelve cada uno. Ajustar ese alcance con lo que el equipo aporte o ya tenga resuelto; no esperar aprobación cuando el alcance es evidente.
+
+Acotar la investigación a la decisión, y sostener cada frente que pueda cambiarla con fuentes abiertas, leídas y fechadas, no con fragmentos de búsqueda. Reutilizar hallazgos ya investigados si siguen vigentes y pertinentes; actualizar lo que pueda haber cambiado. Citar fuentes y fechas o periodos, y explicar cómo respaldan o cuestionan la recomendación, no solo agregar enlaces.
+
+Al entregar, decir qué frentes se cubrieron, cuáles quedaron con evidencia débil o sin evidencia, y qué haría falta para cerrarlos.
 
 Las aclaraciones, cálculos y tareas de organización no requieren investigar el mercado por sí solos. Si no hay acceso web o el usuario pide no usarlo, informar el límite y continuar con un análisis provisional, sin presentar recomendaciones como contrastadas con el mercado ni inventar fuentes.
 

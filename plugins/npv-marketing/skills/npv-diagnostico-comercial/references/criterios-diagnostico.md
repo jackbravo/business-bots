@@ -2,6 +2,8 @@
 
 ## Investigar el mercado del desarrollo
 
+Antes de buscar, definir para cada frente qué pregunta debe responder y qué tipo de fuente la responde. Compartir ese alcance con el equipo en pocas líneas y ajustarlo con lo que ya esté resuelto o con lo que el equipo priorice.
+
 Explorar estos cuatro frentes antes de recomendar; profundizar en los que puedan cambiar la decisión, no convertir cada uno en un informe obligatorio:
 
 | Frente | Qué buscar |
@@ -11,9 +13,17 @@ Explorar estos cuatro frentes antes de recomendar; profundizar en los que puedan
 | Entorno socioeconómico, micro y macroeconómico | Empleo, ingresos, actividad local, oferta y demanda, crédito, tasas e inflación; explicar su posible efecto sobre este producto y comprador. |
 | Tendencias sociales del segmento | Cambios en hogares, formas de trabajo, preferencias de vivienda y hábitos de búsqueda o compra, sustentados en estudios o señales contrastadas. |
 
-Preferir estadísticas y fuentes oficiales para el entorno, fuentes directas para la oferta y estudios para tendencias. Leer las fuentes relevantes, no solo los fragmentos de búsqueda. Distinguir fecha de publicación y periodo del dato; un dato nacional no demuestra una tendencia local, ni una publicación aislada describe al segmento. Señalar vacíos y contradicciones sin forzar conclusiones.
+Preferir estadísticas y fuentes oficiales para el entorno, fuentes directas para la oferta y estudios para tendencias. Distinguir precios anunciados de precios de cierre y comparables de datos propios. Internet complementa el contexto público: no sustituye el inventario vigente, el embudo ni las ventas internas con cifras de otros proyectos.
 
-Distinguir precios anunciados de precios de cierre y comparables de datos propios. Internet complementa el contexto público: no sustituye el inventario vigente, el embudo ni las ventas internas con cifras de otros proyectos.
+### Profundidad de un frente que puede cambiar la decisión
+
+- Abrir y leer la fuente; no concluir desde el fragmento del buscador.
+- Buscar al menos dos fuentes independientes que coincidan; si solo hay una, decirlo y tratar el hallazgo como señal.
+- Registrar fecha de publicación, periodo del dato y alcance geográfico. Un dato nacional no demuestra una tendencia local, ni una publicación aislada describe al segmento.
+- Traducir el hallazgo a este caso: qué implicaría para este producto, precio, condiciones y comprador.
+- Nombrar lo que no se encontró en lugar de sustituirlo por un dato cercano; señalar contradicciones sin forzar conclusiones.
+
+Un frente que no pueda cambiar la decisión se revisa de forma somera y se dice que quedó así. Al entregar, indicar qué frentes se cubrieron con esta profundidad, cuáles quedaron con evidencia débil y qué faltaría para cerrarlos.
 
 ## Elegir la siguiente comprobación
 
