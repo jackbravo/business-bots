@@ -18,7 +18,7 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 **Prompt:** proporcionar una tabla ficticia que muestre leads estables, contacto estable, visitas estables y caída fuerte de visita a apartado; pedir el siguiente paso.
 
-**Se espera:** concentra el diagnóstico en cierre, oferta, objeciones o seguimiento; contrasta con investigación web pertinente antes de recomendar una comprobación reversible y útil, aunque la tabla interna parezca suficiente.
+**Se espera:** concentra el diagnóstico en cierre, oferta, objeciones o seguimiento; contrasta con investigación web pertinente y comparte sus hallazgos antes de recomendar una comprobación reversible y útil, aunque la tabla interna parezca suficiente. Si surge un supuesto determinante por confirmar, lo contrasta con el equipo y espera su respuesta antes de la recomendación que dependa de él.
 
 **No se espera:** continuar entrevistando por completitud ni atribuir el problema automáticamente a generación de demanda.
 
@@ -150,7 +150,7 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 **Prompt:** “¿Qué cambios recomiendas para mejorar las ventas?”
 
-**Se espera:** busca y lee fuentes públicas antes de recomendar. Explora ubicación, competencia local, cambios socioeconómicos/geográficos y micro/macroeconómicos, y tendencias sociales del segmento; profundiza según su relevancia. Cita fuentes y periodos e indica qué hallazgo respalda o cuestiona cada recomendación. Si no encuentra evidencia para un frente, lo señala.
+**Se espera:** busca y lee fuentes públicas antes de recomendar. Explora ubicación, competencia local, cambios socioeconómicos/geográficos y micro/macroeconómicos, y tendencias sociales del segmento; profundiza según su relevancia. Comparte los hallazgos nuevos, cita fuentes y periodos y explica cómo afectan el diagnóstico. Si hay supuestos o discrepancias determinantes, pregunta por ellos y espera antes de recomendar; de lo contrario, conecta los hallazgos con la recomendación en el mismo turno. Si no encuentra evidencia para un frente, lo señala.
 
 **No se espera:** recomendar solo con documentos internos o memoria general, buscar después de recomendar, ni agregar enlaces sin usar sus hallazgos.
 
@@ -168,7 +168,7 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 ## 20. Reutilizar investigación y evitar búsquedas sin propósito
 
-**Preparación:** investigación ya consultada en el mismo hilo, con fuentes, fechas y hallazgos pertinentes; sin cambios relevantes.
+**Preparación:** investigación ya consultada en el mismo hilo, con fuentes, fechas y hallazgos pertinentes; supuestos determinantes ya contrastados con el equipo y sin cambios relevantes.
 
 **Prompt:** “Con lo que acabamos de investigar, prioriza la siguiente acción.” Luego pedir “Calcula la conversión: 2 ventas entre 20 visitas.”
 
@@ -195,3 +195,27 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 **Se espera:** revisa fecha del dato, alcance geográfico y comparabilidad; busca evidencia adicional pertinente. Explica qué sigue sin demostrarse y distingue señales de hipótesis. No fuerza una recomendación por haber encontrado resultados.
 
 **No se espera:** convertir evidencia nacional en demanda local, un anuncio en precio de cierre o una publicación social en un perfil comprobado de compradores.
+
+## 23. Hallazgo determinante: contrastar antes de recomendar
+
+**Preparación:** desarrollo ficticio con ubicación real, condiciones comerciales conocidas y objeciones sobre el enganche. Investigación recién realizada con fuentes públicas leídas y fechadas sobre ofertas de posibles competidores con menor enganche; todavía no se sabe si los compradores realmente consideran esos proyectos como alternativas. Usar fuentes reales o un entorno de prueba claramente simulado, sin atribuir cifras ficticias a entidades reales.
+
+**Prompt:** “Con lo que encontraste, ¿debemos bajar el enganche para vender más?”
+
+**Se espera:** comparte el hallazgo, sus fuentes y su posible efecto en el diagnóstico. Pregunta concretamente si esos proyectos compiten por los mismos compradores o qué diferencias los excluyen; espera la respuesta antes de recomendar reducir el enganche. Puede presentar un diagnóstico provisional, pero no trasladar al usuario la tarea de verificar toda la investigación.
+
+**Continuación:** responder “Esos proyectos ofrecen otra tipología y nuestros compradores no los consideran; además, ya flexibilizamos el enganche y siguen perdiéndose visitas”.
+
+**Se espera después:** incorpora las aclaraciones y revisa la hipótesis y los comparables en vez de reiterar la recomendación inicial. Si una aclaración contradice un hecho verificable de las fuentes, explicita la discrepancia y busca resolverla, sin sustituir automáticamente evidencia por opinión.
+
+**No se espera:** recomendar primero y pedir confirmación después; presentar una recomendación dependiente del supuesto como firme; preguntar “¿validas toda la evidencia?”; repetir preguntas ya resueltas.
+
+## 24. Hallazgo que refuerza lo conocido: avanzar sin aprobación rutinaria
+
+**Preparación:** ubicación, producto, condiciones y comparables ya contrastados con el equipo. Una fuente nueva, vigente y pertinente refuerza la lectura previa sin introducir contradicciones ni supuestos determinantes pendientes. Identificar claramente qué hallazgo es nuevo y qué información ya se confirmó.
+
+**Prompt:** “¿Qué siguiente paso recomiendas con este nuevo hallazgo?”
+
+**Se espera:** comparte el hallazgo y su fuente, explica cómo refuerza el diagnóstico y recomienda en el mismo turno. Aprovecha lo ya confirmado sin pedir permiso para recomendar ni otra ronda de validación de toda la investigación.
+
+**No se espera:** detener el avance porque toda evidencia nueva requiera aprobación, volver a preguntar por información resuelta u omitir el hallazgo por no necesitar aclaraciones.

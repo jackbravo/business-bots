@@ -62,7 +62,7 @@ Ajustar la profundidad al material disponible. Una respuesta útil debe dejar cl
 - qué falta comprobar;
 - cuál es el siguiente paso útil.
 
-Tras contrastar la evidencia interna y externa, entregar el diagnóstico cuando sea suficiente en lugar de seguir entrevistando.
+Antes de recomendar, compartir los hallazgos nuevos relevantes, sus fuentes y cómo afectan la lectura del problema. Contrastar con el usuario los supuestos o discrepancias que puedan cambiar la decisión; esperar su respuesta cuando sean determinantes e incorporar sus aclaraciones al diagnóstico. Si no hay nada relevante por confirmar, avanzar sin repetir preguntas resueltas.
 
 Cuando el usuario pida guardar o actualizar el avance, hacerlo en los documentos del proyecto siguiendo [fuentes y continuidad](references/fuentes-y-continuidad.md). No afirmar que algo quedó guardado si solo se mencionó en el chat.
 
