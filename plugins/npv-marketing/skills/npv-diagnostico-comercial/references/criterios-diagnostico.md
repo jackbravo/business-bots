@@ -1,5 +1,20 @@
 # Criterios de diagnóstico inmobiliario
 
+## Investigar el mercado del desarrollo
+
+Explorar estos cuatro frentes antes de recomendar; profundizar en los que puedan cambiar la decisión, no convertir cada uno en un informe obligatorio:
+
+| Frente | Qué buscar |
+| --- | --- |
+| Ubicación actual | Movilidad, infraestructura, servicios, usos del suelo y cambios geográficos o riesgos territoriales de la zona. |
+| Competencia en la zona | Desarrollos comparables por ubicación, producto, precio, condiciones, entrega y segmento; oferta disponible y diferencias relevantes. |
+| Entorno socioeconómico, micro y macroeconómico | Empleo, ingresos, actividad local, oferta y demanda, crédito, tasas e inflación; explicar su posible efecto sobre este producto y comprador. |
+| Tendencias sociales del segmento | Cambios en hogares, formas de trabajo, preferencias de vivienda y hábitos de búsqueda o compra, sustentados en estudios o señales contrastadas. |
+
+Preferir estadísticas y fuentes oficiales para el entorno, fuentes directas para la oferta y estudios para tendencias. Leer las fuentes relevantes, no solo los fragmentos de búsqueda. Distinguir fecha de publicación y periodo del dato; un dato nacional no demuestra una tendencia local, ni una publicación aislada describe al segmento. Señalar vacíos y contradicciones sin forzar conclusiones.
+
+Distinguir precios anunciados de precios de cierre y comparables de datos propios. Internet complementa el contexto público: no sustituye el inventario vigente, el embudo ni las ventas internas con cifras de otros proyectos.
+
 ## Elegir la siguiente comprobación
 
 | Señal | Alternativas que conviene distinguir | Dato útil si falta | Alternativa de bajo esfuerzo |

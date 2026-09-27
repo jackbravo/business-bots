@@ -1,11 +1,11 @@
 ---
 name: npv-diagnostico-comercial
-description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobiliario de NPV, revisar su contexto y distinguir causas de pocos leads, baja calificación, pocas visitas o ventas lentas mediante evidencia y preguntas mínimas. Usar también para evaluar si conviene reconsiderar el segmento o ayudar al equipo a organizar la información inicial del desarrollo, aunque no exista carpeta ni índice. No activa por consultas inmobiliarias ajenas a NPV ni sustituye la producción de campañas o su publicación.
+description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobiliario de NPV combinando documentos, investigación web y preguntas mínimas. Usar para analizar pocos leads, baja calificación, pocas visitas, ventas lentas o reconsideración de segmento; también para organizar la información inicial, con o sin índice. No sustituye la producción ni publicación de campañas.
 ---
 
 # Arranque y diagnóstico comercial NPV
 
-Producir un diagnóstico útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Trabajar únicamente con el desarrollo actual y no trasladar datos, supuestos o segmentos de otros desarrollos.
+Producir un diagnóstico útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Mantener el foco en el desarrollo actual. Usar el mercado y los competidores como comparación, sin atribuir sus datos, supuestos o segmentos al proyecto.
 
 ## Hablar como parte del equipo comercial
 
@@ -37,6 +37,14 @@ Si ya existe una estructura de documentos, aprovecharla y no duplicarla.
 
 Si el equipo quiere organizar o guardar avances, ofrecer una carpeta de trabajo y un documento “Inicio del desarrollo”. Usar la [plantilla de inicio](assets/inicio-del-desarrollo.md) cuando corresponda. No convertir la organización en un requisito para empezar el diagnóstico.
 
+## Investigar antes de recomendar
+
+Antes de cualquier recomendación comercial o de marketing, contrastar los documentos del desarrollo con búsquedas actuales en internet. No basta con el material interno. Explorar ubicación, competencia, cambios del entorno y tendencias sociales del segmento; completar los datos públicos faltantes siguiendo [criterios de diagnóstico](references/criterios-diagnostico.md). Obtener la ubicación del contexto del proyecto; si no está clara, preguntarla antes de buscar.
+
+Acotar la investigación a la decisión. Reutilizar hallazgos ya investigados si siguen vigentes y pertinentes; actualizar lo que pueda haber cambiado. Citar fuentes y fechas o periodos, y explicar cómo respaldan o cuestionan la recomendación, no solo agregar enlaces.
+
+Las aclaraciones, cálculos y tareas de organización no requieren investigar el mercado por sí solos. Si no hay acceso web o el usuario pide no usarlo, informar el límite y continuar con un análisis provisional, sin presentar recomendaciones como contrastadas con el mercado ni inventar fuentes.
+
 ## Diagnosticar
 
 Consultar [criterios de diagnóstico](references/criterios-diagnostico.md) cuando sea necesario distinguir problemas de volumen, adecuación del comprador, contacto, visitas o cierre.
@@ -44,8 +52,6 @@ Consultar [criterios de diagnóstico](references/criterios-diagnostico.md) cuand
 Relacionar la evidencia disponible con posibles causas de producto, precio y condiciones, segmento, canal, mensaje, confianza y proceso comercial. Evaluar solo las que sean relevantes al caso. No asumir que una caída de ventas implica cambiar de segmento.
 
 Separar con claridad lo que muestran los datos de las interpretaciones y recomendaciones. No inventar objetivos, cifras, probabilidades ni conclusiones que la evidencia no sostenga.
-
-Investigar fuentes públicas cuando ayuden a resolver una pregunta concreta, verificando que sean vigentes y comparables al desarrollo.
 
 ## Entregar y continuar
 
@@ -56,7 +62,7 @@ Ajustar la profundidad al material disponible. Una respuesta útil debe dejar cl
 - qué falta comprobar;
 - cuál es el siguiente paso útil.
 
-Si ya hay información suficiente, entregar el diagnóstico en lugar de seguir entrevistando.
+Tras contrastar la evidencia interna y externa, entregar el diagnóstico cuando sea suficiente en lugar de seguir entrevistando.
 
 Cuando el usuario pida guardar o actualizar el avance, hacerlo en los documentos del proyecto siguiendo [fuentes y continuidad](references/fuentes-y-continuidad.md). No afirmar que algo quedó guardado si solo se mencionó en el chat.
 

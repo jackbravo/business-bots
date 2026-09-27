@@ -2,6 +2,10 @@
 
 Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el plugin. Usar nombres y cifras inventados; no pegar información personal de prospectos o clientes.
 
+En escenarios que pidan recomendaciones de mercado, asignar al desarrollo ficticio una ubicación real indicada por quien prueba y habilitar herramientas web, salvo que el caso indique lo contrario. No buscar una identidad o ubicación ficticia. Los casos de ambigüedad deben conservar el contexto faltante.
+
+Registrar versión y commit, prompt, respuesta, consultas a archivos y web en orden, fuentes utilizadas y resultado (pasa/falla/no ejecutado). La validación estructural no sustituye estas pruebas manuales; comprobar que las consultas preceden a las recomendaciones. Las instrucciones explícitas de usar solo notas o no navegar prevalecen en su caso.
+
 ## 1. Arranque con información mínima
 
 **Prompt:** “Inicia el diagnóstico de Desarrollo Ejemplo. Solo sabemos que bajaron los apartados este trimestre.”
@@ -14,7 +18,7 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 
 **Prompt:** proporcionar una tabla ficticia que muestre leads estables, contacto estable, visitas estables y caída fuerte de visita a apartado; pedir el siguiente paso.
 
-**Se espera:** concentra el diagnóstico en cierre, oferta, objeciones o seguimiento; recomienda una comprobación reversible y útil.
+**Se espera:** concentra el diagnóstico en cierre, oferta, objeciones o seguimiento; contrasta con investigación web pertinente antes de recomendar una comprobación reversible y útil, aunque la tabla interna parezca suficiente.
 
 **No se espera:** continuar entrevistando por completitud ni atribuir el problema automáticamente a generación de demanda.
 
@@ -109,3 +113,85 @@ Estos casos se ejecutan manualmente en un hilo nuevo después de reinstalar el p
 **Se espera:** respeta la restricción, explica que las notas sugieren una posible dificultad con el enganche pero no la demuestran y plantea una comprobación concreta. Si menciona el límite, indica qué archivo deja sin abrir y por qué.
 
 **No se espera:** ocultar incertidumbre por simplificar el lenguaje ni sustituir el límite concreto por “revisaré las restricciones vigentes”.
+
+## 15. Ficha técnica disponible antes de preguntar
+
+**Preparación:** carpeta de prueba autorizada con una ficha ficticia que incluya ubicación real, modelos, superficies, amenidades, inventario, precios y condiciones.
+
+**Prompt:** “Inicia el diagnóstico de Desarrollo Ejemplo. Las ventas van lentas.”
+
+**Se espera:** consulta la ficha antes de preguntar; aprovecha sus datos y pregunta solo por lo que falta para avanzar. Antes de recomendar, contrasta con fuentes públicas de esa zona.
+
+**No se espera:** volver a pedir datos que la ficha ya resuelve ni abrir con un cuestionario.
+
+## 16. Documento pertinente fuera del índice
+
+**Preparación:** carpeta con un índice que no enlaza una lista de precios existente del mismo desarrollo.
+
+**Prompt:** “¿Los precios están frenando las ventas de Desarrollo Ejemplo?”
+
+**Se espera:** encuentra y usa la lista; investiga comparables pertinentes antes de recomendar cambios. Distingue precios anunciados de cierres; no exige organizar la carpeta primero.
+
+**No se espera:** concluir que no hay precios por faltar el enlace, ni tratar un precio de otro proyecto como precio propio.
+
+## 17. Dos desarrollos accesibles
+
+**Preparación:** archivos ficticios de Desarrollo Ejemplo y Desarrollo Vecino, con ubicaciones, precios e inventarios distintos; solo el primero es el proyecto actual.
+
+**Prompt:** “Diagnostica Desarrollo Ejemplo.”
+
+**Se espera:** usa los datos propios del desarrollo indicado. Los competidores investigados se identifican como comparación externa, no como fuentes del inventario o embudo del proyecto.
+
+**No se espera:** completar datos faltantes con los de Desarrollo Vecino o asumir que comparten segmento.
+
+## 18. Investigación previa sin pedirla en el prompt
+
+**Preparación:** ficha y embudo ficticios completos; ubicación real, producto y segmento conocidos; herramientas web disponibles y sin investigación previa.
+
+**Prompt:** “¿Qué cambios recomiendas para mejorar las ventas?”
+
+**Se espera:** busca y lee fuentes públicas antes de recomendar. Explora ubicación, competencia local, cambios socioeconómicos/geográficos y micro/macroeconómicos, y tendencias sociales del segmento; profundiza según su relevancia. Cita fuentes y periodos e indica qué hallazgo respalda o cuestiona cada recomendación. Si no encuentra evidencia para un frente, lo señala.
+
+**No se espera:** recomendar solo con documentos internos o memoria general, buscar después de recomendar, ni agregar enlaces sin usar sus hallazgos.
+
+## 19. Sin acceso web o con instrucción de no navegar
+
+**Preparación:** ejecutar dos variantes con datos internos suficientes: una sin herramientas web y otra con web disponible pero instrucción expresa de no usarla.
+
+**Prompt A:** “¿Qué recomiendas para mejorar las ventas de Desarrollo Ejemplo?”
+
+**Prompt B:** “No uses internet; analiza solo estos datos y dime qué podemos concluir.”
+
+**Se espera:** explica el alcance provisional y continúa con los datos internos; identifica qué falta contrastar. En B no navega.
+
+**No se espera:** inventar fuentes, fingir investigación, presentar conclusiones de mercado como verificadas ni bloquear aclaraciones o cálculos útiles.
+
+## 20. Reutilizar investigación y evitar búsquedas sin propósito
+
+**Preparación:** investigación ya consultada en el mismo hilo, con fuentes, fechas y hallazgos pertinentes; sin cambios relevantes.
+
+**Prompt:** “Con lo que acabamos de investigar, prioriza la siguiente acción.” Luego pedir “Calcula la conversión: 2 ventas entre 20 visitas.”
+
+**Se espera:** reutiliza evidencia vigente para priorizar y responde 10% al cálculo sin repetir toda la investigación. Repetir con un cambio informado de condiciones y comprobar que actualiza la evidencia afectada antes de recomendar.
+
+**No se espera:** investigar por rutina cada turno o reutilizar datos obsoletos ante cambios materiales.
+
+## 21. Ubicación ambigua
+
+**Preparación:** proyecto ficticio sin ciudad o zona identificable en sus materiales; existen nombres parecidos en distintas ciudades.
+
+**Prompt:** “¿Qué competencia tiene nuestro desarrollo y qué recomiendas?”
+
+**Se espera:** pide la ubicación que falta antes de investigar competidores o recomendar. No vuelve a preguntar si la ubicación consta en una ficha accesible.
+
+**No se espera:** usar la ubicación del usuario, otro proyecto o una coincidencia de nombre como ubicación del desarrollo.
+
+## 22. Calidad y alcance de la evidencia externa
+
+**Preparación:** aportar fuentes públicas de prueba claramente identificadas: un estudio nacional con datos antiguos, una publicación social aislada y anuncios de productos no comparables. No inventar URLs ni atribuir cifras ficticias a entidades reales.
+
+**Prompt:** “¿Esto prueba que debemos cambiar de segmento o bajar precios?”
+
+**Se espera:** revisa fecha del dato, alcance geográfico y comparabilidad; busca evidencia adicional pertinente. Explica qué sigue sin demostrarse y distingue señales de hipótesis. No fuerza una recomendación por haber encontrado resultados.
+
+**No se espera:** convertir evidencia nacional en demanda local, un anuncio en precio de cierre o una publicación social en un perfil comprobado de compradores.

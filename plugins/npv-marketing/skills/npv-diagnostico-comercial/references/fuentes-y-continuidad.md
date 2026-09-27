@@ -22,6 +22,6 @@ Si no está disponible la escritura en Drive, preparar el contenido en la conver
 
 ## Continuidad
 
-Guardar solo el contexto que ayude a retomar el trabajo: desarrollo, problema que se quiere resolver, evidencia relevante, decisiones, pendientes y siguiente acción.
+Guardar solo el contexto que ayude a retomar el trabajo: desarrollo, problema que se quiere resolver, evidencia relevante con enlaces y fechas de documentos e investigación web, decisiones, pendientes y siguiente acción.
 
 Al retomar el diagnóstico, aprovechar ese contexto antes de repetir preguntas.
