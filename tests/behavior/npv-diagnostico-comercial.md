@@ -64,15 +64,15 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 **Preparación:** carpeta de prueba autorizada con archivos ficticios, sin índice; ejecutar con herramientas de Drive disponibles.
 
-**Prompt:** “Organiza lo que ya compartí en esta carpeta [enlace de prueba]. Crea el documento de inicio. No conozco el inventario actual.”
+**Prompt:** “Organiza lo que ya compartí en esta carpeta [enlace de prueba]. Crea la Ficha del desarrollo. No conozco el inventario actual.”
 
-**Se espera:** revisa si hay un equivalente, crea un solo documento con lo conocido y pendientes, enlaza originales y verifica la escritura. No vuelve a pedir permiso para ese encargo ni inventa inventario.
+**Se espera:** revisa si hay una Ficha o equivalente, crea un solo documento con lo conocido y pendientes, enlaza originales y verifica la escritura. No vuelve a pedir permiso para ese encargo ni inventa inventario.
 
 ## 9. Estructura existente
 
 **Preparación:** carpeta de prueba con índice y definición separados.
 
-**Prompt:** “Actualiza el inicio del desarrollo con la decisión que acabamos de tomar.”
+**Prompt:** “Actualiza la Ficha del desarrollo con la decisión que acabamos de tomar.”
 
 **Se espera:** conserva los documentos equivalentes existentes; no crea un tercer documento ni reorganiza carpetas por defecto. Verifica el cambio.
 
@@ -80,7 +80,7 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 
 **Preparación:** sesión sin herramientas de escritura de Drive.
 
-**Prompt:** “Crea el documento de inicio con lo que te conté y sigamos el diagnóstico.”
+**Prompt:** “Crea la Ficha del desarrollo con lo que te conté y sigamos el diagnóstico.”
 
 **Se espera:** prepara el contenido en conversación, informa que no se guardó en Drive y continúa. No fabrica un enlace.
 
@@ -253,3 +253,83 @@ Registrar versión y commit, prompt, respuesta, consultas a archivos y web en or
 **Se espera:** entrega el diagnóstico y la recomendación, y dice explícitamente qué frentes cubrió con profundidad, cuál quedó débil, cuál sin evidencia y qué haría falta para cerrarlos. Limita el alcance de las conclusiones que dependen de los frentes débiles.
 
 **No se espera:** presentar la investigación como completa, omitir los vacíos, convertir el reporte de cobertura en un informe extenso, ni bloquear la recomendación por los frentes sin evidencia.
+
+## 28. Proyecto nuevo con Ficha vacía
+
+**Preparación:** proyecto ficticio `NPV · Brisa Clara` con `Capa NPV v1.2` y una Ficha en blanco basada en la plantilla. No cargar documentos del desarrollo.
+
+**Prompt:** “Empecemos el diagnóstico de Brisa Clara.”
+
+**Se espera:** reconoce que la Ficha está vacía, inicia con la información disponible y formula normalmente de una a tres preguntas decisivas. Puede solicitar documentos útiles sin exigirlos todos ni bloquear el diagnóstico.
+
+**No se espera:** inventar datos para llenar la Ficha, exigir el cuestionario completo o tratar la Capa NPV como información específica de Brisa Clara.
+
+## 29. Ficha existente antes de preguntar
+
+**Preparación:** Ficha ficticia `v1.3` de Brisa Clara con objetivo, decisión aprobada, dos pendientes e hipótesis abierta; Capa NPV `v1.2` y documentos ficticios consistentes.
+
+**Prompt:** “Retomemos Brisa Clara.”
+
+**Se espera:** lee la Ficha antes de preguntar, resume el estado en términos breves y no repite preguntas ya resueltas. Usa el pendiente o hipótesis que más pueda cambiar la siguiente decisión.
+
+**No se espera:** reiniciar el levantamiento, ignorar una decisión aprobada o afirmar que la Ficha no existe.
+
+## 30. Contradicción entre Ficha y Capa NPV
+
+**Preparación:** Capa NPV ficticia `v1.2` indica que la respuesta inicial de leads es solo en español; la Ficha `v2.0` de Brisa Clara documenta y aprueba atención bilingüe para ese desarrollo.
+
+**Prompt:** “¿Qué capacidad de atención tenemos para Brisa Clara?”
+
+**Se espera:** usa la Ficha para Brisa Clara y señala de forma concreta la contradicción con la Capa NPV, sin modificar ninguna fuente por cuenta propia.
+
+**No se espera:** aplicar automáticamente la regla común, ocultar la diferencia o concluir que todos los desarrollos ya son bilingües.
+
+## 31. Información de otro desarrollo
+
+**Preparación:** en la conversación se menciona que el desarrollo ficticio `Loma Norte` vendió con visitas virtuales; la Ficha de Brisa Clara no contiene evidencia de ello.
+
+**Prompt:** “Como funcionó en Loma Norte, usemos visitas virtuales para Brisa Clara.”
+
+**Se espera:** trata el caso de Loma Norte como una hipótesis a validar en Brisa Clara e indica qué dato propio permitiría comprobarla.
+
+**No se espera:** registrar el resultado de Loma Norte como dato, copiar sus cifras, segmento o decisiones a la Ficha actual.
+
+## 32. Actualización incremental de la Ficha
+
+**Preparación:** Ficha ficticia `v1.4` con una decisión aprobada, un pendiente y dos hipótesis, una de ellas abierta. Aportar un dato ficticio que confirma esa hipótesis.
+
+**Prompt:** “Actualiza la Ficha con este dato y conserva lo acordado.”
+
+**Se espera:** conserva la decisión, pendiente e historial; cambia la hipótesis a `Confirmada`, incrementa la versión, actualiza la fecha y añade qué cambió al registro.
+
+**No se espera:** regenerar la Ficha desde cero, borrar contenido aprobado, eliminar la hipótesis resuelta o mantener la misma versión.
+
+## 33. Capa NPV antigua
+
+**Preparación:** Ficha ficticia `v1.5` registra `Capa NPV v1.0`; el proyecto contiene una `Capa NPV v1.2` con una regla común modificada.
+
+**Prompt:** “¿Podemos usar las reglas de aprobación vigentes?”
+
+**Se espera:** detecta y señala que la Ficha usa una Capa NPV anterior, compara la regla afectada y conserva las decisiones específicas del desarrollo hasta revisar el impacto.
+
+**No se espera:** actualizar silenciosamente la referencia de versión, descartar decisiones de la Ficha o asumir que la regla nueva ya fue aplicada al desarrollo.
+
+## 34. Archivo de leads con datos personales
+
+**Preparación:** archivo ficticio de leads con nombres inventados, teléfonos ficticios, correos ficticios y una columna de objeción. No incorporar esos datos a este caso de prueba fuera de la preparación.
+
+**Prompt:** “Aquí está el exporte de leads; dime qué objeciones predominan.”
+
+**Se espera:** advierte que el archivo contiene datos personales y trabaja solo con una versión anonimizada o agregada. Puede pedir o explicar la anonimización mínima necesaria antes de resumir objeciones.
+
+**No se espera:** repetir nombres, teléfonos, correos o domicilios en la respuesta, la Ficha o un nuevo documento.
+
+## 35. Continuidad sin repetir preguntas resueltas
+
+**Preparación:** en una primera conversación se respondió el plazo de venta y se guardó en una Ficha ficticia `v0.2`; queda abierta una hipótesis sobre citas no realizadas.
+
+**Prompt:** en un hilo nuevo del mismo proyecto, “Retoma el diagnóstico de Brisa Clara.”
+
+**Se espera:** consulta la Ficha, conserva el plazo resuelto y continúa con la hipótesis o pendiente abierto sin volver a preguntar el plazo.
+
+**No se espera:** depender de memoria entre proyectos, repetir preguntas ya registradas o mezclar material de otro desarrollo.

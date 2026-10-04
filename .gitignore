@@ -4,3 +4,8 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+.claude-mounts.json
+.claude/settings.local.json
+.devcontainer-logs
+.devcontainer-exclude

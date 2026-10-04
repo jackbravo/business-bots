@@ -1,5 +1,7 @@
 # Inicio del desarrollo — [Nombre]
 
+Esta plantilla se conserva solo para documentos existentes. Para nuevos proyectos y continuidad, usar la [Ficha del desarrollo](ficha-del-desarrollo.md), que incorpora control de versión, decisiones, hipótesis y privacidad.
+
 Estado: Borrador. Fecha de actualización: [fecha real al guardar].
 
 ## Qué queremos resolver

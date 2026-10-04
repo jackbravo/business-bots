@@ -74,6 +74,17 @@ def validate_links(path: pathlib.Path) -> list[str]:
     return errors
 
 
+def markdown_files() -> list[pathlib.Path]:
+    """Devuelve la documentación local cuya navegación debe permanecer íntegra."""
+    locations = [ROOT / "plugins", ROOT / "tests"]
+    return sorted(
+        path
+        for location in locations
+        if location.is_dir()
+        for path in location.rglob("*.md")
+    )
+
+
 def validate_plugin(entry: dict[str, Any], allow_cachebuster: bool) -> list[str]:
     errors: list[str] = []
     plugin_name = entry.get("name")
@@ -190,6 +201,12 @@ def main() -> int:
     } - seen
     for name in sorted(unlisted):
         errors.append(f"{name}: existe en plugins/ pero no en el marketplace")
+
+    for markdown_file in markdown_files():
+        try:
+            errors.extend(validate_links(markdown_file))
+        except OSError as exc:
+            errors.append(f"{markdown_file.relative_to(ROOT)}: no se pudo leer: {exc}")
 
     if errors:
         for error in errors:

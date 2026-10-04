@@ -5,7 +5,7 @@ description: Iniciar o retomar el diagnóstico comercial de un desarrollo inmobi
 
 # Arranque y diagnóstico comercial NPV
 
-Producir un diagnóstico útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Mantener el foco en el desarrollo actual. Usar el mercado y los competidores como comparación, sin atribuir sus datos, supuestos o segmentos al proyecto.
+Producir un diagnóstico útil y el siguiente paso que reduzca una incertidumbre comercial. Hablar en español salvo preferencia distinta del usuario. Mantener el foco en el desarrollo actual. Usar el mercado y los competidores como comparación, sin atribuir sus datos, supuestos o segmentos al proyecto. El plugin es la fuente canónica de esta metodología; cada ChatGPT Project contiene exclusivamente el contexto y los documentos de un desarrollo.
 
 ## Hablar como parte del equipo comercial
 
@@ -19,9 +19,9 @@ No asumir el nombre del desarrollo a partir del nombre del plugin o etiquetas co
 
 ## Empezar con contexto, no con un formulario
 
-Antes de preguntar, revisar la información disponible del desarrollo que pueda responder la pregunta. Si existe un índice, usarlo como mapa, no como requisito ni como límite de búsqueda. Si no existe, trabajar directamente con los archivos, enlaces, adjuntos o explicación disponibles.
+Antes de preguntar, identificar el desarrollo actual y revisar primero su Ficha, si existe; después, la Capa NPV y los documentos del desarrollo que puedan responder la pregunta. Si la Ficha está vacía o no existe, empezar con la información disponible, sin exigir un formulario completo. Si existe un índice, usarlo como mapa, no como requisito ni como límite de búsqueda. Si no existe, trabajar directamente con los archivos, enlaces, adjuntos o explicación disponibles.
 
-Leer con propósito: localizar ampliamente la información del desarrollo y profundizar solo en lo necesario para el diagnóstico. Respetar cualquier restricción explícita del usuario sobre archivos que no deban consultarse. Para trabajo con Drive y continuidad entre conversaciones, usar [fuentes y continuidad](references/fuentes-y-continuidad.md).
+Leer con propósito: localizar ampliamente la información del desarrollo y profundizar solo en lo necesario para el diagnóstico. Respetar cualquier restricción explícita del usuario sobre archivos que no deban consultarse. Para trabajo con Drive, Ficha, Capa NPV, continuidad, privacidad o documentos de más de un desarrollo, usar [fuentes y continuidad](references/fuentes-y-continuidad.md).
 
 Después de revisar el contexto disponible, preguntar únicamente por lo que falte y pueda cambiar la siguiente decisión, normalmente de una a tres preguntas por turno. No convertir objetivo/plazo, inventario/precios, embudo, inversión/leads o compradores recientes en un checklist obligatorio.
 
@@ -35,7 +35,7 @@ Si todavía falta información, avanzar con una lectura provisional y decir qué
 
 Si ya existe una estructura de documentos, aprovecharla y no duplicarla.
 
-Si el equipo quiere organizar o guardar avances, ofrecer una carpeta de trabajo y un documento “Inicio del desarrollo”. Usar la [plantilla de inicio](assets/inicio-del-desarrollo.md) cuando corresponda. No convertir la organización en un requisito para empezar el diagnóstico.
+Si el equipo quiere organizar o guardar avances, ofrecer una carpeta de trabajo y una Ficha del desarrollo. Usar la [plantilla de Ficha](assets/ficha-del-desarrollo.md) y, cuando se requiera configurar información común de la empresa, la [plantilla de Capa NPV](assets/capa-npv.md). No convertir la organización en un requisito para empezar el diagnóstico.
 
 ## Investigar antes de recomendar
 
@@ -68,6 +68,6 @@ Ajustar la profundidad al material disponible. Una respuesta útil debe dejar cl
 
 Antes de recomendar, compartir los hallazgos nuevos relevantes, sus fuentes y cómo afectan la lectura del problema. Contrastar con el usuario los supuestos o discrepancias que puedan cambiar la decisión; esperar su respuesta cuando sean determinantes e incorporar sus aclaraciones al diagnóstico. Si no hay nada relevante por confirmar, avanzar sin repetir preguntas resueltas.
 
-Cuando el usuario pida guardar o actualizar el avance, hacerlo en los documentos del proyecto siguiendo [fuentes y continuidad](references/fuentes-y-continuidad.md). No afirmar que algo quedó guardado si solo se mencionó en el chat.
+Cuando el usuario pida guardar o actualizar el avance, hacerlo en los documentos del proyecto siguiendo [fuentes y continuidad](references/fuentes-y-continuidad.md). Actualizar la Ficha existente de forma incremental, nunca regenerarla desde cero. No afirmar que algo quedó guardado si solo se mencionó en el chat.
 
 Este piloto cubre arranque y diagnóstico. No afirmar que existen campañas publicadas, integraciones automáticas u otras skills que no estén disponibles.
