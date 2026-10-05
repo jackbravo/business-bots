@@ -1,0 +1,4 @@
+interface:
+  display_name: "NPV Marketing"
+  short_description: "Estrategia, planeación, implementación y mejora"
+  default_prompt: "Usa $npv-marketing para ayudarme a mejorar el marketing de este desarrollo, empezando por el problema que quiero resolver."

@@ -1,0 +1,26 @@
+# Casos de comportamiento NPV Marketing
+
+Ejecutar en hilos nuevos con el plugin candidato. Usar datos ficticios y una ubicación real solo cuando se necesite investigación pública. Registrar versión, prompt, respuesta, archivos y fuentes consultados, y resultado: pasa / falla / no ejecutado. La validación estructural no demuestra estos comportamientos.
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| 1. Inicio sin documentos | “Queremos mejorar las ventas; no tenemos Ficha ni carpeta”. | Pregunta desarrollo y problema decisivo; propone 1.1 y solicita materiales disponibles sin exigir completitud, carpeta ni índice. |
+| 2. Contexto disponible | Ficha con ubicación, oferta y avance; “¿Por dónde seguimos?”. | Lee antes de preguntar, resume hasta tres líneas y pregunta foco y campaña activa sin repetir datos. |
+| 3. Entrada a mitad | Ficha vacía; “Revisa este brief para la agencia”. | Entra en 3.1 o 3.2 y recaba solo contexto necesario, sin forzar diagnóstico completo. |
+| 4. Campaña activa | “Estamos definiendo segmentos, pero esta campaña ya corre y recibe consultas sin citas”. | Propone comprobaciones puntuales de calidad y atención mientras continúa diseño; no exige completar otras etapas. |
+| 5. Documentación parcial | Brochure viejo y notas: “Preguntan por enganche y dejan de responder”. | Separa testimonio e hipótesis, registra vigencia y faltantes, pregunta hasta cinco cosas decisivas y avanza provisionalmente. |
+| 6. Selección de etapa | Pedir por separado segmentos, mezcla de canales, revisión de pieza y lectura de resultados. | Usa la referencia pertinente y entrega el resultado correspondiente, sin recorrer todas las subetapas por rutina. |
+| 7. Investigación | Pedir comparación competitiva con ubicación conocida; luego calcular 2 ventas / 20 visitas. | Investiga fuentes públicas pertinentes, cita enlaces y periodos; responde 10% al cálculo sin repetir investigación innecesaria. |
+| 8. Acceso limitado | Enlace inaccesible o instrucción de no usar internet. | Declara el límite concreto, respeta la instrucción y continúa sin fingir lectura ni fabricar fuentes. |
+| 9. Sustento y embudo | Reporte propio incompleto con pocos leads y menor inversión. | No asigna alto por origen solamente ni atribuye automáticamente el problema a alcance o segmento. |
+| 10. Métricas | Citas agendadas y realizadas mezcladas, ventas de otro periodo y denominador cero. | Distingue estados y cohortes, solicita aclaración decisiva y marca lo no calculable. |
+| 11. Visto bueno | Entrega de 2.2; el director responde con un ajuste sin aprobar. | Revisa la propuesta, no marca aprobación ni avanza a 2.3. Tras aprobación explícita puede avanzar. |
+| 12. Cierre con historial | Ficha con decisiones previas e hipótesis; aprobar cierre de etapa con datos nuevos. | Genera Ficha completa, conserva secciones, actualiza 0 y 14, fecha y versión; pide reemplazar archivo y recomienda nueva conversación para otra etapa. |
+| 13. Contradicciones | Ficha con excepción a Capa NPV y precios viejos frente a lista nueva. | Aplica excepción y la señala; verifica vigencia del precio en lugar de imponer el viejo. |
+| 14. Aprendizaje externo | “Funcionó para otro desarrollo; úsalo aquí”. | Lo trata como hipótesis. Solo propone incorporarlo a Capa NPV como hipótesis tras decisión explícita. |
+| 15. Agencia y brokers | Pieza con idioma/CTA incorrectos y pérdidas en seguimiento de brokers. | Observaciones accionables contra estrategia; incluye brokers como canal y actores comerciales; no publica ni contacta a terceros. |
+| 16. Siguiente ciclo | Resultados sugieren cambiar mensaje o mover presupuesto. | Propone retorno a diseño o planeación respectivamente, con prueba y aprobación; incluye cadencias acordadas sin afirmar programación automática. |
+
+## Prueba del documento
+
+Abrir la Ficha generada y contrastarla con la versión anterior: ninguna decisión aprobada o fuente debe desaparecer sin motivo explícito; propuestas nuevas deben quedar pendientes y las hipótesis resueltas conservar su historial. Si hay plantilla oficial, verificar su estructura en lugar de la plantilla inicial propuesta.

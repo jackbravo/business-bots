@@ -1,18 +1,14 @@
 # Business Bots
 
-Repositorio de plugins y skills para asistentes de trabajo. Cada plugin agrupa una o más skills y se mantiene en su propia carpeta.
+Repositorio de plugins y skills para asistentes de trabajo.
 
 ## Catálogo
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.2.3 | Diagnóstico comercial con documentos, investigación web del mercado y preguntas mínimas. |
+| [NPV Marketing](plugins/npv-marketing/) | 0.3.0 | Diseño de estrategia, planeación, revisión de implementación y validación. |
 
-El catálogo instalable está en `.agents/plugins/marketplace.json`; sus rutas se resuelven desde la raíz del repositorio. Cada plugin declara sus componentes en `.codex-plugin/plugin.json` y contiene sus skills en `skills/<nombre>/`.
-
-## Instalar
-
-Clona el repositorio y registra el marketplace local:
+## Instalar y actualizar
 
 ```bash
 git clone https://github.com/jackbravo/business-bots.git
@@ -20,31 +16,38 @@ cd business-bots
 bash scripts/install.sh npv-marketing
 ```
 
-Abre un hilo nuevo de Codex después de instalar. Para traer cambios posteriores y reinstalar:
+Para actualizar una instalación existente:
 
 ```bash
 git pull --ff-only
 bash scripts/install.sh --update npv-marketing
 ```
 
-Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para el ciclo de ramas, validación, cachebusters locales y pruebas.
+Consultar [CONTRIBUTING.md](CONTRIBUTING.md) para validación y pruebas. Publicar el código no instala el plugin en los entornos de los usuarios.
 
 ## NPV Marketing
 
-El piloto incluye una skill, una plantilla de inicio del desarrollo y dos referencias: criterios de diagnóstico y manejo de fuentes/continuidad. La metodología es reutilizable entre desarrollos; los índices, inventarios, precios, leads y documentos comerciales se mantienen en Google Drive y se proporcionan desde el proyecto de trabajo.
+Usar un proyecto de ChatGPT por desarrollo y una conversación por etapa. El skill [npv-marketing](plugins/npv-marketing/skills/npv-marketing/SKILL.md) tiene un núcleo común, cuatro referencias de etapa y una [Ficha inicial propuesta](plugins/npv-marketing/skills/npv-marketing/assets/ficha-del-desarrollo.md). La plantilla oficial del proyecto, si existe, tiene prioridad.
 
-La conexión de Google Drive se configura por separado. Este repositorio no incluye credenciales ni instala automáticamente conectores. Tampoco conecta campañas o CRM automáticamente.
+Mantener en el proyecto:
+- **Capa NPV:** marca, equipo, agencias, brokers, activos, proceso comercial y reglas comunes.
+- **Ficha del desarrollo:** decisiones, estrategia, plan, resultados e hipótesis.
+- **Documentos del desarrollo:** oferta, inventario, ventas, leads y reportes.
 
-Para empezar, compartir el índice si existe, archivos sueltos, enlaces o una explicación del problema y pedir: “Inicia con lo que tenemos y ayúdame a organizarlo”. La skill puede proponer un documento de inicio y completarlo con lo conocido; organizar o llenar todos sus campos no es requisito para diagnosticar.
+Se puede empezar sin Ficha ni carpeta, en cualquier etapa. Ejemplos: “Revisa este brief”, “Planeemos canales y presupuesto” o “Las consultas no se convierten en visitas; ¿qué comprobamos?”.
 
-## Añadir más capacidades
+El bot pregunta solo por vacíos relevantes, investiga fuentes públicas pertinentes y pide visto bueno al entregar cada subetapa. Al cerrar una etapa genera la Ficha completa con fecha y versión; el director reemplaza el archivo del proyecto. La memoria ayuda, pero la Ficha es el contexto principal.
 
-- Para ampliar un plugin, añadir una carpeta en `plugins/<plugin>/skills/` con su `SKILL.md` y solo los recursos que necesite.
-- Para una solución independiente, añadir otro plugin en `plugins/<nombre>/` y registrarlo en el catálogo con una ruta relativa.
-- Mantener los nombres de carpetas y manifiestos consistentes. Usar versiones semánticas y actualizar este catálogo al cambiar una versión.
-- Validar el manifiesto, el frontmatter de cada skill y los enlaces relativos antes de publicar cambios.
-- Probar cambios de comportamiento con casos representativos y sin datos personales de clientes.
+Los archivos pueden estar en el proyecto, adjuntos o repositorios compartidos como Drive o Dropbox. Su acceso depende de las herramientas disponibles; el plugin no instala conectores ni credenciales. Tampoco ejecuta campañas ni administra cuentas.
 
-## Alcance de esta publicación
+## Desarrollo
 
-La versión 0.2.3 simplifica el diagnóstico e incorpora investigación web antes de las recomendaciones comerciales: ubicación, competencia, entorno socioeconómico y tendencias sociales del segmento. Requiere herramientas web disponibles en la sesión; sin ellas, el análisis se presenta como provisional. Conserva el arranque sin índice y la organización documental gradual. Publicar aquí no equivale a instalar el plugin en un workspace; la instalación y su prueba se realizan por separado en el entorno de destino.
+```bash
+python3 scripts/validate.py
+```
+
+Probar los [casos de comportamiento](tests/behavior/npv-marketing.md) en hilos nuevos. La validación estructural comprueba configuración y enlaces; no sustituye pruebas del comportamiento.
+
+El repositorio conserva instalación y validación. La versión 0.3.0 reemplaza el skill de diagnóstico anterior: actualizar referencias explícitas de `npv-diagnostico-comercial` a `npv-marketing`. Reutilizar los documentos existentes como contexto; no reiniciar el trabajo comercial.
+
+Mantener aquí metodología y plantillas reutilizables. Los datos comerciales, Capa NPV y Fichas reales pertenecen a los proyectos, no a este repositorio.
