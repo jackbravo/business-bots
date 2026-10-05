@@ -2,17 +2,18 @@
 
 | Subetapa | Qué averiguar | Resultado |
 | --- | --- | --- |
-| 4.1 Recolección de datos | Resultados por periodo y canal, ventas, contacto, citas, visitas, descartes y cambios ejecutados. | Corte de datos con faltantes y límites. |
-| 4.2 Lectura contra objetivos | Diferencias frente a línea base y metas, considerando inversión y maduración. | Desviaciones relevantes y su sustento. |
+| 4.1 Recolección de datos | Exportes de pauta, reporte de agencia y registros de leads, contacto, citas, visitas, apartados y ventas por periodo y canal; descartes y cambios ejecutados. | Corte de datos con faltantes y límites. |
+| 4.2 Lectura contra objetivos | Diferencias frente a línea base y metas, considerando inversión y maduración. | Tabla resultado vs. meta por canal y perfil cuando los datos lo permitan; desviaciones y sustento. |
 | 4.3 Diagnóstico | Dónde cae el embudo y qué causas compiten por explicarlo. | Hipótesis priorizadas y comprobación siguiente. |
-| 4.4 Aprendizajes sobre el comprador | Qué cambió en motivaciones, capacidad, objeciones o comportamiento. | Aprendizajes y supuestos resueltos o abiertos. |
-| 4.5 Decisiones del siguiente ciclo | Qué mantener, cambiar o probar, y con qué criterio de éxito. | Recomendación, aprobación del director y siguiente etapa. |
+| 4.4 Aprendizajes sobre el comprador | Qué dicen compradores y no compradores; nuevas objeciones, motivaciones, capacidad o comportamiento. | Aprendizajes y supuestos resueltos o abiertos. |
+| 4.5 Decisiones del siguiente ciclo | Qué mantener, cambiar o probar, y con qué criterio de éxito. | Qué cortar, escalar o probar, con recomendación, aprobación del director y siguiente etapa. |
 
 ## Lectura del embudo
 
 | Señal | Posibles causas | Comprobación útil |
 | --- | --- | --- |
-| Pocos leads | Inversión, alcance, mensaje, oferta o medición. | Inversión, exposición y respuesta en periodos comparables. |
+| Pocas impresiones o alcance | Inversión, segmentación, canal o medición. | Presupuesto, exposición y cobertura en periodos comparables. |
+| Alcance alto, pocos leads | Mensaje, pieza, oferta, llamado a la acción, destino o medición. | Respuesta al anuncio, recorrido de conversión y registro de contactos. |
 | Leads sin citas | Calidad, contacto tardío, calificación, mensaje, objeciones o agenda. | Muestra de contactos, tiempos y motivos de pérdida. |
 | Citas sin visitas | Confirmación, horarios, seguimiento o fricciones de asistencia. | Citas agendadas frente a realizadas. |
 | Visitas sin ventas | Producto, precio, condiciones, confianza, seguimiento o ciclo largo. | Objeciones postvisita y evolución de compradores y no compradores. |

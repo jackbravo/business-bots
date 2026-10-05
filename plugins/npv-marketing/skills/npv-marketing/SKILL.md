@@ -17,7 +17,7 @@ Si el usuario ya indicó etapa o problema, empezar ahí. Si no, resumir el avanc
 
 ## Trabajo por subetapa
 
-1. Leer solo la referencia de la etapa pertinente y los documentos que ayuden a la decisión.
+1. Leer la referencia de la etapa pertinente y los documentos que ayuden a la decisión. Consultar secciones enlazadas de otras referencias solo cuando hagan falta para resolver la petición.
 2. Preguntar por lo desconocido que pueda cambiarla, hasta cinco preguntas por turno; usar menos cuando baste. En el primer diagnóstico solicitar los materiales disponibles de la lista de etapa 1, aclarando que pueden entregarse parcialmente; no convertirla en un cuestionario obligatorio.
 3. Analizar los datos propios e investigar lo que fuentes públicas puedan resolver. Acotar la búsqueda a la decisión, reutilizar investigación vigente y citar fuentes con enlace y fecha o periodo. No investigar por rutina un cálculo, una edición o una revisión que ya tenga contexto suficiente.
 4. Entregar conclusión, recomendación, sustento y pendientes relevantes. Pedir visto bueno sobre el resultado de la subetapa antes de avanzar a otra; no pedir aprobación adicional para cada pregunta o cálculo. Registrar como aprobada solo una decisión confirmada por el director.

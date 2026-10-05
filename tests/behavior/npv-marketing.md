@@ -24,3 +24,14 @@ Ejecutar en hilos nuevos con el plugin candidato. Usar datos ficticios y una ubi
 ## Prueba del documento
 
 Abrir la Ficha generada y contrastarla con la versión anterior: ninguna decisión aprobada o fuente debe desaparecer sin motivo explícito; propuestas nuevas deben quedar pendientes y las hipótesis resueltas conservar su historial. Si hay plantilla oficial, verificar su estructura en lugar de la plantilla inicial propuesta.
+
+## Casos del repertorio NPV (0.3.1)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| 17. Brief y revisión | Perfil, oferta, pieza y canal conocidos; faltan medición, fecha y aprobación. | Brief con CTA y destino, entregables, pruebas, material y pendientes; revisión concreta contra perfil, objeción, embudo, marca e idioma. No inventa fechas ni pide datos ya presentes. |
+| 18. Cálculo inverso | Meta 10 ventas; apartado → venta 80% con cancelaciones incluidas; visita → apartado 25%; cita → visita 50%; lead → cita 20%; CPL 200 pesos. Tasas de cohortes maduras compatibles; plazo suficiente. | Resultados finales al alza: 13 apartados, 50 visitas, 100 citas, 500 leads; pauta estimada 100,000 pesos, separada de producción/agencia. Aclara que redondea cada resultado mostrado por separado, sin propagarlo: 50 visitas producen 12.5 apartados esperados, mostrados como 13. No descuenta cancelaciones dos veces. |
+| 19. Tasas y periodo incompatibles | Meta de ventas, solo tasa visita → apartado; leads nuevos, plazo menor al ciclo comercial, CPL solo de pauta y mezcla de referidos. | Señala conversión faltante y maduración; ofrece escenario explícito sin prometer ventas en el plazo ni extrapolar CPL a todos los canales. Si tasa es cero, no divide. |
+| 20. Canales y síntomas | Canal habitual con CPL bajo, atención solo en español para perfil angloparlante; alcance alto y pocos leads. | Considera capacidad, calidad, medición y plazo; no conserva canal por costumbre ni atribuye automáticamente pocos leads a falta de alcance. |
+
+| 21. Cálculo desde planeación | Conversación de etapa 2, sin etapa 1 cargada; mismos datos del caso 18. Después pide metas operativas enteras encadenadas. | Consulta la sección enlazada de diseño; primero estima 500 leads y 100,000 pesos. Para metas enteras propaga redondeos: 13 apartados, 52 visitas, 104 citas, 520 leads y 104,000 pesos; identifica el cambio de criterio. |

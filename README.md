@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.3.0 | Diseño de estrategia, planeación, revisión de implementación y validación. |
+| [NPV Marketing](plugins/npv-marketing/) | 0.3.1 | Diseño de estrategia, planeación, revisión de implementación y validación. |
 
 ## Instalar y actualizar
 
@@ -51,3 +51,5 @@ Probar los [casos de comportamiento](tests/behavior/npv-marketing.md) en hilos n
 El repositorio conserva instalación y validación. La versión 0.3.0 reemplaza el skill de diagnóstico anterior: actualizar referencias explícitas de `npv-diagnostico-comercial` a `npv-marketing`. Reutilizar los documentos existentes como contexto; no reiniciar el trabajo comercial.
 
 Mantener aquí metodología y plantillas reutilizables. Los datos comerciales, Capa NPV y Fichas reales pertenecen a los proyectos, no a este repositorio.
+
+La versión 0.3.1 integra el repertorio de preguntas NPV en las cuatro referencias: brief, revisión de agencia, selección de canales y cálculo inverso de objetivos. No requiere cargar un archivo adicional de “Marcos y preguntas” en cada proyecto.

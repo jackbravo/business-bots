@@ -140,7 +140,8 @@ def validate_plugin(entry: dict[str, Any], allow_cachebuster: bool) -> list[str]
             errors.append(f"{skill_file.relative_to(ROOT)}: falta description")
         if "[TODO:" in skill_file.read_text(encoding="utf-8"):
             errors.append(f"{skill_file.relative_to(ROOT)}: contiene un TODO pendiente")
-        errors.extend(validate_links(skill_file))
+        for markdown_file in sorted(skill_file.parent.rglob("*.md")):
+            errors.extend(validate_links(markdown_file))
 
     return errors
 
