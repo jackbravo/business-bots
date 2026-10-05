@@ -4,14 +4,25 @@ Partir de la estrategia disponible; si es incompleta, señalar qué parte del pl
 
 | Subetapa | Qué averiguar | Resultado |
 | --- | --- | --- |
-| 2.1 Recorrido de compra por perfil | Cómo descubre, compara, consulta, visita y decide cada perfil; objeciones y fricciones. | Recorrido con necesidades y puntos de intervención. |
-| 2.2 Mezcla de canales | Dónde se puede alcanzar y convertir a los perfiles, incluyendo brokers. | Función de cada canal y prioridades. |
-| 2.3 Plan de contenidos por etapa del embudo | Qué debe comprender o comprobar el comprador en cada momento. | Temas y formatos ligados a perfil, objeción y llamado a la acción. |
-| 2.4 Presupuesto y asignación | Inversión disponible, costos conocidos, capacidad y resultados por canal. | Asignación propuesta y criterio para ajustarla. |
-| 2.5 Calendario e hitos | Dependencias, entregas, disponibilidad y fechas comerciales. | Calendario con hitos y revisiones. |
-| 2.6 KPIs, línea base y metas | Qué medimos hoy y cómo se conecta con objetivos comerciales. | Indicadores definidos, periodo, línea base y metas. |
-| 2.7 Roles y recursos del desarrollo | Quién decide, produce, publica, mide y atiende; capacidad de agencia, equipo y brokers. | Responsables y dependencias, por confirmar cuando falten. |
+| 2.1 Recorrido de compra por perfil | Tiempo desde contacto hasta apartado, interacciones, visitas y decisión a distancia; objeciones y fricciones. | Recorrido por perfil con momentos clave, necesidades y puntos de intervención. |
+| 2.2 Mezcla de canales | Canales activos, dónde se informa el perfil, brokers y recepción de leads, eventos y visitas guiadas; alternativas pertinentes. | Canales elegidos con función, prioridad y justificación. |
+| 2.3 Plan de contenidos por etapa del embudo | Material existente: fotos, renders, video, testimonios; quién produce y qué frecuencia puede sostener. | Contenidos por perfil, canal y momento: descubrir, considerar, decidir. |
+| 2.4 Presupuesto y asignación | Pauta y producción mensuales, costos, capacidad, resultados y quién autoriza cambios. | Asignación por canal y reserva propuesta para pruebas, sin imponer un porcentaje fijo. |
+| 2.5 Calendario e hitos | Temporadas relevantes, avances de obra, entregas, eventos y dependencias. Investigar estacionalidad si puede afectar el plan. | Calendario con hitos y fechas de lectura. |
+| 2.6 KPIs, línea base y metas | Qué se mide confiablemente, CPL y conversiones disponibles. | Tabla con indicador, definición, línea base, meta, frecuencia y fuente; vacíos antes de lanzar. |
+| 2.7 Roles y recursos del desarrollo | Responsables de decisión, producción, publicación, medición y atención; reparto entre agencia, equipo y brokers. | Matriz simple de tareas y responsables, por confirmar cuando falten. |
 
-No inventar benchmarks, costos ni metas. Usar rangos explícitamente hipotéticos cuando se requiera un escenario. No optimizar por CPL aislado: considerar calidad, visitas y cierres si hay datos.
+## Elegir canales
 
-Incluir revisión quincenal de redes sociales, pulso semanal de pauta activa, hitos a 30 y 60–90 días y cierre de ciclo. Son revisiones del plan: no afirmar que quedan programadas automáticamente.
+Comparar opciones por:
+- Evidencia propia o pública de que el perfil está ahí.
+- Costo y calidad esperados frente al ticket y objetivos; no optimizar por CPL aislado.
+- Capacidad del equipo para atender idioma, volumen y tiempo de respuesta.
+- Tiempo para obtener resultados frente al plazo de venta.
+- Posibilidad de medir y atribuir resultados.
+
+No elegir un canal solo porque ya se usa. No inventar benchmarks, costos ni metas; distinguir estimaciones de datos. Usar escenarios explícitos cuando falten tasas y apoyarse en el cálculo inverso de etapa 1 si hace falta dimensionar la captación.
+
+Fijar una línea base antes del lanzamiento cuando sea posible; si falta, proponer cómo levantarla y limitar la lectura posterior, sin detener toda mejora comercial por ese vacío.
+
+Incluir revisión quincenal de redes, pulso semanal de pauta activa, hitos a 30 y 60–90 días y cierre de ciclo. Son revisiones del plan, no tareas programadas automáticamente.
