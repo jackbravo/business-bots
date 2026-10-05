@@ -21,7 +21,7 @@ Comparar opciones por:
 - Tiempo para obtener resultados frente al plazo de venta.
 - Posibilidad de medir y atribuir resultados.
 
-No elegir un canal solo porque ya se usa. No inventar benchmarks, costos ni metas; distinguir estimaciones de datos. Usar escenarios explícitos cuando falten tasas y apoyarse en el cálculo inverso de etapa 1 si hace falta dimensionar la captación.
+No elegir un canal solo porque ya se usa. No inventar benchmarks, costos ni metas; distinguir estimaciones de datos. Usar escenarios explícitos cuando falten tasas y consultar el [cálculo inverso de objetivos](1-diseno.md#cálculo-inverso-de-objetivos) si hace falta dimensionar la captación.
 
 Fijar una línea base antes del lanzamiento cuando sea posible; si falta, proponer cómo levantarla y limitar la lectura posterior, sin detener toda mejora comercial por ese vacío.
 

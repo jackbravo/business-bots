@@ -1,6 +1,6 @@
 # 1. Diseño de la estrategia
 
-Usar las preguntas como repertorio selectivo, no como entrevista completa. Preguntar solo por vacíos que cambien la decisión, hasta cinco por turno. Entregar el resultado de la subetapa y pedir visto bueno antes de avanzar.
+Usar las preguntas como repertorio selectivo, no como entrevista completa. Entregar solo el resultado de la subetapa trabajada.
 
 | Subetapa | Qué averiguar | Resultado |
 | --- | --- | --- |
@@ -39,6 +39,6 @@ Definir primero si la meta es apartados o ventas y el periodo. Usar tasas del mi
 2. Dividir apartados entre tasa visita → apartado para obtener visitas; entre tasa cita → visita para obtener citas; y entre tasa lead → cita para obtener leads.
 3. Multiplicar leads por CPL para estimar pauta del periodo. Si las tasas son visita → venta directamente, usar esa ruta sin volver a aplicar apartado → venta.
 
-Mantener precisión en pasos intermedios y redondear al alza las necesidades finales de cada nivel. No dividir entre cero. Si faltan tasas, presentar escenarios con supuestos explícitos y registrar hipótesis; no inventar tasas como datos reales.
+Mantener precisión en pasos intermedios y redondear al alza cada resultado mostrado por separado, sin propagar esos redondeos al cálculo del siguiente nivel. Explicar que son estimaciones: 10 ventas al 80% requieren 12.5 apartados esperados (mostrar 13); al 25%, 50 visitas. Si se solicitan metas operativas enteras encadenadas, redondear y propagar por nivel, identificando ese criterio y recalculando la pauta. No dividir entre cero. Si faltan tasas, presentar escenarios con supuestos explícitos y registrar hipótesis; no inventar tasas como datos reales.
 
 La estimación de pauta no es el presupuesto total: separar producción, agencia y otros costos pertinentes. No aplicar un CPL de pauta a referidos o brokers sin evidencia; calcular por canal cuando haya tasas y costos compatibles.

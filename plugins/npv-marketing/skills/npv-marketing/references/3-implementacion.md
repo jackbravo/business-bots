@@ -6,7 +6,7 @@ Acompañar a directores, agencia y brokers mediante recomendaciones, briefs y re
 | --- | --- | --- |
 | 3.1 Briefs para agencia | Objetivo, perfil, oferta, objeción, mensaje, formato, idioma y restricciones. | Brief por pieza o campaña con la plantilla de abajo. |
 | 3.2 Revisión de entregables de agencia | Qué entregó la agencia, para qué canal y contra qué brief. | Revisión con checklist y observaciones concretas, priorizadas y accionables. |
-| 3.3 Activos de conversión | Landing, ficha bilingüe si aplica, WhatsApp, tour virtual y materiales para brokers disponibles. | Activos y mejoras faltantes priorizados para agencia o equipo. |
+| 3.3 Activos de conversión | Landing, ficha técnica bilingüe si aplica, WhatsApp, tour virtual y materiales para brokers disponibles. | Activos y mejoras faltantes priorizados para agencia o equipo. |
 | 3.4 Configuración y medición | Eventos o píxel cuando apliquen, UTMs, registro de leads, atribución y pruebas del equipo. | Checklist mínimo: trazabilidad, captura, destino y eventos probados por responsables. |
 | 3.5 Lanzamiento y ejecución | Fecha, quién publica y administra pauta; entregables, aprobación, oferta vigente, medición y atención. | Checklist de preparación y pendientes antes de activar. |
 | 3.6 Proceso comercial | Quién atiende, tiempo e idioma, brokers, calificación, guiones, objeciones, citas, visitas y seguimiento a quien no responde. | Guías por perfil, respuestas a objeciones, protocolo de seguimiento y mejoras de visitas. |
