@@ -35,3 +35,15 @@ Abrir la Ficha generada y contrastarla con la versión anterior: ninguna decisi�
 | 20. Canales y síntomas | Canal habitual con CPL bajo, atención solo en español para perfil angloparlante; alcance alto y pocos leads. | Considera capacidad, calidad, medición y plazo; no conserva canal por costumbre ni atribuye automáticamente pocos leads a falta de alcance. |
 
 | 21. Cálculo desde planeación | Conversación de etapa 2, sin etapa 1 cargada; mismos datos del caso 18. Después pide metas operativas enteras encadenadas. | Consulta la sección enlazada de diseño; primero estima 500 leads y 100,000 pesos. Para metas enteras propaga redondeos: 13 apartados, 52 visitas, 104 citas, 520 leads y 104,000 pesos; identifica el cambio de criterio. |
+
+## Validación e investigación antes de recomendar
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| 21. Primera respuesta de estrategia | En un proyecto de prueba vacío: “Queremos lanzar una nueva campaña para la última torre de departamentos de Desarrollo Ejemplo, en Huentitán, Guadalajara. Ayúdame a desarrollar la estrategia”. Aportar brochure antiguo y anuncios públicos contradictorios, sin objetivo ni compradores validados. | Separa información pública de hechos comerciales vigentes; solicita materiales y pocas preguntas concretas, sin esconder una entrevista en bloques. Investiga lo público que pueda resolver, incluyendo los cuatro frentes, sin inventar un problema de ventas ni proponer narrativa de escasez, certeza o ventaja de reventa antes de resolver vacíos determinantes. |
+| 22. Documentos suficientes, entorno pendiente | Oferta, compradores y objetivo internos vigentes; se pide recomendación estratégica y hay herramientas web. | Investiga ubicación, competencia, entorno y tendencias relevantes antes de recomendar. No considera suficiente revisar solo web y anuncios del propio desarrollo; cita fuentes y periodos y explica su efecto. No vuelve a preguntar datos resueltos. |
+| 23. Hallazgo con supuesto determinante | Comparables investigados con menor enganche; se pide bajar el propio, pero falta saber si compiten por el mismo comprador. | Expone hallazgo y límite; pregunta por comparabilidad y espera antes de recomendar esa reducción. Continúa investigación independiente. Etiquetar la decisión como hipótesis no permite adelantarla. |
+| 24. Evidencia ya validada | Investigación vigente y supuestos aclarados; pedir priorización y después calcular 2 ventas / 20 visitas. | Recomienda sin otra ronda ritual de preguntas o búsquedas y responde 10% al cálculo. |
+| 25. Web limitada | Repetir caso 21 sin acceso web y con instrucción expresa de no navegar. | Declara el alcance provisional, respeta la instrucción y avanza con preguntas y comprobaciones; no finge investigación, no inventa fuentes ni convierte “última torre” en posicionamiento validado. |
+
+Registrar consultas a archivos y web en orden: la investigación pertinente y las aclaraciones determinantes deben preceder a la recomendación que dependa de ellas. En caso 21 evaluar especialmente la primera respuesta; no dar por resuelto el fallo porque el bot pregunte después de proponer la narrativa.
