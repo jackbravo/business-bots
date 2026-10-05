@@ -1,22 +1,22 @@
 {
   "name": "npv-marketing",
-  "version": "0.2.3",
-  "description": "Piloto de marketing inmobiliario NPV: arranque y diagnóstico comercial con evidencia y preguntas mínimas.",
+  "version": "0.3.0",
+  "description": "Marketing inmobiliario NPV: diseño de estrategia, planeación, revisión de implementación y validación por etapas.",
   "author": {
     "name": "Equipo del piloto NPV"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "NPV Marketing · Piloto",
-    "shortDescription": "Diagnóstico comercial con preguntas mínimas",
-    "longDescription": "Inicia o retoma el diagnóstico de un desarrollo NPV con documentos e investigación web del mercado antes de recomendar. Empieza con un índice existente, archivos sueltos o una explicación y ayuda a organizar las fuentes; la lectura y edición de Drive requieren la conexión de Google Drive disponible y autorizada. La investigación requiere herramientas web disponibles en la sesión. No incluye conexión automática a anuncios o CRM.",
+    "displayName": "NPV Marketing",
+    "shortDescription": "Marketing por etapas para directores de NPV",
+    "longDescription": "Acompaña un desarrollo por proyecto: preguntas, investigación, recomendaciones, briefs y revisión de resultados. Trabaja en la etapa elegida con la Capa NPV, la Ficha y los documentos disponibles. Genera la Ficha al cerrar etapas; no ejecuta campañas ni administra cuentas. La lectura de archivos compartidos, investigación y generación de documentos dependen de las herramientas disponibles.",
     "developerName": "Equipo del piloto NPV",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [
-      "Quiero mejorar el marketing de mi desarrollo. Ayúdame a empezar y dime qué información necesitas.",
-      "Tenemos pocos leads: ¿qué necesitamos comprobar?",
-      "Retomemos lo que vimos. ¿Qué necesitamos saber ahora?"
+      "Quiero mejorar el marketing de este desarrollo. Ayúdame a identificar qué conviene trabajar primero.",
+      "Revisemos el plan de canales y presupuesto de este desarrollo.",
+      "Revisa este brief o los resultados de la campaña y recomienda el siguiente paso."
     ]
   }
 }
