@@ -1,6 +1,6 @@
 # Investigación y validación antes de recomendar
 
-Separar lo que dicen las fuentes de lo que permiten concluir. Antes de una recomendación estratégica o comercial, explorar estos cuatro frentes y profundizar según su posible efecto en la decisión. No convertirlos en cuatro informes obligatorios ni rellenar vacíos con generalidades.
+Separar lo que dicen las fuentes de lo que permiten concluir. Antes de recomendar estrategia, segmento, posicionamiento o cambios de oferta, explorar estos cuatro frentes y profundizar según su posible efecto en la decisión. No convertirlos en cuatro informes obligatorios ni rellenar vacíos con generalidades.
 
 | Frente | Qué comprobar |
 | --- | --- |
@@ -8,6 +8,8 @@ Separar lo que dicen las fuentes de lo que permiten concluir. Antes de una recom
 | Competencia en la zona | Alternativas del comprador comparables por ubicación, producto, superficie, entrega, precios y condiciones; oferta activa y mensajes. |
 | Cambios del entorno | Empleo, ingresos, actividad local, crédito, tasas, inflación y otros cambios socioeconómicos, micro o macroeconómicos pertinentes. Explicar la relación con este producto, no solo enumerar indicadores. |
 | Tendencias sociales del segmento | Hogares, retiro, trabajo, preferencias y hábitos de búsqueda o compra sustentados en estudios o señales contrastadas. Si el segmento aún no está validado, investigar posibilidades sin elegirlo por anticipado. |
+
+Las mejoras puntuales de campaña o proceso comercial con sustento en datos propios —por ejemplo, corregir un destino o reducir una demora documentada de atención— no requieren investigar los cuatro frentes. Si la mejora depende de un hecho externo no validado, investigar ese hecho; si implica cambiar estrategia, segmento, posicionamiento u oferta, aplicar el contraste de los cuatro frentes.
 
 ## Consultar y contrastar
 
