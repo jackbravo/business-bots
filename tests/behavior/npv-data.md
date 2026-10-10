@@ -26,6 +26,6 @@ Para aceptar la integración real, configurar secretos fuera del chat, descargar
 ## Registro inicial — 2026-10-10, candidato 0.4.0
 
 - Validación estructural, compilación y validación del skill: pasa.
-- 16 pruebas automatizadas con datos ficticios y DuckDB 1.5.6: pasan; incluye recuperación desde procesos independientes, deduplicación, revisiones, rollback, CSV, metadatos documentales y HTTP simulado.
+- 16 pruebas automatizadas con datos ficticios, DuckDB 1.5.6 y pytz 2025.2: pasan también en un entorno virtual limpio; incluye recuperación desde procesos independientes, deduplicación, revisiones, rollback, CSV, metadatos documentales y HTTP simulado.
 - Prueba conversacional en hilo independiente: FIX del 2026-09-01, consulta «actual» al 2026-10-10, solo datos cargados y sin desarrollo/precios. Pasa: no presenta dato antiguo como actual, explica conversión condicional y no recomienda cambios comerciales.
 - Resto de casos conversacionales: no ejecutados. API real de Banxico y MotherDuck: no ejecutados; no hay credenciales configuradas en el entorno de validación. No se instaló el candidato en el workspace ni se desplegó un MCP.
