@@ -1,22 +1,23 @@
 {
   "name": "npv-marketing",
-  "version": "0.3.2",
-  "description": "Marketing inmobiliario NPV: diseño de estrategia, planeación, revisión de implementación y validación por etapas.",
+  "version": "0.4.0",
+  "description": "Marketing inmobiliario y datos NPV: estrategia, planeación, revisión de campañas y evidencia trazable.",
   "author": {
     "name": "Equipo del piloto NPV"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "NPV Marketing",
-    "shortDescription": "Marketing por etapas para directores de NPV",
-    "longDescription": "Acompaña un desarrollo por proyecto: preguntas, investigación, recomendaciones, briefs y revisión de resultados. Trabaja en la etapa elegida con la Capa NPV, la Ficha y los documentos disponibles. Genera la Ficha al cerrar etapas; no ejecuta campañas ni administra cuentas. La lectura de archivos compartidos, investigación y generación de documentos dependen de las herramientas disponibles.",
+    "displayName": "NPV Marketing y Datos",
+    "shortDescription": "Marketing y datos para directores de NPV",
+    "longDescription": "Acompaña el marketing de un desarrollo por etapas y obtiene, organiza y consulta evidencia con fuentes y fechas. Incluye npv-marketing y el prototipo npv-data con CSV, registro documental y adaptador Banxico. El destino MotherDuck y las credenciales requieren configuración; no ejecuta campañas ni instala conexiones automáticamente.",
     "developerName": "Equipo del piloto NPV",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [
       "Quiero mejorar el marketing de este desarrollo. Ayúdame a identificar qué conviene trabajar primero.",
       "Revisemos el plan de canales y presupuesto de este desarrollo.",
-      "Revisa este brief o los resultados de la campaña y recomienda el siguiente paso."
+      "Revisa este brief o los resultados de la campaña y recomienda el siguiente paso.",
+      "Ayúdame a consultar o incorporar datos para este desarrollo, con fuentes y fechas."
     ]
   }
 }
