@@ -1,0 +1,5 @@
+{
+  "SF43718": {"name": "Tipo de cambio FIX", "unit": "MXN por USD", "frequency": "daily", "geography": "MX"},
+  "SF61745": {"name": "Tasa objetivo", "unit": "porcentaje anual", "frequency": "daily", "geography": "MX"},
+  "SF60633": {"name": "CETES a 28 días", "unit": "porcentaje anual", "frequency": "daily", "geography": "MX"}
+}

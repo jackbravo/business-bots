@@ -1,0 +1,4 @@
+interface:
+  display_name: "NPV Datos"
+  short_description: "Fuentes y datos trazables para decisiones NPV"
+  default_prompt: "Usa $npv-data para revisar qué datos tenemos y resolver mi consulta con fuentes y fechas."

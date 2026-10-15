@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.3.2 | Diseño de estrategia, planeación, revisión de implementación y validación. |
+| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.4.0 | Marketing por etapas y prototipo de datos trazables. |
 
 ## Instalar y actualizar
 
@@ -40,13 +40,25 @@ El bot pregunta solo por vacíos relevantes, investiga fuentes públicas pertine
 
 Los archivos pueden estar en el proyecto, adjuntos o repositorios compartidos como Drive o Dropbox. Su acceso depende de las herramientas disponibles; el plugin no instala conectores ni credenciales. Tampoco ejecuta campañas ni administra cuentas.
 
+## Datos NPV (prototipo 0.4.0)
+
+El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Incluye una CLI para DuckDB local o un destino MotherDuck configurado: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
+
+Consultar [ejecución y credenciales](plugins/npv-marketing/skills/npv-data/references/ejecucion.md) antes de usarlo. Los tokens se configuran en el entorno; nunca en el chat, el repositorio ni la base. El registro documental no sube ni indexa originales: conservarlos en el repositorio autorizado y leerlos con las herramientas de archivos.
+
+La ruta MotherDuck requiere conexión, permisos y prueba real. Los adaptadores INEGI/CANADEVI y el servidor MCP propio quedan pendientes. Data de OpenAI y el plugin MotherDuck pueden complementar el skill cuando estén disponibles; no son dependencias instaladas automáticamente.
+
+Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la competencia?”, “Incorpora este reporte y conserva su fuente y fecha” o “Consulta el último FIX publicado y compáralo con el mes anterior”. Con información parcial, el skill pregunta solo por vacíos relevantes y distingue información cargada de nuevas consultas externas.
+
 ## Desarrollo
 
 ```bash
 python3 scripts/validate.py
+python3 -m pip install -r plugins/npv-marketing/skills/npv-data/scripts/requirements.txt
+python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-Probar los [casos de comportamiento](tests/behavior/npv-marketing.md) en hilos nuevos. La validación estructural comprueba configuración y enlaces; no sustituye pruebas del comportamiento.
+Probar los casos de [marketing](tests/behavior/npv-marketing.md) y [datos](tests/behavior/npv-data.md) en hilos nuevos. La validación estructural comprueba configuración y enlaces; no sustituye pruebas del comportamiento.
 
 El repositorio conserva instalación y validación. La versión 0.3.0 reemplaza el skill de diagnóstico anterior: actualizar referencias explícitas de `npv-diagnostico-comercial` a `npv-marketing`. Reutilizar los documentos existentes como contexto; no reiniciar el trabajo comercial.
 

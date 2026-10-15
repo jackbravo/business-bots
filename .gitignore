@@ -4,3 +4,8 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Bases de trabajo: los datos reales no pertenecen a GitHub.
+*.duckdb
+*.duckdb.wal
+*.db
