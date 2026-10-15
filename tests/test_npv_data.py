@@ -106,6 +106,20 @@ class StorageTests(unittest.TestCase):
         self.assertTrue(second["created"])
         self.assertEqual(self.con.execute("SELECT supersedes_document_id FROM npv.documents WHERE document_id=?", [second["document_id"]]).fetchone()[0], first["document_id"])
 
+    def test_document_relocation_and_locator_credentials(self):
+        data.ensure_source(self.con, SOURCE)
+        file = Path(self.temp.name) / "report.txt"
+        file.write_text("Reporte ficticio")
+        first = data.register_document(self.con, "demo", file, "Prueba", "https://example.com/report")
+        moved = data.register_document(self.con, "demo", file, "Otro título", "https://example.com/archive/report")
+        self.assertEqual(moved["document_id"], first["document_id"])
+        self.assertTrue(moved["locator_updated"])
+        self.assertEqual(moved["ignored_fields"], ["title"])
+        self.assertEqual(self.con.execute("SELECT original_locator, title FROM npv.documents").fetchone(), ("https://example.com/archive/report", "Prueba"))
+        for locator in ("HTTPS://user:pass@example.com/r.pdf", "http://example.com/r.pdf", "https://example.com/r.pdf?sig=x", "s3://key:secret@bucket/r.pdf"):
+            with self.assertRaises(data.DataError):
+                data.register_document(self.con, "demo", file, "Prueba", locator)
+
 
 class AdapterTests(unittest.TestCase):
     def test_successful_download_retries_then_normalizes(self):
@@ -135,6 +149,15 @@ class AdapterTests(unittest.TestCase):
         self.assertTrue(url.endswith("/series/SF43718/datos/oportuno"))
         self.assertIsNotNone(retrieved.tzinfo)
 
+    def test_schema_check_ignores_other_attached_databases(self):
+        import duckdb
+        with tempfile.TemporaryDirectory() as folder:
+            con = duckdb.connect(str(Path(folder) / "main.duckdb"))
+            con.execute(f"ATTACH '{Path(folder) / 'other.duckdb'}' AS other")
+            con.execute("CREATE SCHEMA other.npv; CREATE TABLE other.npv.leftover(x INTEGER)")
+            data.check_schema(con, allow_empty=True)
+            con.close()
+
     def test_existing_unversioned_namespace_is_not_adopted(self):
         import duckdb
         with duckdb.connect() as con:
@@ -153,6 +176,8 @@ class AdapterTests(unittest.TestCase):
             data.normalize_banxico(payload, ["SF61745"], catalog)
         with self.assertRaises(data.DataError):
             data.normalize_banxico(payload, ["SF43718"], catalog, "2026-09-02", "2026-09-03")
+        with self.assertRaisesRegex(data.DataError, "no devolvió observaciones"):
+            data.normalize_banxico({"bmx": {"series": [{"idSerie": "SF43718", "titulo": "FIX"}]}}, ["SF43718"], catalog)
 
     def test_token_only_in_header_and_errors_do_not_echo_it(self):
         token = "SYNTHETIC_TOKEN_FOR_TEST_ONLY"
@@ -174,6 +199,9 @@ class AdapterTests(unittest.TestCase):
                 data.download_banxico(["SF43718"], latest=True)
             with self.assertRaisesRegex(data.DataError, "motherduck_token"):
                 data.connect_database("md:npv_pilot")
+        with patch.dict(os.environ, {"MOTHERDUCK_TOKEN": "ficticio"}, clear=True), patch("duckdb.connect") as connect:
+            data.connect_database("md:npv_pilot")
+            connect.assert_called_once_with("md:npv_pilot")
         with self.assertRaises(data.DataError):
             data.NoRedirect().redirect_request(None, None, 302, "", {}, "https://example.com")
 

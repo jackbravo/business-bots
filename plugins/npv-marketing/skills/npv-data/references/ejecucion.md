@@ -42,7 +42,7 @@ El comando calcula SHA-256, registra metadatos y confirma `original_uploaded: fa
 
 ## MotherDuck
 
-Crear/elegir una base autorizada (por ejemplo `npv_pilot`) y configurar `motherduck_token` en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
+Crear/elegir una base autorizada (por ejemplo `npv_pilot`) y configurar `motherduck_token` (o `MOTHERDUCK_TOKEN`) en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
 
 La ruta remota está implementada, pero requiere prueba real del cliente, versión, permisos y esquema con la cuenta elegida. Las consultas de la CLI usan SELECT; los permisos remotos efectivos los impone MotherDuck. Un archivo local comprobado entre procesos no demuestra conexión cloud ni disponibilidad desde otra cuenta.
 

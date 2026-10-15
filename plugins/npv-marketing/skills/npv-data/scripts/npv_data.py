@@ -108,8 +108,8 @@ def connect_database(target, readonly=False):
     if target.startswith("md:"):
         if not re.fullmatch(r"md:[A-Za-z][A-Za-z0-9_]*", target):
             raise DataError("Usar md:nombre_base sin tokens ni parámetros.")
-        if not os.environ.get("motherduck_token"):
-            raise DataError("Falta motherduck_token en los secretos del entorno.")
+        if not (os.environ.get("motherduck_token") or os.environ.get("MOTHERDUCK_TOKEN")):
+            raise DataError("Falta motherduck_token (o MOTHERDUCK_TOKEN) en los secretos del entorno.")
         # Permisos remotos dependen de la cuenta; las operaciones de lectura solo ejecutan SELECT.
         return duckdb.connect(target)
     if target == ":memory:":
@@ -118,10 +118,10 @@ def connect_database(target, readonly=False):
 
 
 def check_schema(con, allow_empty=False):
-    exists = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_schema='npv' AND table_name='schema_versions'").fetchone()[0]
+    exists = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_catalog=current_database() AND table_schema='npv' AND table_name='schema_versions'").fetchone()[0]
     if not exists:
         if allow_empty:
-            occupied = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_schema='npv'").fetchone()[0]
+            occupied = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_catalog=current_database() AND table_schema='npv'").fetchone()[0]
             if occupied:
                 raise DataError("El namespace npv ya contiene tablas sin versión; revisar antes de inicializar.")
             return
@@ -261,7 +261,7 @@ def normalize_banxico(payload, series, catalog, start=None, end=None):
         if sid not in series:
             raise DataError("Banxico devolvió una serie no solicitada.")
         returned.append(sid)
-        for observation in item["datos"]:
+        for observation in item.get("datos", []):
             period = datetime.strptime(observation["fecha"], "%d/%m/%Y").date().isoformat()
             if (start and period < start) or (end and period > end):
                 raise DataError("Banxico devolvió un periodo fuera del rango solicitado.")
@@ -300,8 +300,11 @@ def register_document(con, source_id, file, title, locator, published=None, supe
         raise DataError("Registrar primero la fuente del documento.")
     if not title.strip() or not locator.strip():
         raise DataError("Título y ubicación del original son obligatorios.")
-    if locator.startswith("https:"):
-        public_url(locator)
+    parts = urlsplit(locator.strip())
+    if parts.scheme in ("http", "https"):
+        public_url(locator.strip())
+    elif parts.netloc and (parts.username or parts.password or parts.query):
+        raise DataError("La ubicación del original no puede incluir credenciales ni parámetros.")
     published_on = iso_date(published) if published else None
     if published_on and published_on > date.today():
         raise DataError("La publicación no puede estar en el futuro.")
@@ -313,9 +316,19 @@ def register_document(con, source_id, file, title, locator, published=None, supe
     if not byte_count:
         raise DataError("Documento vacío.")
     content_hash = digest.hexdigest()
-    previous = con.execute("SELECT document_id FROM npv.documents WHERE source_id=? AND content_hash=?", [source_id, content_hash]).fetchone()
+    previous = con.execute("SELECT document_id,title,published_on,original_locator,supersedes_document_id FROM npv.documents WHERE source_id=? AND content_hash=?", [source_id, content_hash]).fetchone()
     if previous:
-        return {"document_id": previous[0], "created": False, "original_uploaded": False}
+        result = {"document_id": previous[0], "created": False, "original_uploaded": False, "locator_updated": False}
+        if locator != previous[3]:
+            # El mismo contenido se movió: actualizar solo la ubicación del original.
+            con.execute("UPDATE npv.documents SET original_locator=? WHERE document_id=?", [locator, previous[0]])
+            result["locator_updated"] = True
+        _, stored_title, stored_published, _, stored_supersedes = previous
+        requested = {"title": (title, stored_title), "published_on": (published_on, stored_published), "supersedes_document_id": (supersedes, stored_supersedes)}
+        ignored = [field for field, (new, stored) in requested.items() if new is not None and new != stored]
+        if ignored:
+            result["ignored_fields"] = ignored
+        return result
     if supersedes and not con.execute("SELECT 1 FROM npv.documents WHERE document_id=? AND source_id=?", [supersedes, source_id]).fetchone():
         raise DataError("La versión anterior debe existir y pertenecer a la misma fuente.")
     document_id = str(uuid.uuid4())
