@@ -1,6 +1,6 @@
 # Ejecución y credenciales del prototipo
 
-Resolver las rutas contra la carpeta instalada de `npv-data`. Los ejemplos se ejecutan desde esa carpeta. Instalar dependencias en el entorno de trabajo antes de ejecutar:
+Resolver las rutas contra la carpeta instalada de `npv-data`. Los ejemplos se ejecutan desde esa carpeta. Para ejecutar la CLI, instalar sus dependencias en el entorno de trabajo. Las consultas mediante el plugin MotherDuck no requieren esta instalación:
 
 ```bash
 python -m pip install -r scripts/requirements.txt
@@ -42,7 +42,15 @@ El comando calcula SHA-256, registra metadatos y confirma `original_uploaded: fa
 
 ## MotherDuck
 
-Crear/elegir una base autorizada (por ejemplo `npv_pilot`) y configurar `motherduck_token` (o `MOTHERDUCK_TOKEN`) en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
+### Consultas mediante el plugin
+
+Usar primero la conexión MotherDuck disponible. Si una consulta o el listado de bases funciona, continuar con esa conexión sin pedir autenticación de nuevo en cada conversación. No exigir variables de entorno ni configurar la CLI para usar las herramientas del plugin. Si falla, distinguir ausencia de conexión, error de autenticación y falta de permisos sobre un recurso antes de pedir configuración.
+
+El acceso comprobado desde una cuenta no demuestra que la conexión se comparta con todos los usuarios del equipo. Verificarlo por usuario; no afirmar que el inicio de sesión individual es obligatorio o que la conexión es compartida sin comprobarlo.
+
+### Cargas y consultas mediante la CLI
+
+Usar `md:npv_pilot` como destino acordado del piloto NPV, salvo indicación distinta del usuario. Comprobar acceso y esquema antes de operar; la existencia de la base no demuestra que esté inicializada ni compartida. Para ejecutar la CLI, configurar `motherduck_token` (o `MOTHERDUCK_TOKEN`) en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
 
 La ruta remota está implementada, pero requiere prueba real del cliente, versión, permisos y esquema con la cuenta elegida. Las consultas de la CLI usan SELECT; los permisos remotos efectivos los impone MotherDuck. Un archivo local comprobado entre procesos no demuestra conexión cloud ni disponibilidad desde otra cuenta.
 
