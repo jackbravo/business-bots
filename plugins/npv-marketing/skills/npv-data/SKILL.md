@@ -31,6 +31,8 @@ Usar `md:npv_pilot` como destino acordado del piloto NPV, salvo que el usuario i
 
 Para cargas mediante el script, revisar por separado los requisitos de [ejecución y credenciales](references/ejecucion.md). Consultar con el plugin no requiere configurar el script ni demuestra acceso a Banxico.
 
+Antes de descargar de Banxico, comprobar que el ejecutor elegido dispone de la credencial, sin mostrar su valor. Para MotherDuck Flights, comprobar el secreto `npv_banxico` con parámetro `BANXICO_TOKEN`. Si falta, explicar cómo generar el token del SIE y guardarlo mediante la interfaz de secretos, siguiendo [Token Banxico y ejecución en MotherDuck Flights](references/ejecucion.md#token-banxico-y-ejecución-en-motherduck-flights). Si el usuario ya tiene token, pasar directamente a guardarlo; si ya guardó el secreto, verificarlo antes de pedir que repita la configuración. No pedir el token en el chat ni afirmar que la conexión funciona hasta completar una consulta real.
+
 ## Alcance del prototipo
 
 Usar la conexión MotherDuck disponible para consultar datos remotos. Como alternativa, usar la CLI para consultar series. Usar [la CLI](scripts/npv_data.py) para inicializar el [esquema v1](assets/schema-v1.sql), descargar las tres series verificadas del catálogo Banxico, incorporar CSV normalizados, registrar documentos. Ejecutar únicamente la operación solicitada; no inicializar ni escribir por una pregunta de lectura. No borrar datos ni cambiar el esquema existente para resolver un fallo.
