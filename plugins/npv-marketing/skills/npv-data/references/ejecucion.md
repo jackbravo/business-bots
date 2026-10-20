@@ -1,6 +1,6 @@
 # Ejecución y credenciales del prototipo
 
-Resolver las rutas contra la carpeta instalada de `npv-data`. Los ejemplos se ejecutan desde esa carpeta. Instalar dependencias en el entorno de trabajo antes de ejecutar:
+Resolver las rutas contra la carpeta instalada de `npv-data`. Los ejemplos se ejecutan desde esa carpeta. Para ejecutar la CLI, instalar sus dependencias en el entorno de trabajo. Las consultas mediante el plugin MotherDuck no requieren esta instalación:
 
 ```bash
 python -m pip install -r scripts/requirements.txt
@@ -19,6 +19,16 @@ python scripts/npv_data.py --database /tmp/npv-demo.duckdb show-series --indicat
 Configurar `BANXICO_TOKEN` una vez mediante los secretos del entorno. No pegarlo en la conversación, incluirlo en argumentos ni imprimir variables. El adaptador lo envía solo en `Bmx-Token` al host oficial; rechaza redirecciones. Necesita acceso HTTPS a `www.banxico.org.mx`. Un secreto de red del entorno puede sustituir un marcador al llamar al dominio autorizado; comprobarlo con una consulta real sin imprimir el valor. No asumir que un secreto de Codex Cloud se suministra a cualquier chat.
 
 Para un rango explícito, sustituir `--latest` por `--start 2026-09-01 --end 2026-09-30`. Catálogo permitido: SF43718, SF61745, SF60633. Tres intentos como máximo para HTTP 429/5xx seleccionados; timeout de 20 segundos y límite de respuesta de 8 MiB. No hay descarga programada.
+
+## Token Banxico y ejecución en MotherDuck Flights
+
+Obtener el token desde https://www.banxico.org.mx/SieAPIRest/service/v1/ y abrir «Token de consulta». Completar la imagen de seguridad y pulsar «Generar token». El token de 64 caracteres se reutiliza respetando los límites del SIE. Si el enlace directo https://www.banxico.org.mx/SieAPIRest/service/v1/token devuelve un error de formulario, entrar desde la página principal.
+
+Para ejecutar descargas en MotherDuck, guardar el token en un secreto de tipo `flights`, nombre `npv_banxico`, parámetro `BANXICO_TOKEN`. Abrir https://app.motherduck.com/settings/secrets?action=create&type=flights&name=npv_banxico&params=BANXICO_TOKEN y capturar el valor en la interfaz, nunca en el chat, el código o la configuración del Flight.
+
+Cargar la guía de Flights antes de implementarlo. Referenciar `npv_banxico` en `flight_secret_names`; el ejecutor recibe `npv_banxico_BANXICO_TOKEN`. Adaptar esa variable al `BANXICO_TOKEN` esperado por la CLI sin imprimirla. La credencial MotherDuck la proporciona el runtime de Flights; no reutilizar tokens del chat.
+
+Un secreto guardado no demuestra una descarga exitosa: probar ejecución, revisar logs sin credenciales y confirmar los datos en `npv_pilot`. Los Flights solo pueden ser ejecutados o modificados por su propietario; compartir la base no habilita ejecución para otros usuarios. No prometer ejecución compartida por los tres usuarios sin resolver y verificar ese acceso.
 
 ## CSV y reportes
 
@@ -42,7 +52,15 @@ El comando calcula SHA-256, registra metadatos y confirma `original_uploaded: fa
 
 ## MotherDuck
 
-Crear/elegir una base autorizada (por ejemplo `npv_pilot`) y configurar `motherduck_token` (o `MOTHERDUCK_TOKEN`) en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
+### Consultas mediante el plugin
+
+Usar primero la conexión MotherDuck disponible. Si una consulta o el listado de bases funciona, continuar con esa conexión sin pedir autenticación de nuevo en cada conversación. No exigir variables de entorno ni configurar la CLI para usar las herramientas del plugin. Si falla, distinguir ausencia de conexión, error de autenticación y falta de permisos sobre un recurso antes de pedir configuración.
+
+El acceso comprobado desde una cuenta no demuestra que la conexión se comparta con todos los usuarios del equipo. Verificarlo por usuario; no afirmar que el inicio de sesión individual es obligatorio o que la conexión es compartida sin comprobarlo.
+
+### Cargas y consultas mediante la CLI
+
+Usar `md:npv_pilot` como destino acordado del piloto NPV, salvo indicación distinta del usuario. Comprobar acceso y esquema antes de operar; la existencia de la base no demuestra que esté inicializada ni compartida. Para ejecutar la CLI, configurar `motherduck_token` (o `MOTHERDUCK_TOKEN`) en el entorno; el cliente DuckDB lo obtiene de esa variable. Reemplazar el destino local por `--database md:npv_pilot` en los mismos comandos. No poner el token en el URI. La extensión MotherDuck necesita red y permisos de la cuenta. La variable debe estar disponible para el cliente; los secretos de red con proxy requieren una comprobación específica y no se presuponen compatibles con este cliente.
 
 La ruta remota está implementada, pero requiere prueba real del cliente, versión, permisos y esquema con la cuenta elegida. Las consultas de la CLI usan SELECT; los permisos remotos efectivos los impone MotherDuck. Un archivo local comprobado entre procesos no demuestra conexión cloud ni disponibilidad desde otra cuenta.
 
