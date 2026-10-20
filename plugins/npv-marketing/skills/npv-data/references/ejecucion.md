@@ -20,6 +20,16 @@ Configurar `BANXICO_TOKEN` una vez mediante los secretos del entorno. No pegarlo
 
 Para un rango explícito, sustituir `--latest` por `--start 2026-09-01 --end 2026-09-30`. Catálogo permitido: SF43718, SF61745, SF60633. Tres intentos como máximo para HTTP 429/5xx seleccionados; timeout de 20 segundos y límite de respuesta de 8 MiB. No hay descarga programada.
 
+## Token Banxico y ejecución en MotherDuck Flights
+
+Obtener el token desde https://www.banxico.org.mx/SieAPIRest/service/v1/ y abrir «Token de consulta». Completar la imagen de seguridad y pulsar «Generar token». El token de 64 caracteres se reutiliza respetando los límites del SIE. Si el enlace directo https://www.banxico.org.mx/SieAPIRest/service/v1/token devuelve un error de formulario, entrar desde la página principal.
+
+Para ejecutar descargas en MotherDuck, guardar el token en un secreto de tipo `flights`, nombre `npv_banxico`, parámetro `BANXICO_TOKEN`. Abrir https://app.motherduck.com/settings/secrets?action=create&type=flights&name=npv_banxico&params=BANXICO_TOKEN y capturar el valor en la interfaz, nunca en el chat, el código o la configuración del Flight.
+
+Cargar la guía de Flights antes de implementarlo. Referenciar `npv_banxico` en `flight_secret_names`; el ejecutor recibe `npv_banxico_BANXICO_TOKEN`. Adaptar esa variable al `BANXICO_TOKEN` esperado por la CLI sin imprimirla. La credencial MotherDuck la proporciona el runtime de Flights; no reutilizar tokens del chat.
+
+Un secreto guardado no demuestra una descarga exitosa: probar ejecución, revisar logs sin credenciales y confirmar los datos en `npv_pilot`. Los Flights solo pueden ser ejecutados o modificados por su propietario; compartir la base no habilita ejecución para otros usuarios. No prometer ejecución compartida por los tres usuarios sin resolver y verificar ese acceso.
+
 ## CSV y reportes
 
 Registrar fuente y luego cargar el [CSV normalizado](modelo.md). No etiquetar datos ficticios ni una extracción manual como descarga API oficial.
