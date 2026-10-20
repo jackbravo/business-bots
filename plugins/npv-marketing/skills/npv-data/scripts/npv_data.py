@@ -111,7 +111,9 @@ def connect_database(target, readonly=False):
         if not (os.environ.get("motherduck_token") or os.environ.get("MOTHERDUCK_TOKEN")):
             raise DataError("Falta motherduck_token (o MOTHERDUCK_TOKEN) en los secretos del entorno.")
         # Permisos remotos dependen de la cuenta; las operaciones de lectura solo ejecutan SELECT.
-        return duckdb.connect(target)
+        con = duckdb.connect(target)
+        con.execute("SET TimeZone = 'UTC'")
+        return con
     if target == ":memory:":
         raise DataError("Usar un archivo persistente o md:nombre_base.")
     return duckdb.connect(target, read_only=readonly)
