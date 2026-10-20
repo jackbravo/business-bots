@@ -23,8 +23,16 @@ No pedir tokens en el chat ni guardarlos en documentos, SQL, GitHub o instruccio
 
 Si solo hay almacenamiento temporal, decirlo y no afirmar persistencia entre sesiones. Sin capacidad de escritura, preparar los datos y explicar qué falta guardar. Sin herramientas de ejecución, usar las capacidades conectadas disponibles; no prometer que instalar el skill configura APIs o crea una base.
 
+## Conexión y destino del piloto NPV
+
+Para consultas en MotherDuck, usar primero las herramientas de la conexión disponible y comprobar acceso. Si funcionan, reutilizarlas sin pedir otro inicio de sesión ni tokens de la CLI en cada conversación. Solicitar configuración solo ante una conexión ausente o un error de autenticación; distinguirlo de una base o tabla inexistente o sin permiso.
+
+Usar `md:npv_pilot` como destino acordado del piloto NPV, salvo que el usuario indique otro. Comprobar tablas y esquema antes de operar; no crear ni inicializar por una consulta de lectura. La existencia de la base no demuestra que tenga el esquema NPV ni datos cargados. No asumir que la conexión o el acceso se comparte con otros usuarios del equipo.
+
+Para cargas mediante el script, revisar por separado los requisitos de [ejecución y credenciales](references/ejecucion.md). Consultar con el plugin no requiere configurar el script ni demuestra acceso a Banxico.
+
 ## Alcance del prototipo
 
-Usar [la CLI](scripts/npv_data.py) para inicializar el [esquema v1](assets/schema-v1.sql), descargar las tres series verificadas del catálogo Banxico, incorporar CSV normalizados, registrar documentos y consultar series. Ejecutar únicamente la operación solicitada; no inicializar ni escribir por una pregunta de lectura. No borrar datos ni cambiar el esquema existente para resolver un fallo.
+Usar la conexión MotherDuck disponible para consultar datos remotos. Como alternativa, usar la CLI para consultar series. Usar [la CLI](scripts/npv_data.py) para inicializar el [esquema v1](assets/schema-v1.sql), descargar las tres series verificadas del catálogo Banxico, incorporar CSV normalizados, registrar documentos. Ejecutar únicamente la operación solicitada; no inicializar ni escribir por una pregunta de lectura. No borrar datos ni cambiar el esquema existente para resolver un fallo.
 
 DuckDB local permite comprobar persistencia entre procesos sobre el mismo archivo; MotherDuck permite un destino compartido cuando esté configurado. El registro documental guarda metadatos y huella: no sube el original, no crea embeddings ni ofrece búsqueda semántica. Leer originales con las herramientas de archivos y registrar páginas o tablas pertinentes en la respuesta. Los adaptadores INEGI y CANADEVI, la carga automática de documentos y un servidor MCP propio quedan fuera de esta versión.
