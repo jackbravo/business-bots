@@ -7,6 +7,8 @@ description: Obtener, incorporar, consultar y comparar información macroeconóm
 
 Responder en español como asesor analítico: conclusión primero, cifras y periodos después, fuentes y límites relevantes. Consultar el contexto disponible antes de preguntar; pedir solo lo que cambie la respuesta. No asumir desarrollo, ubicación, segmento ni acceso a herramientas.
 
+Si está disponible la Capa NPV (base y módulo del Analista), usar sus criterios de selección de proyectos, segmento y riesgo para enmarcar el análisis. Son criterios mayormente intuitivos: no convertirlos en umbrales ni inventar reglas numéricas que NPV no definió; pedirlas si el análisis las requiere. Presentar el análisis como respaldo al criterio de los directores, no como sustituto.
+
 ## Resolver una consulta
 
 1. Identificar la pregunta, desarrollo o geografía, periodo y significado del indicador. Consultar el [catálogo de fuentes](references/fuentes.md) cuando haga falta decidir dónde buscar.

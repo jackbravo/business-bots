@@ -9,3 +9,9 @@ __pycache__/
 *.duckdb
 *.duckdb.wal
 *.db
+
+.claude-mounts.json
+.claude/settings.local.json
+.devcontainer-logs
+.devcontainer-exclude
+.devcontainer.json
