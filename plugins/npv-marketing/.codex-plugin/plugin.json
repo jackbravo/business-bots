@@ -1,6 +1,6 @@
 {
   "name": "npv-marketing",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Marketing inmobiliario y datos NPV: estrategia, planeación, revisión de campañas y evidencia trazable.",
   "author": {
     "name": "Equipo del piloto NPV"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "NPV Marketing y Datos",
     "shortDescription": "Marketing y datos para directores de NPV",
-    "longDescription": "Acompaña el marketing de un desarrollo por etapas y obtiene, organiza y consulta evidencia con fuentes y fechas. Incluye npv-marketing y el prototipo npv-data con CSV, registro documental y adaptador Banxico. El destino MotherDuck y las credenciales requieren configuración; no ejecuta campañas ni instala conexiones automáticamente.",
+    "longDescription": "Acompaña el marketing de un desarrollo por etapas y obtiene, organiza y consulta evidencia con fuentes y fechas. Incluye npv-marketing y el prototipo npv-data con CSV, registro documental y adaptador Banxico. Prioriza tablas del cliente y usa SQLite local como apoyo; el acceso a archivos y las credenciales dependen del entorno; no ejecuta campañas ni instala conexiones automáticamente.",
     "developerName": "Equipo del piloto NPV",
     "category": "Productivity",
     "capabilities": [],

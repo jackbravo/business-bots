@@ -27,16 +27,12 @@ El endpoint `datos/oportuno` entrega el último dato publicado: no implica una c
 
 No fijar una serie TIIE sin verificar referencia, plazo y régimen aplicable. El documento de alcance menciona «CNIC»: confirmar con el equipo a qué organismo se refiere antes de crear un adaptador o sustituirlo por otra cámara.
 
-### Consultas para usuarios del piloto
+### Consultas habituales
 
-- «¿En cuánto está el dólar?» Consultar SF43718 y responder «tipo de cambio de referencia FIX de Banxico», con fecha y MXN por USD. Explicar que no es una cotización en tiempo real ni el precio de compra/venta de un banco. Si el usuario necesita cambiar dinero, aclarar qué cotización requiere.
-- «¿Cuánto pagan los CETES?» Usar SF60633 para CETES a 28 días, indicando plazo, fecha y porcentaje anual; no presentar esa tasa como rendimiento de solo 28 días ni como oferta garantizada de una plataforma.
-- «¿Cuál es la tasa de Banxico?» Consultar SF61745, tasa objetivo en porcentaje anual, con fecha.
-- «Muéstrame el dólar/CETES entre dos fechas». Usar el rango explícito y comparar observaciones disponibles; no rellenar días sin publicación como si fueran datos nuevos.
-
-El Flight del piloto `b124ac6d-23eb-413b-98d2-8ffd3f17ca53` admite `SERIES` (IDs separados por comas), `MODE=latest` o `MODE=range`, y `START`/`END` en YYYY-MM-DD. Cargar la guía de Flights antes de operarlo y conservar la restricción de propietario. No ejecutar una descarga si la pregunta solo solicita leer datos guardados.
-
-El FIX se calcula con cotizaciones representativas del mercado mayorista. Referencia: https://www.banxico.org.mx/tipcamb/llenarTiposCambioAction.do . No confundir fecha de determinación, publicación en DOF y aplicación.
+- «¿En cuánto está el dólar?»: usar SF43718 y aclarar que es el FIX de referencia, en MXN por USD, con fecha; no equivale a compra/venta bancaria ni cotización en tiempo real.
+- «¿Cuánto pagan los CETES?»: usar SF60633 y especificar 28 días, porcentaje anual y fecha; no presentar la tasa anual como ganancia de 28 días.
+- «¿Cuál es la tasa de Banxico?»: usar SF61745, porcentaje anual y fecha.
+- Para comparar fechas, descargar solo el rango pertinente si falta en los datos accesibles; conservar días sin dato como ausencia y distinguir descarga API de consulta a tablas existentes.
 
 ## Referencias oficiales
 

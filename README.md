@@ -40,13 +40,13 @@ El bot pregunta solo por vacíos relevantes, investiga fuentes públicas pertine
 
 Los archivos pueden estar en el proyecto, adjuntos o repositorios compartidos como Drive o Dropbox. Su acceso depende de las herramientas disponibles; el plugin no instala conectores ni credenciales. Tampoco ejecuta campañas ni administra cuentas.
 
-## Datos NPV (prototipo 0.4.0)
+## Datos NPV (prototipo 0.5.0)
 
-El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Incluye una CLI para DuckDB local o un destino MotherDuck configurado: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
+El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Prioriza las tablas que el cliente proporcione en Drive, Dropbox o archivos adjuntos, respetando su estructura y los permisos disponibles. Para trabajo interno incluye una CLI SQLite local sin dependencias externas: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
 
 Consultar [ejecución y credenciales](plugins/npv-marketing/skills/npv-data/references/ejecucion.md) antes de usarlo. Los tokens se configuran en el entorno; nunca en el chat, el repositorio ni la base. El registro documental no sube ni indexa originales: conservarlos en el repositorio autorizado y leerlos con las herramientas de archivos.
 
-La ruta MotherDuck requiere conexión, permisos y prueba real. Los adaptadores INEGI/CANADEVI y el servidor MCP propio quedan pendientes. Data de OpenAI y el plugin MotherDuck pueden complementar el skill cuando estén disponibles; no son dependencias instaladas automáticamente.
+Un enlace de lectura no permite editar el original: sin escritura se entrega una copia o una tabla para incorporar. SQLite no sincroniza archivos ni garantiza persistencia entre conversaciones; conservar el archivo o una exportación en un destino durable autorizado. Los adaptadores INEGI/CANADEVI quedan pendientes. Data de OpenAI puede complementar el skill cuando esté disponible; no es una dependencia instalada automáticamente.
 
 Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la competencia?”, “Incorpora este reporte y conserva su fuente y fecha” o “Consulta el último FIX publicado y compáralo con el mes anterior”. Con información parcial, el skill pregunta solo por vacíos relevantes y distingue información cargada de nuevas consultas externas.
 
@@ -54,7 +54,6 @@ Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la co
 
 ```bash
 python3 scripts/validate.py
-python3 -m pip install -r plugins/npv-marketing/skills/npv-data/scripts/requirements.txt
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 

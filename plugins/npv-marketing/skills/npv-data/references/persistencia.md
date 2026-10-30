@@ -12,7 +12,9 @@
 
 ## Reglas
 
-Conservar originales en el repositorio autorizado (Drive u otro); SQL conserva datos estructurados y referencias, no reemplaza ese repositorio. La base pertenece a NPV; las credenciales viven en secretos del entorno o del servidor. GitHub conserva metodología, scripts, esquema y ejemplos ficticios.
+Priorizar las tablas del cliente en Drive, Dropbox u otro destino autorizado, verificando lectura y escritura por separado. Conservar originales y versiones allí cuando haya permisos; confirmar la actualización con una lectura posterior. Un enlace de lectura no habilita guardado. Sin escritura, entregar una copia o los cambios para incorporar sin afirmar que el original cambió.
+
+SQLite local sirve como tabla de trabajo para análisis y presentación, no como almacenamiento compartido por defecto. Para recuperar datos en otra conversación, conservar el archivo o una exportación en un destino durable accesible y registrar su ubicación. Si solo hay archivos temporales o tablas en el chat, explicar el límite. Las credenciales viven en secretos del entorno; GitHub conserva metodología, scripts, esquema y ejemplos ficticios.
 
 Distinguir periodo observado, publicación del reporte, recuperación de la fuente y carga. Registrar fecha de publicación cuando la fuente la proporcione; nunca sustituirla por fecha de descarga. La v1 registra publicación en documentos; para series API puede ser desconocida y no debe inventarse.
 
