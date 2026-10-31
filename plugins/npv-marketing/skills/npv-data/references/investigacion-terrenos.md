@@ -14,6 +14,8 @@ Consultar materiales disponibles y pedir solo ubicación precisa (enlace, coorde
 
 Con un punto, investigar el entorno y advertir que no delimita el predio. Para atribuir zonificación o una afectación a toda su superficie, obtener polígono o identificación catastral suficiente y comprobar ubicación y municipio. Si se desconoce el lindero, continuar los demás frentes sin inventarlo. Definir un área de estudio razonada por accesibilidad, barreras y comparabilidad, además de distancia; declarar el alcance y ampliar si la oferta relevante lo requiere.
 
+Desde la primera entrega, explicar brevemente zonas y tipos de producto revisados, fuentes consultadas, selección de la muestra y exclusiones relevantes. Incluir inmuebles y desarrollos competidores cuando existan publicaciones pertinentes; distinguir competencia directa de alternativas del corredor. Ampliar una muestra insuficiente o declarar su límite sin presentarla como inventario completo; no exigir una cantidad fija de anuncios.
+
 ## Frentes de investigación
 
 | Frente | Buscar y comprobar | Entregar |
@@ -41,7 +43,9 @@ Distinguir proyectos en consulta pública de instrumentos vigentes. Si visor, do
 
 ## Cruces y evaluación
 
-Usar Data, cuando esté disponible, para calidad, cálculos, comparaciones y presentación conforme al skill principal. Para cruces cartográficos precisos, comprobar geometrías, sistema de coordenadas y herramientas geoespaciales disponibles; usar distancias en unidades adecuadas, no grados como metros. No afirmar intersecciones, distancias exactas ni porcentajes afectados a partir de una imagen o un marcador. Si solo se logra revisión visual, describirla como indicio y precisar qué archivo o comprobación falta.
+Avanzar en paralelo la investigación de mercado y las verificaciones prediales independientes. La falta de polígono, factibilidad o dictamen limita las conclusiones que dependen de ellos, pero no obliga a posponer competencia ni validación de compradores. Proponer entrevistas o pruebas de conceptos como diseño exploratorio ajustable a recursos y acceso, sin imponer plazos o muestras fijos ni ejecutarlas o contactar personas sin autorización. Contrastar precios de prueba con presupuesto de compradores, alternativas disponibles y escenarios de costos/servicios; no derivarlos solo del costo ni dar por autorizado el producto.
+
+Usar Data, cuando esté disponible, para calidad, cálculos, comparaciones y presentación conforme al skill principal. No exigir una herramienta específica ni un dashboard por rutina; si se pregunta qué se utilizó, distinguir guías metodológicas leídas de herramientas realmente ejecutadas y no llamar validación independiente al uso de instrucciones. Para cruces cartográficos precisos, comprobar geometrías, sistema de coordenadas y herramientas geoespaciales disponibles; usar distancias en unidades adecuadas, no grados como metros. No afirmar intersecciones, distancias exactas ni porcentajes afectados a partir de una imagen o un marcador. Si solo se logra revisión visual, describirla como indicio y precisar qué archivo o comprobación falta.
 
 En cada frente distinguir: hallazgo respaldado, indicio por confirmar, información no localizada y fuente inaccesible. “No se encontró una restricción” no significa que no exista; una capa sin peligro marcado tampoco demuestra ausencia de riesgo. No asignar una calificación global numérica sin metodología solicitada y respaldada.
 
@@ -56,4 +60,4 @@ Entregar un expediente preliminar proporcional a la pregunta, en el formato soli
 5. Evaluación que vincule cada oportunidad u obstáculo a evidencia y a los criterios del Analista disponibles, indicando cuáles pueden evaluarse y cuáles quedan pendientes; separar hechos, cálculos e hipótesis y no concluir viabilidad comercial por demografía solamente.
 6. Siguientes verificaciones priorizadas por su efecto en la decisión: dato o documento faltante, autoridad/profesional que puede resolverlo y decisión dependiente. Incluir factibilidad del operador, dictamen municipal o estudio técnico cuando el hallazgo lo requiera, sin contactar terceros por cuenta propia.
 
-Registrar URL o archivo, productor, publicación/versión si se conoce, periodo del dato, fecha de consulta y página/tabla/capa pertinente. Exponer fuentes fallidas y cobertura incompleta junto a la conclusión que limiten. Aplicar las reglas del skill principal para guardar solo cuando esté autorizado y comprobar el destino; no archivar datos del terreno en el repositorio del plugin.
+Vincular cada afirmación decisiva a la ficha o documento específico que la respalde, con página, artículo, tabla o capa pertinente; una portada o enlace general no sustituye esa evidencia. Si no se logra verificar el respaldo, marcar el hallazgo como pendiente, limitarlo o retirarlo de las conclusiones. Registrar productor, publicación/versión si se conoce, periodo del dato y fecha de consulta. Exponer fuentes fallidas y cobertura incompleta junto a la conclusión que limiten. Aplicar las reglas del skill principal para guardar solo cuando esté autorizado y comprobar el destino; no archivar datos del terreno en el repositorio del plugin.
