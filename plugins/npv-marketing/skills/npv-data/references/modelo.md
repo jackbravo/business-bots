@@ -1,6 +1,6 @@
 # Modelo v1
 
-Usar el [esquema SQL](../assets/schema-v1.sql) bajo el namespace `npv` en una base autorizada. `init` crea la v1 sin borrar tablas; rechaza versiones distintas. Cambios futuros requieren migraciones explícitas y respaldo, no recrear la base.
+Usar el [esquema SQL](../assets/schema-v1.sql) con prefijo `npv_` en un archivo SQLite de trabajo autorizado. `init` crea la v1 sin borrar tablas; rechaza versiones distintas. Cambios futuros requieren migraciones explícitas y respaldo, no recrear la base.
 
 | Tabla/vista | Grano y uso |
 | --- | --- |
@@ -36,11 +36,13 @@ No combinar definiciones distintas bajo el mismo ID. Para otra unidad o metodolo
 
 ```sql
 SELECT o.period, o.value, i.unit, o.last_checked_at, s.url
-FROM npv.current_observations o
-JOIN npv.indicators i USING (indicator_id)
-JOIN npv.sources s USING (source_id)
+FROM npv_current_observations o
+JOIN npv_indicators i USING (indicator_id)
+JOIN npv_sources s USING (source_id)
 WHERE o.indicator_id = 'banxico:SF43718' AND o.geography = 'MX'
 ORDER BY o.period DESC;
 ```
 
-Con MotherDuck, seleccionar la base NPV o calificar `base.npv.tabla`. Consultar primero las tablas reales y sus permisos. La CLI no presupone que el plugin MotherDuck esté conectado y no proporciona herramientas MCP propias.
+Este modelo sirve para las tablas internas de la CLI; no reemplaza la estructura de las tablas del cliente. Para Drive/Dropbox, mapear los campos pertinentes y respetar el formato de destino con las herramientas disponibles.
+
+SQLite almacena los valores como texto decimal exacto (`DECIMAL_TEXT`) y la CLI los recupera como `Decimal`; no usar SUM/AVG ni CAST a REAL para cálculos que requieran precisión decimal. Leer los valores y calcular con `Decimal` en Python. Las fechas con hora se guardan en ISO 8601 UTC (`TIMESTAMP_TZ`); la publicación usa fecha ISO. Las tablas y la vista llevan prefijo `npv_` (por ejemplo, `npv_observations`). Una base en otro formato se rechaza sin modificarla; no se realiza migración automática.

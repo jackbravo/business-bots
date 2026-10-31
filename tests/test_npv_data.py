@@ -28,7 +28,7 @@ def observation(value="2", period="2026-08", sid="ventas"):
 class StorageTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.db = str(Path(self.temp.name) / "demo.duckdb")
+        self.db = str(Path(self.temp.name) / "demo.sqlite")
         self.con = data.connect_database(self.db)
         data.initialize(self.con)
 
@@ -42,31 +42,31 @@ class StorageTests(unittest.TestCase):
     def test_init_is_repeatable_and_rejects_future_schema(self):
         self.ingest([observation()])
         data.initialize(self.con)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.observations").fetchone()[0], 1)
-        self.con.execute("INSERT INTO npv.schema_versions(version) VALUES(2)")
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_observations").fetchone()[0], 1)
+        self.con.execute("INSERT INTO npv_schema_versions(version) VALUES(2)")
         with self.assertRaises(data.DataError):
             data.initialize(self.con)
 
     def test_repeat_load_keeps_one_observation_and_refreshes_check(self):
         self.assertEqual(self.ingest([observation()])["new_revisions"], 1)
         self.assertEqual(self.ingest([observation()], T2)["new_revisions"], 0)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.observations").fetchone()[0], 1)
-        self.assertEqual(self.con.execute("SELECT first_retrieved_at,last_checked_at FROM npv.observations").fetchone(), (T1, T2))
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.ingestion_runs").fetchone()[0], 2)
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_observations").fetchone()[0], 1)
+        self.assertEqual(self.con.execute("SELECT first_retrieved_at,last_checked_at FROM npv_observations").fetchone(), (T1, T2))
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_ingestion_runs").fetchone()[0], 2)
 
     def test_correction_and_reversion_preserve_history(self):
         self.ingest([observation("2")])
         self.ingest([observation("3")], T2)
         self.ingest([observation("2")], T2)
-        self.assertEqual(self.con.execute("SELECT revision,value FROM npv.observations ORDER BY revision").fetchall(), [(1, Decimal(2)), (2, Decimal(3)), (3, Decimal(2))])
-        self.assertEqual(self.con.execute("SELECT revision,value FROM npv.current_observations").fetchone(), (3, Decimal(2)))
+        self.assertEqual(self.con.execute("SELECT revision,value FROM npv_observations ORDER BY revision").fetchall(), [(1, Decimal(2)), (2, Decimal(3)), (3, Decimal(2))])
+        self.assertEqual(self.con.execute("SELECT revision,value FROM npv_current_observations").fetchone(), (3, Decimal(2)))
 
     def test_stale_retrieval_cannot_replace_latest(self):
         self.ingest([observation()], T2)
         with self.assertRaises(data.DataError):
             self.ingest([observation("5")], T1)
-        self.assertEqual(self.con.execute("SELECT value FROM npv.current_observations").fetchone()[0], 2)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.ingestion_runs").fetchone()[0], 1)
+        self.assertEqual(self.con.execute("SELECT value FROM npv_current_observations").fetchone()[0], 2)
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_ingestion_runs").fetchone()[0], 1)
 
     def test_definition_change_rolls_back_entire_batch(self):
         self.ingest([observation()])
@@ -74,18 +74,18 @@ class StorageTests(unittest.TestCase):
         conflicting["unit"] = "MXN"
         with self.assertRaises(data.DataError):
             self.ingest([observation(period="2026-07", sid="otra"), conflicting], T2)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.indicators").fetchone()[0], 1)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.ingestion_runs").fetchone()[0], 1)
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_indicators").fetchone()[0], 1)
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_ingestion_runs").fetchone()[0], 1)
 
     def test_zero_and_missing_remain_distinct(self):
         self.ingest([observation("0"), observation("N/E", "2026-07")])
-        self.assertEqual(self.con.execute("SELECT value,status FROM npv.current_observations ORDER BY period DESC").fetchall(), [(Decimal(0), "available"), (None, "unavailable")])
+        self.assertEqual(self.con.execute("SELECT value,status FROM npv_current_observations ORDER BY period DESC").fetchall(), [(Decimal(0), "available"), (None, "unavailable")])
 
     def test_duplicate_rows_and_invalid_period_fail_before_writes(self):
         for rows in ([observation(), observation()], [observation(period="2026-13")]):
             with self.assertRaises(data.DataError):
                 self.ingest(rows)
-        self.assertEqual(self.con.execute("SELECT count(*) FROM npv.sources").fetchone()[0], 0)
+        self.assertEqual(self.con.execute("SELECT count(*) FROM npv_sources").fetchone()[0], 0)
 
     def test_conflicting_source_is_rejected(self):
         data.ensure_source(self.con, SOURCE)
@@ -104,7 +104,7 @@ class StorageTests(unittest.TestCase):
         file.write_text("Reporte ficticio v2")
         second = data.register_document(self.con, "demo", file, "Prueba", "https://example.com/report-v2", supersedes=first["document_id"])
         self.assertTrue(second["created"])
-        self.assertEqual(self.con.execute("SELECT supersedes_document_id FROM npv.documents WHERE document_id=?", [second["document_id"]]).fetchone()[0], first["document_id"])
+        self.assertEqual(self.con.execute("SELECT supersedes_document_id FROM npv_documents WHERE document_id=?", [second["document_id"]]).fetchone()[0], first["document_id"])
 
     def test_document_relocation_and_locator_credentials(self):
         data.ensure_source(self.con, SOURCE)
@@ -115,7 +115,7 @@ class StorageTests(unittest.TestCase):
         self.assertEqual(moved["document_id"], first["document_id"])
         self.assertTrue(moved["locator_updated"])
         self.assertEqual(moved["ignored_fields"], ["title"])
-        self.assertEqual(self.con.execute("SELECT original_locator, title FROM npv.documents").fetchone(), ("https://example.com/archive/report", "Prueba"))
+        self.assertEqual(self.con.execute("SELECT original_locator, title FROM npv_documents").fetchone(), ("https://example.com/archive/report", "Prueba"))
         for locator in ("HTTPS://user:pass@example.com/r.pdf", "http://example.com/r.pdf", "https://example.com/r.pdf?sig=x", "s3://key:secret@bucket/r.pdf"):
             with self.assertRaises(data.DataError):
                 data.register_document(self.con, "demo", file, "Prueba", locator)
@@ -150,21 +150,20 @@ class AdapterTests(unittest.TestCase):
         self.assertIsNotNone(retrieved.tzinfo)
 
     def test_schema_check_ignores_other_attached_databases(self):
-        import duckdb
         with tempfile.TemporaryDirectory() as folder:
-            con = duckdb.connect(str(Path(folder) / "main.duckdb"))
-            con.execute(f"ATTACH '{Path(folder) / 'other.duckdb'}' AS other")
-            con.execute("CREATE SCHEMA other.npv; CREATE TABLE other.npv.leftover(x INTEGER)")
+            con = data.connect_database(str(Path(folder) / "main.sqlite"))
+            con.execute("ATTACH DATABASE ? AS other", [str(Path(folder) / "other.sqlite")])
+            con.execute("CREATE TABLE other.npv_leftover(x INTEGER)")
             data.check_schema(con, allow_empty=True)
             con.close()
 
     def test_existing_unversioned_namespace_is_not_adopted(self):
-        import duckdb
-        with duckdb.connect() as con:
-            con.execute("CREATE SCHEMA npv; CREATE TABLE npv.legacy(value INTEGER)")
+        import sqlite3
+        with sqlite3.connect(":memory:") as con:
+            con.execute("CREATE TABLE npv_legacy(value INTEGER)")
             with self.assertRaises(data.DataError):
                 data.initialize(con)
-            self.assertEqual(con.execute("SELECT count(*) FROM information_schema.tables WHERE table_schema='npv'").fetchone()[0], 1)
+            self.assertEqual(con.execute("SELECT count(*) FROM sqlite_master WHERE name GLOB 'npv_*'").fetchone()[0], 1)
 
     def test_banxico_parsing_and_response_scope(self):
         catalog = json.loads((data.ASSETS / "banxico-series.json").read_text())
@@ -197,13 +196,48 @@ class AdapterTests(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaisesRegex(data.DataError, "BANXICO_TOKEN"):
                 data.download_banxico(["SF43718"], latest=True)
-            with self.assertRaisesRegex(data.DataError, "motherduck_token"):
-                data.connect_database("md:npv_pilot")
-        with patch.dict(os.environ, {"MOTHERDUCK_TOKEN": "ficticio"}, clear=True), patch("duckdb.connect") as connect:
-            data.connect_database("md:npv_pilot")
-            connect.assert_called_once_with("md:npv_pilot")
         with self.assertRaises(data.DataError):
             data.NoRedirect().redirect_request(None, None, 302, "", {}, "https://example.com")
+
+    def test_local_paths_only_and_existing_files_preserved(self):
+        for target in (":memory:", "md:remote", "https://example.com/data", "file:demo.sqlite"):
+            with self.assertRaises(data.DataError):
+                data.connect_database(target)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "client.xlsx"
+            path.write_bytes(b"client document")
+            with self.assertRaises(data.DataError):
+                data.connect_database(str(path))
+            self.assertEqual(path.read_bytes(), b"client document")
+            missing = Path(folder) / "missing.sqlite"
+            with self.assertRaises(Exception):
+                data.connect_database(str(missing), readonly=True)
+            self.assertFalse(missing.exists())
+
+    def test_readonly_connection_rejects_writes(self):
+        import sqlite3
+        with tempfile.TemporaryDirectory() as folder:
+            path = str(Path(folder) / "readonly.sqlite")
+            con = data.connect_database(path)
+            data.initialize(con)
+            data.ensure_source(con, SOURCE)
+            con.close()
+            con = data.connect_database(path, readonly=True)
+            with self.assertRaises(sqlite3.OperationalError):
+                con.execute("DELETE FROM npv_sources")
+            self.assertEqual(con.execute("SELECT count(*) FROM npv_sources").fetchone()[0], 1)
+            con.close()
+
+    def test_exact_decimal_storage(self):
+        with tempfile.TemporaryDirectory() as folder:
+            con = data.connect_database(str(Path(folder) / "exact.sqlite"))
+            data.initialize(con)
+            value = "999999999999999999.1234567890"
+            data.ingest(con, SOURCE, [observation(value)], T1, "fixture")
+            self.assertEqual(con.execute("SELECT value FROM npv_observations").fetchone()[0], Decimal(value))
+            data.ingest(con, SOURCE, [observation(value)], T2, "fixture")
+            self.assertEqual(con.execute("SELECT count(*) FROM npv_observations").fetchone()[0], 1)
+            con.close()
 
     def test_numeric_precision_and_periods(self):
         for invalid in ("NaN", "Infinity", "1,2", "1000000000000000000", "0.00000000001"):
@@ -218,7 +252,7 @@ class AdapterTests(unittest.TestCase):
 class ProcessTests(unittest.TestCase):
     def test_csv_persists_across_processes_and_queries_are_readonly(self):
         with tempfile.TemporaryDirectory() as temp:
-            db, csv_file = Path(temp) / "demo.duckdb", Path(temp) / "demo.csv"
+            db, csv_file = Path(temp) / "demo.sqlite", Path(temp) / "demo.csv"
             csv_file.write_text("series_id,series_name,unit,frequency,geography,period,value\nventas,Ventas netas,unidades,monthly,project:demo,2026-08,2\n")
             def run(*args):
                 result = subprocess.run([sys.executable, str(SCRIPT), "--database", str(db), *args], capture_output=True, text=True)
@@ -231,7 +265,7 @@ class ProcessTests(unittest.TestCase):
             self.assertEqual(run(*args)["new_revisions"], 0)
             before = db.read_bytes()
             rows = run("show-series", "--indicator", "demo:ventas", "--geography", "project:demo")
-            self.assertEqual(rows[0]["value"], "2.0000000000")
+            self.assertEqual(Decimal(rows[0]["value"]), Decimal("2"))
             self.assertEqual(rows[0]["source_name"], "Datos ficticios")
             self.assertEqual(before, db.read_bytes())
             csv_file.write_text("series_id,series_name,unit,frequency,geography,period,value\nventas,Ventas netas,unidades,monthly,project:demo,2026-08,2\nventas,Ventas netas,unidades,monthly,project:demo,2026-08,3\n")
