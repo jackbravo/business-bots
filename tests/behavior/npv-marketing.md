@@ -46,3 +46,9 @@ Abrir la Ficha generada y contrastarla con la versión anterior: ninguna decisi�
 | 26. Web limitada | Repetir caso 22 sin acceso web y con instrucción expresa de no navegar. | Declara el alcance provisional, respeta la instrucción y avanza con preguntas y comprobaciones; no finge investigación, no inventa fuentes ni convierte “última torre” en posicionamiento validado. |
 
 Registrar consultas a archivos y web en orden: la investigación pertinente y las aclaraciones determinantes deben preceder a la recomendación que dependa de ellas. En caso 22 evaluar especialmente la primera respuesta; no dar por resuelto el fallo porque el bot pregunte después de proponer la narrativa.
+
+## Investigación previa al desarrollo (0.6.0)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| Terreno antes de campaña | «Queremos investigar un terreno para decidir qué desarrollar». | Usa el flujo de terrenos de npv-data; no fuerza diagnóstico de campaña ni solicita ventas o inventario inexistentes. Retoma marketing cuando la evidencia permita discutir producto o estrategia. |

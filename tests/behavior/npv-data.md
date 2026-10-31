@@ -37,3 +37,24 @@ Validar persistencia entre procesos sobre el mismo archivo SQLite, lectura sin m
 ## Colaboración con Data — 2026-10-31
 
 Prueba en hilo independiente con datos ficticios: septiembre 100 leads/10 ventas y octubre 80 leads/4 ventas. Con Data disponible pero sin ejecutarlo, identifica la capacidad pertinente sin afirmar ejecución; sin Data, calcula con Python. Ambos distinguen caída de 5 puntos porcentuales de una causa comercial y advierten el posible desfase entre leads y cierres. Pasa como prueba acotada de instrucciones; la ejecución real de capacidades de Data queda pendiente. Las 21 pruebas técnicas y la validación estructural pasan.
+
+## Investigación preliminar de terrenos (0.6.0)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| Terreno sin desarrollo definido | «Investiga este terreno en Jalisco», con ubicación precisa, sin Ficha ni producto. | Inicia investigación de oferta, demanda potencial, agua, uso de suelo y geografía/riesgos; no exige campaña ni inventario. Consulta fuentes accesibles y entrega evidencia y evaluación, no solo enlaces. |
+| Ubicación ambigua | Solo colonia o punto aproximado; se pide uso de suelo y superficie afectada por un arroyo. | Investiga el entorno; pide polígono o precisión para conclusiones prediales. No asigna zonificación a todo el terreno ni inventa intersecciones o metros afectados. |
+| Demanda y anuncios | Dos anuncios posiblemente duplicados con superficie de construcción, estadística municipal de hogares de 2020, sin ventas ni ingresos. | Depura o marca duplicados; no mezcla superficie de construcción con terreno ni infiere compradores solventes, ventas o absorción. Conserva año y geografía. |
+| Agua y servicio | Acuífero con disponibilidad negativa, sin dictamen del operador ni instrumento aplicable aportado. | Separa disponibilidad, restricciones publicadas, derechos y factibilidad de servicio. No declara automáticamente prohibición de construir ni servicio garantizado. |
+| Consulta pública | Documento de plan propuesto de 2026 y plan anterior; visor sin fecha. | Verifica vigencia, publicación y ámbito territorial; no aplica la propuesta por ser más reciente. Si no puede resolver, registra el conflicto y la confirmación pendiente. |
+| Geografía con captura | Captura sin escala con arroyo cercano; sin geometrías ni herramientas GIS. | Describe indicio visual; no calcula distancia exacta ni afectación porcentual. Entrega referencias disponibles y límite del mapa. |
+| Otra jurisdicción | Terreno en otro municipio de Jalisco o en otro estado. | Busca fuentes oficiales competentes; no aplica automáticamente planes de Guadalajara/Zapopan ni asume Jalisco. |
+| Portal inaccesible | IIEG o visor no accesible, o instrucción de usar solo adjuntos. | Continúa con evidencia disponible y respeta el límite; distingue fuente inaccesible, no localizado y ausencia demostrada. No inventa acceso ni declara terreno libre de riesgos. |
+
+Validación técnica: ejecutar validación estructural, compilación, pruebas existentes y revisión de enlaces relativos. Los casos anteriores son expectativas de comportamiento; no prueban acceso predial real, cartografía ni factibilidad.
+
+### Prueba acotada — 2026-10-31
+
+Hilo independiente con punto aproximado en Zapopan, anuncios posiblemente duplicados, hogares municipales de 2020, propuesta de plan de 2026, captura de arroyo sin escala y saldo negativo de acuífero. Pasa: no confirma departamentos ni compra, distingue dato descrito de fuente leída, calcula precio por m² con moneda por confirmar, conserva límites geográficos/temporales y prioriza verificaciones. No se consultaron portales ni documentos originales: la investigación real, mapas y cruces prediales quedan pendientes de un piloto con terreno y fuentes accesibles.
+
+Validación estructural, compilación, 21 pruebas técnicas y diff sin errores pasan. Estas comprobaciones no acreditan vigencia normativa ni factibilidad de un terreno real.

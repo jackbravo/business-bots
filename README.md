@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.5.0 | Marketing por etapas y prototipo de datos trazables. |
+| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.6.0 | Marketing por etapas y prototipo de datos trazables. |
 
 ## Instalar y actualizar
 
@@ -40,7 +40,7 @@ El bot pregunta solo por vacíos relevantes, investiga fuentes públicas pertine
 
 Los archivos pueden estar en el proyecto, adjuntos o repositorios compartidos como Drive o Dropbox. Su acceso depende de las herramientas disponibles; el plugin no instala conectores ni credenciales. Tampoco ejecuta campañas ni administra cuentas.
 
-## Datos NPV (prototipo 0.5.0)
+## Datos NPV (prototipo 0.6.0)
 
 El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Prioriza las tablas que el cliente proporcione en Drive, Dropbox o archivos adjuntos, respetando su estructura y los permisos disponibles. Para trabajo interno incluye una CLI SQLite local sin dependencias externas: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
 
@@ -51,6 +51,12 @@ Un enlace de lectura no permite editar el original: sin escritura se entrega una
 NPV aporta contexto y fuentes; Data de OpenAI, cuando está disponible, aporta análisis, validación y presentación; NPV Marketing convierte los hallazgos en recomendaciones comerciales. La colaboración ocurre mediante las capacidades disponibles en la conversación y no requiere una conexión entre plugins. Sin Data, el trabajo continúa con las herramientas disponibles.
 
 Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la competencia?”, “Incorpora este reporte y conserva su fuente y fecha” o “Consulta el último FIX publicado y compáralo con el mes anterior”. Con información parcial, el skill pregunta solo por vacíos relevantes y distingue información cargada de nuevas consultas externas.
+
+## Investigación preliminar de terrenos
+
+Antes de definir un desarrollo, `npv-data` puede investigar oferta publicada, demanda potencial, agua, uso de suelo y geografía/riesgos siguiendo la [guía de terrenos](plugins/npv-marketing/skills/npv-data/references/investigacion-terrenos.md). Para Jalisco incluye puntos de entrada de IIEG/INEGI, CONAGUA, municipios y CENAPRED. Entrega evidencia fechada, comparables, condicionantes y una evaluación con verificaciones prioritarias; no equivale a un dictamen ni acredita viabilidad por sí sola.
+
+Ejemplo: “Investiga este terreno [ubicación o polígono]. Revisa oferta cercana, estadísticas de demanda potencial, agua, uso de suelo y riesgos publicados. Comparte los datos duros, sus fuentes y tu evaluación”. No hace falta contar ya con campaña, producto ni Ficha. Los cruces cartográficos y el acceso a portales dependen de las herramientas y datos disponibles; no se añaden adaptadores ni un motor GIS.
 
 ## Desarrollo
 

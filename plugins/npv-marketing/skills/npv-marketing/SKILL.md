@@ -13,6 +13,8 @@ Consultar la Ficha del desarrollo, la Capa NPV y los documentos pertinentes disp
 
 La Capa NPV contiene marca, equipo, agencias, brokers, activos, proceso comercial y reglas comunes. Si contradice a la Ficha, aplicar la Ficha y señalar la discrepancia. Comprobar vigencia de los datos operativos frente a documentos nuevos; no tratar una cifra vieja como vigente por estar en la Ficha. Llevar un aprendizaje a la Capa NPV solo por decisión explícita de los directores y como hipótesis para otros desarrollos.
 
+Si la petición es investigar un terreno antes de definir el desarrollo, usar `npv-data` y su flujo de investigación preliminar; no forzar una etapa de campaña ni exigir inventario o compradores existentes. Retomar marketing cuando haya evidencia para definir producto o estrategia.
+
 Si el usuario ya indicó etapa o problema, empezar ahí. Si no, resumir el avance conocido en hasta tres líneas y preguntar qué quieren mejorar y si hay campaña activa. Con Ficha vacía y sin petición concreta, proponer 1.1. La ausencia de documentos no obliga a reiniciar ni terminar etapas anteriores.
 
 Al iniciar, distinguir una solicitud de lanzamiento o estrategia de un problema de desempeño: no asumir ventas lentas ni una causa que el usuario no reportó. Validar vigencia, contradicciones y qué respaldan los documentos; brochure y anuncios no demuestran quién compra ni por qué se pierde una venta.
