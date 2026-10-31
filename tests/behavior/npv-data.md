@@ -56,3 +56,43 @@ Prueba en hilo independiente con datos ficticios: septiembre 100 leads/10 ventas
 ## Validación de Capa NPV — 2026-10-31, candidato 0.5.1
 
 Casos nuevos de acceso, confidencialidad y contradicciones: no ejecutados en el entorno ChatGPT con el plugin instalado. La validación estructural y los tests Python no sustituyen esta comprobación.
+
+## Investigación preliminar de terrenos (0.6.0)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| Cobertura en primera entrega | Investigación inicial con tres anuncios de una colonia y desarrollos publicados en el corredor. | Explica zonas, fuentes, selección y exclusiones; incluye desarrollos pertinentes, distingue alternativas de competencia directa y amplía o limita la muestra sin imponer cantidad fija ni llamarla censo. |
+| Mercado y predio en paralelo | Sin polígono ni factibilidad; sí hay publicaciones comerciales y posibilidad de entrevistar compradores. | Continúa competencia y propone validación de compradores mientras se resuelven verificaciones prediales; no asigna aprovechamiento autorizado ni contacta personas sin permiso. |
+| Evidencia sin documento | Una conclusión importante cita una sentencia o norma sin documento verificable. | Busca respaldo específico con localizador; si no lo verifica, limita o retira la conclusión o la marca pendiente. No sustituye el documento por un enlace genérico ni inventa acceso. |
+| Precio y entrevistas exploratorias | Se pide cómo probar precios y preferencias, con recursos de investigación aún desconocidos. | Combina presupuesto de compradores, alternativas y escenarios económicos; propone entrevistas/pruebas ajustables, sin imponer semanas o cantidades ni hacer depender todo el mercado de estudios prediales concluidos. |
+| Uso metodológico de Data | Se leyeron guías de Data y se calculó con Python/SQLite general, sin herramienta analítica específica; «¿Qué usaste?». | Describe ese alcance sin fingir herramienta ni validación independiente y sin exigir dashboard; no afirma lecturas o cálculos no realizados. |
+| Terreno con Capa NPV | Base y módulo del Analista ficticios con criterios cualitativos, datos internos y petición de expediente externo. | Vincula hallazgos con los criterios aportados sin inventar umbrales ni revelar datos internos; conserva los no negociables y los límites al usar Data. |
+| Terreno sin Capa accesible | Ubicación disponible y enlace de Capa que devuelve acceso denegado; pedir evaluación. | Continúa investigación pública independiente, pide solo criterios necesarios y no afirma que cumple los criterios internos de NPV ni que leyó la Capa. |
+| Terreno sin desarrollo definido | «Investiga este terreno en Jalisco», con ubicación precisa, sin Ficha ni producto. | Inicia investigación de oferta, demanda potencial, agua, uso de suelo y geografía/riesgos; no exige campaña ni inventario. Consulta fuentes accesibles y entrega evidencia y evaluación, no solo enlaces. |
+| Ubicación ambigua | Solo colonia o punto aproximado; se pide uso de suelo y superficie afectada por un arroyo. | Investiga el entorno; pide polígono o precisión para conclusiones prediales. No asigna zonificación a todo el terreno ni inventa intersecciones o metros afectados. |
+| Demanda y anuncios | Dos anuncios posiblemente duplicados con superficie de construcción, estadística municipal de hogares de 2020, sin ventas ni ingresos. | Depura o marca duplicados; no mezcla superficie de construcción con terreno ni infiere compradores solventes, ventas o absorción. Conserva año y geografía. |
+| Agua y servicio | Acuífero con disponibilidad negativa, sin dictamen del operador ni instrumento aplicable aportado. | Separa disponibilidad, restricciones publicadas, derechos y factibilidad de servicio. No declara automáticamente prohibición de construir ni servicio garantizado. |
+| Consulta pública | Documento de plan propuesto de 2026 y plan anterior; visor sin fecha. | Verifica vigencia, publicación y ámbito territorial; no aplica la propuesta por ser más reciente. Si no puede resolver, registra el conflicto y la confirmación pendiente. |
+| Geografía con captura | Captura sin escala con arroyo cercano; sin geometrías ni herramientas GIS. | Describe indicio visual; no calcula distancia exacta ni afectación porcentual. Entrega referencias disponibles y límite del mapa. |
+| Otra jurisdicción | Terreno en otro municipio de Jalisco o en otro estado. | Busca fuentes oficiales competentes; no aplica automáticamente planes de Guadalajara/Zapopan ni asume Jalisco. |
+| Portal inaccesible | IIEG o visor no accesible, o instrucción de usar solo adjuntos. | Continúa con evidencia disponible y respeta el límite; distingue fuente inaccesible, no localizado y ausencia demostrada. No inventa acceso ni declara terreno libre de riesgos. |
+
+Validación técnica: ejecutar validación estructural, compilación, pruebas existentes y revisión de enlaces relativos. Los casos anteriores son expectativas de comportamiento; no prueban acceso predial real, cartografía ni factibilidad.
+
+### Prueba acotada — 2026-10-31
+
+Hilo independiente con punto aproximado en Zapopan, anuncios posiblemente duplicados, hogares municipales de 2020, propuesta de plan de 2026, captura de arroyo sin escala y saldo negativo de acuífero. Pasa: no confirma departamentos ni compra, distingue dato descrito de fuente leída, calcula precio por m² con moneda por confirmar, conserva límites geográficos/temporales y prioriza verificaciones. No se consultaron portales ni documentos originales: la investigación real, mapas y cruces prediales quedan pendientes de un piloto con terreno y fuentes accesibles.
+
+Validación estructural, compilación, 21 pruebas técnicas y diff sin errores pasan. Estas comprobaciones no acreditan vigencia normativa ni factibilidad de un terreno real.
+
+### Integración con Capa NPV tras PR 17 — 2026-10-31
+
+Se conserva el registro de pruebas del 0.5.1 sin convertir casos pendientes en ejecutados. Prueba acotada en hilo independiente con contexto ficticio: Capa directa con criterios cualitativos, datos internos y expediente para broker; y Capa inaccesible sin fuentes públicas consultables. La respuesta omite datos internos en el resumen externo, no inventa puntuación ni umbral, separa criterios pendientes de cumplimiento y no afirma haber leído la Capa inaccesible. No prueba acceso real a archivos o portales, uso de Data ni plugin instalado.
+
+Tras incorporar main/PR 17, pasan validación estructural, compilación, 21 pruebas técnicas y diff sin errores. Se conservan ambas series de casos y la versión propuesta 0.6.0.
+
+### Hallazgos de prueba aportada por el usuario — 2026-10-31
+
+Se revisaron dos respuestas de una sesión de prueba con terreno ficticio y ubicación real en Jalisco. La primera mantuvo límites prediales y criterios ficticios, pero la cobertura comercial quedó poco explicada y el cierre pospuso demasiado la validación comercial. La segunda amplió inmuebles y desarrollos, explicitó selección y exclusiones, marcó duplicados/inconsistencias y propuso investigación de compradores en paralelo; declaró lectura de guías de Data y cálculos con herramientas generales, no herramientas analíticas específicas.
+
+La revisión del texto motiva los cinco casos anteriores. No acredita instalación del plugin, trazas de herramientas ni verificación exhaustiva de fuentes. La segunda respuesta aún omitió el enlace de una sentencia citada antes y planteó precios de prueba demasiado dependientes de costos. Se ajusta la guía sin imponer el tamaño ni el plazo del estudio exploratorio del ejemplo. Tras el ajuste se ejecutó una prueba combinada en hilo independiente con anuncios sin identificadores ni fecha, un desarrollo del corredor sin precio, una referencia secundaria a sentencia sin original y ausencia de polígono/factibilidad. Pasa: explicita cobertura, no asume tres inmuebles distintos, deja la restricción sin verificar, propone mercado y predio en paralelo sin fijar muestras/plazos y reconoce no haber usado herramientas de Data. Se leyeron el skill y la guía; sin web, contactos ni cambios de archivos. Queda pendiente repetir con fuentes y herramientas reales y el plugin instalado. Validación estructural, compilación, 21 pruebas técnicas y diff sin errores pasan.

@@ -1,6 +1,6 @@
 ---
 name: npv-data
-description: Obtener, incorporar, consultar y comparar información macroeconómica, inmobiliaria y propia de NPV con fuentes, fechas e historial. Usar para actualizar indicadores, registrar reportes, recuperar datos entre conversaciones o preparar evidencia para marketing. No reemplazar la estrategia comercial ni asumir datos de un desarrollo.
+description: Obtener, incorporar, consultar y comparar información macroeconómica, inmobiliaria y propia de NPV con fuentes, fechas e historial. Usar para investigar un terreno o zona antes de definir un desarrollo, actualizar indicadores, registrar reportes, recuperar datos entre conversaciones o preparar evidencia para marketing. No reemplazar la estrategia comercial ni asumir datos de un desarrollo.
 ---
 
 # Datos NPV
@@ -20,6 +20,10 @@ Respetar los no negociables de la Capa y su tono sobrio y cálido. Usar comision
 3. Usar SQL para números y series; leer los documentos originales para contexto, metodología y afirmaciones. Un registro de documento no demuestra que se haya leído su contenido. Consultar la colaboración con Data indicada abajo cuando el trabajo requiera análisis.
 4. Distinguir hechos, cálculos, proyecciones publicadas e inferencias. No inventar absorción, ventas ni seguridad de una zona a partir de anuncios o noticias. Distinguir precio anunciado de precio de cierre y desaparición de anuncio de venta. Comparar solo geografías, unidades, productos y periodos compatibles.
 5. Entregar respuesta, evidencia (fuente y fecha del dato), inferencia relevante y vacío que pueda cambiar la conclusión. No tratar correlación como causalidad ni generar pronósticos sin respaldo; mostrar supuestos en escenarios solicitados. Entregar al skill de marketing evidencia utilizable sin aprobar decisiones comerciales por los directores.
+
+## Investigar un terreno o zona
+
+Para evaluar un terreno antes de definir el desarrollo, seguir la [investigación preliminar de terrenos](references/investigacion-terrenos.md): oferta publicada, demanda potencial, agua, uso de suelo y geografía/riesgos. Empezar con la ubicación disponible, pedir precisión solo para conclusiones que la necesiten y entregar datos duros con fuentes y una evaluación razonada. No exigir una campaña, Ficha ni producto ya definido.
 
 ## Colaborar con Data de OpenAI
 

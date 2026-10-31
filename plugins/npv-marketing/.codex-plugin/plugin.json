@@ -1,7 +1,7 @@
 {
   "name": "npv-marketing",
-  "version": "0.5.1",
-  "description": "Marketing inmobiliario y datos NPV: estrategia, planeación, revisión de campañas y evidencia trazable.",
+  "version": "0.6.0",
+  "description": "Marketing inmobiliario y datos NPV: investigación de terrenos, estrategia, campañas y evidencia trazable.",
   "author": {
     "name": "Equipo del piloto NPV"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "NPV Marketing y Datos",
     "shortDescription": "Marketing y datos para directores de NPV",
-    "longDescription": "Acompaña el marketing de un desarrollo por etapas y obtiene, organiza y consulta evidencia con fuentes y fechas. Incluye npv-marketing y el prototipo npv-data con CSV, registro documental y adaptador Banxico. Prioriza tablas del cliente y usa SQLite local como apoyo; el acceso a archivos y las credenciales dependen del entorno; no ejecuta campañas ni instala conexiones automáticamente.",
+    "longDescription": "Acompaña el marketing de un desarrollo por etapas y obtiene, organiza y consulta evidencia con fuentes y fechas. Incluye investigación preliminar de terrenos: oferta, demanda potencial, agua, uso de suelo y riesgos; además de CSV, registro documental y adaptador Banxico. Prioriza tablas del cliente y usa SQLite local como apoyo; el acceso a archivos y las credenciales dependen del entorno; no ejecuta campañas ni instala conexiones automáticamente.",
     "developerName": "Equipo del piloto NPV",
     "category": "Productivity",
     "capabilities": [],
@@ -17,7 +17,8 @@
       "Quiero mejorar el marketing de este desarrollo. Ayúdame a identificar qué conviene trabajar primero.",
       "Revisemos el plan de canales y presupuesto de este desarrollo.",
       "Revisa este brief o los resultados de la campaña y recomienda el siguiente paso.",
-      "Ayúdame a consultar o incorporar datos para este desarrollo, con fuentes y fechas."
+      "Ayúdame a consultar o incorporar datos para este desarrollo, con fuentes y fechas.",
+      "Quiero investigar un terreno: oferta cercana, demanda potencial, agua, uso de suelo y riesgos publicados."
     ]
   }
 }

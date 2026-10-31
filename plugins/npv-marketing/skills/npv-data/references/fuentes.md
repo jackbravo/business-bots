@@ -5,6 +5,7 @@ Elegir fuentes por la pregunta y cobertura disponible; no descargar todo por rut
 | Fuente | Información pertinente | Acceso del prototipo |
 | --- | --- | --- |
 | Banco de México | FIX, tasa objetivo, CETES; ampliar después a otras series pertinentes | Adaptador SIE API con token del entorno. |
+| IIEG Jalisco, municipios, CONAGUA y CENAPRED | Demografía local, planeación, agua y geografía/riesgos para investigar terrenos | Seguir la [guía de terrenos](investigacion-terrenos.md); consulta pública según acceso y cobertura, sin adaptadores automáticos. |
 | INEGI | Inflación, actividad, construcción, población, empleo y contexto por geografía | Web, documentos o CSV preparado con herramientas disponibles; adaptador pendiente. |
 | CANADEVI | Reportes y tableros de vivienda por segmento y estado | Leer y registrar documentos; verificar el organismo que originó la estadística. |
 | CONAVI/SNIIV, SHF, RUV | Oferta, financiamiento y precios de vivienda, según cobertura | Consultar publicación o descarga oficial pertinente; adaptadores pendientes. |
