@@ -6,8 +6,11 @@ __pycache__/
 !.env.example
 
 # Bases de trabajo: los datos reales no pertenecen a GitHub.
-*.duckdb
-*.duckdb.wal
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
 *.db
 
 .claude-mounts.json

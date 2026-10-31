@@ -27,6 +27,13 @@ El endpoint `datos/oportuno` entrega el último dato publicado: no implica una c
 
 No fijar una serie TIIE sin verificar referencia, plazo y régimen aplicable. El documento de alcance menciona «CNIC»: confirmar con el equipo a qué organismo se refiere antes de crear un adaptador o sustituirlo por otra cámara.
 
+### Consultas habituales
+
+- «¿En cuánto está el dólar?»: usar SF43718 y aclarar que es el FIX de referencia, en MXN por USD, con fecha; no equivale a compra/venta bancaria ni cotización en tiempo real.
+- «¿Cuánto pagan los CETES?»: usar SF60633 y especificar 28 días, porcentaje anual y fecha; no presentar la tasa anual como ganancia de 28 días.
+- «¿Cuál es la tasa de Banxico?»: usar SF61745, porcentaje anual y fecha.
+- Para comparar fechas, descargar solo el rango pertinente si falta en los datos accesibles; conservar días sin dato como ausencia y distinguir descarga API de consulta a tablas existentes.
+
 ## Referencias oficiales
 
 - [SIE API Banxico: autenticación, catálogo y consultas](https://www.banxico.org.mx/SieAPIRest/service/v1/).

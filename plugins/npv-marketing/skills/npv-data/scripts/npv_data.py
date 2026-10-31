@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI del prototipo NPV: datos trazables en DuckDB o MotherDuck."""
+"""CLI del prototipo NPV: datos trazables en SQLite local."""
 from __future__ import annotations
 
 import argparse
@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import sqlite3
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
@@ -104,51 +105,56 @@ def validate_source(source):
 
 
 def connect_database(target, readonly=False):
-    import duckdb
-    if target.startswith("md:"):
-        if not re.fullmatch(r"md:[A-Za-z][A-Za-z0-9_]*", target):
-            raise DataError("Usar md:nombre_base sin tokens ni parámetros.")
-        if not (os.environ.get("motherduck_token") or os.environ.get("MOTHERDUCK_TOKEN")):
-            raise DataError("Falta motherduck_token (o MOTHERDUCK_TOKEN) en los secretos del entorno.")
-        # Permisos remotos dependen de la cuenta; las operaciones de lectura solo ejecutan SELECT.
-        return duckdb.connect(target)
-    if target == ":memory:":
-        raise DataError("Usar un archivo persistente o md:nombre_base.")
-    return duckdb.connect(target, read_only=readonly)
+    if target == ":memory:" or re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:", target):
+        raise DataError("Usar una ruta de archivo SQLite local, no una conexión remota ni en memoria.")
+    path = Path(target).expanduser().resolve()
+    if path.exists() and path.stat().st_size:
+        with path.open("rb") as stream:
+            if stream.read(16) != b"SQLite format 3\x00":
+                raise DataError("El archivo no es SQLite; no se modifica ni convierte automáticamente.")
+    sqlite3.register_adapter(Decimal, str)
+    sqlite3.register_converter("DECIMAL_TEXT", lambda raw: Decimal(raw.decode()))
+    sqlite3.register_adapter(datetime, lambda value: value.astimezone(timezone.utc).isoformat())
+    sqlite3.register_converter("TIMESTAMP_TZ", lambda raw: datetime.fromisoformat(raw.decode().replace("Z", "+00:00")))
+    sqlite3.register_adapter(date, lambda value: value.isoformat())
+    sqlite3.register_converter("DATE_ISO", lambda raw: date.fromisoformat(raw.decode()))
+    con = sqlite3.connect(path.as_uri() + ("?mode=ro" if readonly else "?mode=rwc"),
+                          uri=True, isolation_level=None, detect_types=sqlite3.PARSE_DECLTYPES)
+    con.execute("PRAGMA foreign_keys = ON")
+    return con
 
 
 def check_schema(con, allow_empty=False):
-    exists = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_catalog=current_database() AND table_schema='npv' AND table_name='schema_versions'").fetchone()[0]
+    exists = con.execute("SELECT count(*) FROM main.sqlite_master WHERE type='table' AND name='npv_schema_versions'").fetchone()[0]
     if not exists:
         if allow_empty:
-            occupied = con.execute("SELECT count(*) FROM information_schema.tables WHERE table_catalog=current_database() AND table_schema='npv'").fetchone()[0]
+            occupied = con.execute("SELECT count(*) FROM main.sqlite_master WHERE name GLOB 'npv_*'").fetchone()[0]
             if occupied:
                 raise DataError("El namespace npv ya contiene tablas sin versión; revisar antes de inicializar.")
             return
         raise DataError("Falta esquema NPV; ejecutar init sobre el destino autorizado.")
-    if con.execute("SELECT version FROM npv.schema_versions ORDER BY version").fetchall() != [(1,)]:
+    if con.execute("SELECT version FROM npv_schema_versions ORDER BY version").fetchall() != [(1,)]:
         raise DataError("Versión de esquema incompatible; no modificar automáticamente.")
 
 
 def initialize(con):
     check_schema(con, allow_empty=True)
-    con.execute("BEGIN TRANSACTION")
     try:
-        con.execute((ASSETS / "schema-v1.sql").read_text(encoding="utf-8"))
-        con.execute("COMMIT")
+        con.executescript("BEGIN TRANSACTION;\n" + (ASSETS / "schema-v1.sql").read_text(encoding="utf-8") + "\nCOMMIT;")
     except Exception:
-        con.execute("ROLLBACK")
+        if con.in_transaction:
+            con.execute("ROLLBACK")
         raise
     return {"schema_version": 1}
 
 
 def ensure_source(con, source):
     validate_source(source)
-    previous = con.execute("SELECT source_id,name,url,category FROM npv.sources WHERE source_id=?", [source[0]]).fetchone()
+    previous = con.execute("SELECT source_id,name,url,category FROM npv_sources WHERE source_id=?", [source[0]]).fetchone()
     if previous and tuple(source) != previous:
         raise DataError("La fuente ya existe con otros metadatos; usar otro identificador.")
     if not previous:
-        con.execute("INSERT INTO npv.sources VALUES (?,?,?,?)", source)
+        con.execute("INSERT INTO npv_sources VALUES (?,?,?,?)", source)
 
 
 def validate_rows(rows):
@@ -179,32 +185,32 @@ def ingest(con, source, rows, retrieved_at, content_hash, request_url=None):
     con.execute("BEGIN TRANSACTION")
     try:
         ensure_source(con, source)
-        con.execute("INSERT INTO npv.ingestion_runs(run_id,source_id,retrieved_at,content_hash,request_url,row_count,new_revisions) VALUES (?,?,?,?,?,?,0)", [run_id, source[0], retrieved_at, content_hash, request_url, len(rows)])
+        con.execute("INSERT INTO npv_ingestion_runs(run_id,source_id,retrieved_at,content_hash,request_url,row_count,new_revisions) VALUES (?,?,?,?,?,?,0)", [run_id, source[0], retrieved_at, content_hash, request_url, len(rows)])
         for row in rows:
             indicator_id = source[0] + ":" + row["series_id"]
             definition = (row["series_name"], row["unit"], row["frequency"])
-            previous_definition = con.execute("SELECT name,unit,frequency FROM npv.indicators WHERE indicator_id=?", [indicator_id]).fetchone()
+            previous_definition = con.execute("SELECT name,unit,frequency FROM npv_indicators WHERE indicator_id=?", [indicator_id]).fetchone()
             if previous_definition and previous_definition != definition:
                 raise DataError("Cambió la definición de la serie; revisar antes de combinarla.")
             if not previous_definition:
-                con.execute("INSERT INTO npv.indicators VALUES (?,?,?,?,?,?)", [indicator_id, source[0], row["series_id"], *definition])
+                con.execute("INSERT INTO npv_indicators VALUES (?,?,?,?,?,?)", [indicator_id, source[0], row["series_id"], *definition])
             key = [indicator_id, row["geography"], row["period"]]
-            previous = con.execute("SELECT revision,value,status,last_checked_at FROM npv.observations WHERE indicator_id=? AND geography=? AND period=? ORDER BY revision DESC LIMIT 1", key).fetchone()
+            previous = con.execute("SELECT revision,value,status,last_checked_at FROM npv_observations WHERE indicator_id=? AND geography=? AND period=? ORDER BY revision DESC LIMIT 1", key).fetchone()
             value, status = row["value"], "unavailable" if row["value"] is None else "available"
             if previous and retrieved_at < previous[3]:
                 raise DataError("Carga anterior al último control: no sustituir datos más recientes.")
             if previous and (value, status) == previous[1:3]:
-                con.execute("UPDATE npv.observations SET last_checked_at=? WHERE indicator_id=? AND geography=? AND period=? AND revision=?", [retrieved_at, *key, previous[0]])
+                con.execute("UPDATE npv_observations SET last_checked_at=? WHERE indicator_id=? AND geography=? AND period=? AND revision=?", [retrieved_at, *key, previous[0]])
                 continue
             revision = previous[0] + 1 if previous else 1
-            con.execute("INSERT INTO npv.observations VALUES (?,?,?,?,?,?,?,?,?)", [*key, revision, value, status, run_id, retrieved_at, retrieved_at])
+            con.execute("INSERT INTO npv_observations VALUES (?,?,?,?,?,?,?,?,?)", [*key, revision, value, status, run_id, retrieved_at, retrieved_at])
             new_revisions += 1
-        con.execute("UPDATE npv.ingestion_runs SET new_revisions=? WHERE run_id=?", [new_revisions, run_id])
+        con.execute("UPDATE npv_ingestion_runs SET new_revisions=? WHERE run_id=?", [new_revisions, run_id])
         con.execute("COMMIT")
     except Exception:
         con.execute("ROLLBACK")
         raise
-    stored = con.execute("SELECT row_count,new_revisions FROM npv.ingestion_runs WHERE run_id=?", [run_id]).fetchone()
+    stored = con.execute("SELECT row_count,new_revisions FROM npv_ingestion_runs WHERE run_id=?", [run_id]).fetchone()
     return {"run_id": run_id, "rows": stored[0], "new_revisions": stored[1], "unchanged": stored[0] - stored[1], "retrieved_at": retrieved_at.isoformat()}
 
 
@@ -296,7 +302,7 @@ def read_csv(path):
 
 def register_document(con, source_id, file, title, locator, published=None, supersedes=None):
     check_schema(con)
-    if not con.execute("SELECT 1 FROM npv.sources WHERE source_id=?", [source_id]).fetchone():
+    if not con.execute("SELECT 1 FROM npv_sources WHERE source_id=?", [source_id]).fetchone():
         raise DataError("Registrar primero la fuente del documento.")
     if not title.strip() or not locator.strip():
         raise DataError("Título y ubicación del original son obligatorios.")
@@ -316,12 +322,12 @@ def register_document(con, source_id, file, title, locator, published=None, supe
     if not byte_count:
         raise DataError("Documento vacío.")
     content_hash = digest.hexdigest()
-    previous = con.execute("SELECT document_id,title,published_on,original_locator,supersedes_document_id FROM npv.documents WHERE source_id=? AND content_hash=?", [source_id, content_hash]).fetchone()
+    previous = con.execute("SELECT document_id,title,published_on,original_locator,supersedes_document_id FROM npv_documents WHERE source_id=? AND content_hash=?", [source_id, content_hash]).fetchone()
     if previous:
         result = {"document_id": previous[0], "created": False, "original_uploaded": False, "locator_updated": False}
         if locator != previous[3]:
             # El mismo contenido se movió: actualizar solo la ubicación del original.
-            con.execute("UPDATE npv.documents SET original_locator=? WHERE document_id=?", [locator, previous[0]])
+            con.execute("UPDATE npv_documents SET original_locator=? WHERE document_id=?", [locator, previous[0]])
             result["locator_updated"] = True
         _, stored_title, stored_published, _, stored_supersedes = previous
         requested = {"title": (title, stored_title), "published_on": (published_on, stored_published), "supersedes_document_id": (supersedes, stored_supersedes)}
@@ -329,11 +335,11 @@ def register_document(con, source_id, file, title, locator, published=None, supe
         if ignored:
             result["ignored_fields"] = ignored
         return result
-    if supersedes and not con.execute("SELECT 1 FROM npv.documents WHERE document_id=? AND source_id=?", [supersedes, source_id]).fetchone():
+    if supersedes and not con.execute("SELECT 1 FROM npv_documents WHERE document_id=? AND source_id=?", [supersedes, source_id]).fetchone():
         raise DataError("La versión anterior debe existir y pertenecer a la misma fuente.")
     document_id = str(uuid.uuid4())
-    con.execute("INSERT INTO npv.documents(document_id,source_id,title,published_on,original_locator,content_hash,byte_count,supersedes_document_id) VALUES (?,?,?,?,?,?,?,?)", [document_id, source_id, title, published_on, locator, content_hash, byte_count, supersedes])
-    verified = con.execute("SELECT document_id FROM npv.documents WHERE document_id=?", [document_id]).fetchone()
+    con.execute("INSERT INTO npv_documents(document_id,source_id,title,published_on,original_locator,content_hash,byte_count,supersedes_document_id) VALUES (?,?,?,?,?,?,?,?)", [document_id, source_id, title, published_on, locator, content_hash, byte_count, supersedes])
+    verified = con.execute("SELECT document_id FROM npv_documents WHERE document_id=?", [document_id]).fetchone()
     return {"document_id": verified[0], "created": True, "original_uploaded": False}
 
 
@@ -345,7 +351,7 @@ def query_rows(con, sql, parameters=()):
 
 def build_parser():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--database", required=True, help="Archivo DuckDB o md:base_existente; nunca incluir tokens")
+    parser.add_argument("--database", required=True, help="Ruta a un archivo SQLite local; nunca incluir tokens")
     subs = parser.add_subparsers(dest="command", required=True)
     subs.add_parser("init")
     source = subs.add_parser("register-source")
@@ -396,7 +402,7 @@ def execute(args):
             rows, digest, url, fetched_at = download_banxico(args.series, args.start, args.end, args.latest)
             return ingest(con, BANXICO_SOURCE, rows, fetched_at, digest, url)
         if args.command == "import-csv":
-            source = con.execute("SELECT source_id,name,url,category FROM npv.sources WHERE source_id=?", [args.source_id]).fetchone()
+            source = con.execute("SELECT source_id,name,url,category FROM npv_sources WHERE source_id=?", [args.source_id]).fetchone()
             if not source or source[0] == "banxico":
                 raise DataError("Registrar una fuente de carga manual distinta de banxico.")
             rows, digest = read_csv(args.file)
@@ -404,13 +410,13 @@ def execute(args):
         if args.command == "register-document":
             return register_document(con, args.source_id, args.file, args.title, args.original_locator, args.published_on, args.supersedes)
         if args.command == "list-documents":
-            return query_rows(con, "SELECT d.*,s.name AS source_name,s.url AS source_url FROM npv.documents d JOIN npv.sources s USING(source_id) ORDER BY registered_at DESC LIMIT 100")
+            return query_rows(con, "SELECT d.*,s.name AS source_name,s.url AS source_url FROM npv_documents d JOIN npv_sources s USING(source_id) ORDER BY registered_at DESC LIMIT 100")
         if args.command == "list-indicators":
-            return query_rows(con, "SELECT i.*,s.name AS source_name,s.url AS source_url FROM npv.indicators i JOIN npv.sources s USING(source_id) ORDER BY indicator_id")
+            return query_rows(con, "SELECT i.*,s.name AS source_name,s.url AS source_url FROM npv_indicators i JOIN npv_sources s USING(source_id) ORDER BY indicator_id")
         if not 1 <= args.limit <= 10000:
             raise DataError("Usar --limit entre 1 y 10000.")
-        table = "npv.observations" if args.history else "npv.current_observations"
-        return query_rows(con, f"SELECT o.*,i.name,i.unit,i.frequency,s.name AS source_name,s.url AS source_url,r.request_url,r.retrieved_at,r.loaded_at FROM {table} o JOIN npv.indicators i USING(indicator_id) JOIN npv.sources s USING(source_id) JOIN npv.ingestion_runs r USING(run_id) WHERE indicator_id=? AND geography=? ORDER BY period DESC,revision DESC LIMIT ?", [args.indicator, args.geography, args.limit])
+        table = "npv_observations" if args.history else "npv_current_observations"
+        return query_rows(con, f"SELECT o.*,i.name,i.unit,i.frequency,s.name AS source_name,s.url AS source_url,r.request_url,r.retrieved_at,r.loaded_at FROM {table} o JOIN npv_indicators i USING(indicator_id) JOIN npv_sources s USING(source_id) JOIN npv_ingestion_runs r USING(run_id) WHERE indicator_id=? AND geography=? ORDER BY period DESC,revision DESC LIMIT ?", [args.indicator, args.geography, args.limit])
     finally:
         con.close()
 
@@ -423,7 +429,7 @@ def main():
     except DataError as exc:
         print("ERROR: " + str(exc), file=sys.stderr)
     except ImportError:
-        print("ERROR: Instalar scripts/requirements.txt en el entorno.", file=sys.stderr)
+        print("ERROR: Se requiere Python con sqlite3 disponible.", file=sys.stderr)
     except Exception:
         # No imprimir mensajes del driver: pueden contener credenciales o contenido privado.
         print("ERROR: No se pudo completar la operación; revisar archivo, conexión, permisos y esquema. No se confirma guardado.", file=sys.stderr)
