@@ -11,9 +11,17 @@ Responder en español como asesor analítico: conclusión primero, cifras y peri
 
 1. Identificar la pregunta, desarrollo o geografía, periodo y significado del indicador. Consultar el [catálogo de fuentes](references/fuentes.md) cuando haga falta decidir dónde buscar.
 2. Revisar los datos y documentos accesibles. Para preguntas actuales, comprobar la vigencia según la fuente y la [política de persistencia](references/persistencia.md); investigar en web o API los vacíos públicos pertinentes. Respetar una instrucción de usar solo información cargada.
-3. Usar SQL para números y series; leer los documentos originales para contexto, metodología y afirmaciones. Un registro de documento no demuestra que se haya leído su contenido. Usar Data de OpenAI para validación, cálculos y reportes si sus capacidades están disponibles; no exigirlo ni afirmar que está instalado.
+3. Usar SQL para números y series; leer los documentos originales para contexto, metodología y afirmaciones. Un registro de documento no demuestra que se haya leído su contenido. Consultar la colaboración con Data indicada abajo cuando el trabajo requiera análisis.
 4. Distinguir hechos, cálculos, proyecciones publicadas e inferencias. No inventar absorción, ventas ni seguridad de una zona a partir de anuncios o noticias. Distinguir precio anunciado de precio de cierre y desaparición de anuncio de venta. Comparar solo geografías, unidades, productos y periodos compatibles.
 5. Entregar respuesta, evidencia (fuente y fecha del dato), inferencia relevante y vacío que pueda cambiar la conclusión. No tratar correlación como causalidad ni generar pronósticos sin respaldo; mostrar supuestos en escenarios solicitados. Entregar al skill de marketing evidencia utilizable sin aprobar decisiones comerciales por los directores.
+
+## Colaborar con Data de OpenAI
+
+Si sus capacidades están disponibles, aprovechar Data para revisar calidad, realizar cálculos y comparaciones, diagnosticar cambios de indicadores, validar conclusiones y elaborar gráficos o reportes. Aportar la pregunta, los datos o sus ubicaciones accesibles, fuentes, periodos, geografías, unidades y definiciones relevantes; conservar las restricciones de acceso y de usar solo información cargada.
+
+NPV aporta contexto y procedencia; Data aplica el análisis; el skill de marketing convierte la evidencia en recomendaciones comerciales. Revisar que cada conclusión esté respaldada y distinguir observaciones, cálculos, supuestos e inferencias, señalando vacíos que puedan cambiarla. No presentar el uso de Data como certificación de las fuentes ni afirmar una validación que no se realizó.
+
+No exigir Data ni afirmar que está instalado. Sin sus capacidades, continuar con las herramientas disponibles y explicar solo los límites que afecten el resultado. Data no configura conexiones ni garantiza almacenamiento entre conversaciones; mantener el destino autorizado y comprobar cualquier guardado.
 
 ## Incorporar información
 

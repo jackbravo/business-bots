@@ -6,7 +6,7 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 | Plugin | Versión | Contenido |
 | --- | --- | --- |
-| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.4.0 | Marketing por etapas y prototipo de datos trazables. |
+| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.5.0 | Marketing por etapas y prototipo de datos trazables. |
 
 ## Instalar y actualizar
 
@@ -47,6 +47,8 @@ El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), ob
 Consultar [ejecución y credenciales](plugins/npv-marketing/skills/npv-data/references/ejecucion.md) antes de usarlo. Los tokens se configuran en el entorno; nunca en el chat, el repositorio ni la base. El registro documental no sube ni indexa originales: conservarlos en el repositorio autorizado y leerlos con las herramientas de archivos.
 
 Un enlace de lectura no permite editar el original: sin escritura se entrega una copia o una tabla para incorporar. SQLite no sincroniza archivos ni garantiza persistencia entre conversaciones; conservar el archivo o una exportación en un destino durable autorizado. Los adaptadores INEGI/CANADEVI quedan pendientes. Data de OpenAI puede complementar el skill cuando esté disponible; no es una dependencia instalada automáticamente.
+
+NPV aporta contexto y fuentes; Data de OpenAI, cuando está disponible, aporta análisis, validación y presentación; NPV Marketing convierte los hallazgos en recomendaciones comerciales. La colaboración ocurre mediante las capacidades disponibles en la conversación y no requiere una conexión entre plugins. Sin Data, el trabajo continúa con las herramientas disponibles.
 
 Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la competencia?”, “Incorpora este reporte y conserva su fuente y fecha” o “Consulta el último FIX publicado y compáralo con el mes anterior”. Con información parcial, el skill pregunta solo por vacíos relevantes y distingue información cargada de nuevas consultas externas.
 
