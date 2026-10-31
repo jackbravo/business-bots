@@ -31,7 +31,7 @@ Completar con lo conocido y marcar pendientes; no inventar responsables, fechas 
 1. ¿Habla al perfil definido y resuelve la objeción asignada?
 2. ¿Corresponde al momento del embudo y se diferencia con atributos sustentados?
 3. ¿El llamado a la acción es claro y lleva al activo correcto?
-4. ¿Idioma, tono, marca y promesas cumplen la estrategia y la Capa NPV, considerando excepciones registradas en la Ficha?
+4. ¿Idioma, tono, marca y promesas cumplen la estrategia y la Capa NPV, considerando particularidades operativas registradas en la Ficha, sin anular los no negociables ni la confidencialidad?
 5. ¿Permite medir la respuesta mediante enlace etiquetado, formulario o contacto identificable según el canal?
 
 Indicar qué elemento cambiar y por qué. Revisar medición y lanzamiento con evidencia aportada por el equipo; no afirmar configuración o ejecución por redactar una lista.

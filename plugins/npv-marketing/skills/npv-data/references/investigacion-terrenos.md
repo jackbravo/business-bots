@@ -2,6 +2,12 @@
 
 Preparar evidencia para decidir qué oportunidades explorar y qué condicionantes resolver antes de definir un desarrollo. Investigar lo público pertinente con las herramientas disponibles; no sustituir la investigación por una lista de enlaces ni pedir al cliente datos públicos que puedan consultarse. No emitir una autorización, dictamen de factibilidad ni recomendación definitiva de compra a partir de esta revisión.
 
+## Criterios NPV y contexto
+
+Consultar la base de la Capa NPV y el módulo del Analista disponibles, conforme al skill principal, antes de evaluar el terreno. Vincular los hallazgos con los criterios de selección, segmento y riesgo realmente aportados; distinguirlos de la evidencia pública y de los supuestos del análisis. No convertir preferencias cualitativas en umbrales, ponderaciones ni reglas numéricas inventadas. Si falta un criterio decisivo, pedirlo y continuar la investigación independiente; sin Capa, entregar una evaluación preliminar de oportunidades y condicionantes sin afirmar que cumple los criterios internos de NPV.
+
+Respetar los no negociables y la confidencialidad también en expedientes, mapas, reportes de Data y versiones para terceros. Utilizar el contexto interno para razonar sin reproducir comisiones, estructura societaria, inversionistas ni decisiones internas en entregas externas. Una particularidad del terreno no anula esos límites.
+
 ## Ubicación y alcance
 
 Consultar materiales disponibles y pedir solo ubicación precisa (enlace, coordenadas o polígono) y propósito si faltan. No asumir Jalisco: usar sus fuentes cuando corresponda y buscar equivalentes oficiales para otro estado o municipio. Producto, superficie y presupuesto ayudan si ya existen, pero no son requisitos para comenzar.
@@ -47,7 +53,7 @@ Entregar un expediente preliminar proporcional a la pregunta, en el formato soli
 2. Tabla de comparables y perfil de demanda potencial, con datos duros y límites de comparabilidad.
 3. Matriz de agua, uso de suelo y geografía/riesgos: hallazgo, fuente/fecha, localizador preciso, relación con el terreno y verificación pendiente.
 4. Mapa con predio o punto y capas pertinentes si pueden representarse fielmente. Si no es posible, entregar enlaces y referencias cartográficas y explicar el límite sin fingir un mapa o análisis espacial.
-5. Evaluación que vincule cada oportunidad u obstáculo a evidencia; separar hechos, cálculos e hipótesis y no concluir viabilidad comercial por demografía solamente.
+5. Evaluación que vincule cada oportunidad u obstáculo a evidencia y a los criterios del Analista disponibles, indicando cuáles pueden evaluarse y cuáles quedan pendientes; separar hechos, cálculos e hipótesis y no concluir viabilidad comercial por demografía solamente.
 6. Siguientes verificaciones priorizadas por su efecto en la decisión: dato o documento faltante, autoridad/profesional que puede resolverlo y decisión dependiente. Incluir factibilidad del operador, dictamen municipal o estudio técnico cuando el hallazgo lo requiera, sin contactar terceros por cuenta propia.
 
 Registrar URL o archivo, productor, publicación/versión si se conoce, periodo del dato, fecha de consulta y página/tabla/capa pertinente. Exponer fuentes fallidas y cobertura incompleta junto a la conclusión que limiten. Aplicar las reglas del skill principal para guardar solo cuando esté autorizado y comprobar el destino; no archivar datos del terreno en el repositorio del plugin.

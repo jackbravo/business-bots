@@ -12,3 +12,9 @@ __pycache__/
 *.sqlite-shm
 *.sqlite-journal
 *.db
+
+.claude-mounts.json
+.claude/settings.local.json
+.devcontainer-logs
+.devcontainer-exclude
+.devcontainer.json
