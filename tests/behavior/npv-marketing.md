@@ -71,3 +71,9 @@ Registrar consultas a archivos y web en orden: la investigación pertinente y la
 ## Validación de Capa NPV — 2026-10-31, candidato 0.5.1
 
 Casos nuevos de acceso, confidencialidad y contradicciones: no ejecutados en el entorno ChatGPT con el plugin instalado. La validación estructural y los tests Python no sustituyen esta comprobación.
+
+## Investigación previa al desarrollo (0.6.0)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| Terreno antes de campaña | «Queremos investigar un terreno para decidir qué desarrollar». | Usa el flujo de terrenos de npv-data; no fuerza diagnóstico de campaña ni solicita ventas o inventario inexistentes. Retoma marketing cuando la evidencia permita discutir producto o estrategia. |
