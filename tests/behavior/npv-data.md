@@ -96,3 +96,33 @@ Tras incorporar main/PR 17, pasan validación estructural, compilación, 21 prue
 Se revisaron dos respuestas de una sesión de prueba con terreno ficticio y ubicación real en Jalisco. La primera mantuvo límites prediales y criterios ficticios, pero la cobertura comercial quedó poco explicada y el cierre pospuso demasiado la validación comercial. La segunda amplió inmuebles y desarrollos, explicitó selección y exclusiones, marcó duplicados/inconsistencias y propuso investigación de compradores en paralelo; declaró lectura de guías de Data y cálculos con herramientas generales, no herramientas analíticas específicas.
 
 La revisión del texto motiva los cinco casos anteriores. No acredita instalación del plugin, trazas de herramientas ni verificación exhaustiva de fuentes. La segunda respuesta aún omitió el enlace de una sentencia citada antes y planteó precios de prueba demasiado dependientes de costos. Se ajusta la guía sin imponer el tamaño ni el plazo del estudio exploratorio del ejemplo. Tras el ajuste se ejecutó una prueba combinada en hilo independiente con anuncios sin identificadores ni fecha, un desarrollo del corredor sin precio, una referencia secundaria a sentencia sin original y ausencia de polígono/factibilidad. Pasa: explicita cobertura, no asume tres inmuebles distintos, deja la restricción sin verificar, propone mercado y predio en paralelo sin fijar muestras/plazos y reconoce no haber usado herramientas de Data. Se leyeron el skill y la guía; sin web, contactos ni cambios de archivos. Queda pendiente repetir con fuentes y herramientas reales y el plugin instalado. Validación estructural, compilación, 21 pruebas técnicas y diff sin errores pasan.
+
+## Seis etapas del Analista (0.7.0)
+
+| Caso | Entrada | Se espera |
+| --- | --- | --- |
+| Encuadre general | «Queremos evaluar un terreno», sin decisión definida; ya se aporta ubicación. | Lee primero, pregunta solo decisión/horizonte y vacíos determinantes sin volver a pedir ubicación; propone foco antes de ampliar todos los frentes. |
+| Comparación acotada | Dos fichas comparables completas; «Solo compara precio, superficie y pago». | Entra en mercado, compara lo aportado y sus límites sin abrir macro, demografía ni permisos ni exigir etapas anteriores. |
+| Contexto específico | «¿Qué cambia para compradores con ingresos en dólares con este movimiento del FIX?», con valores y fechas. | Entra en contexto, calcula/explica supuesto de conversión; no confunde FIX con cotización bancaria ni deriva demanda efectiva o abre todo el análisis. |
+| Etapas mezcladas | «Compara competidores y capacidad de compra; no hagas panorama macro». | Cubre mercado y demanda, respeta exclusión y resuelve solo dependencias decisivas; no fuerza el ciclo ni pide aprobación por cada cálculo. |
+| Investigación integral | Solicitud explícita de oferta, demanda, agua, uso y riesgos, con ubicación e hipótesis conocidas. | Atiende el alcance completo sin recortarlo ni exigir otra ronda de encuadre; declara pendientes prediales y evidencia. |
+| Consulta simple | «Calcula 2 ventas / 20 visitas» o «Carga este CSV en el destino autorizado». | Resuelve la operación y límites pertinentes sin recorrer seis etapas ni iniciar escenarios. |
+| Escenarios sin elección | Evidencia de mercado/demanda/contexto disponible; «Propón opciones». | Presenta alternativas comparables y supuestos, no repite todo ni crea mensajes/pauta, no registra elección automática. |
+| Traspaso elegido | Dirección elige explícitamente una alternativa comercial. | Entrega estrategia, fuentes, supuestos, riesgos y pendientes a Marketing; no confunde numeración de sus cuatro etapas con las seis del Analista. |
+| Monitoreo sin automatización | «Revisa ahora si cambió el crédito; después podríamos verlo mensualmente», sin solicitud de programar ni umbrales. | Actualiza lo pertinente, deja umbrales/cadencia pendientes y no afirma alertas programadas; no rehace otros frentes por rutina. |
+| Señal acordada | Estrategia elegida con umbral explícito y dato nuevo compatible que lo cruza. | Reabre escenarios solo en lo afectado y propone revisión sin cambiar aprobación ni reiniciar todo el ciclo. |
+| Sustento limitado | Informe oficial antiguo de otra geografía o archivo interno incompleto. | No asigna Alto por origen; explica límites de vigencia/cobertura/comparabilidad. |
+
+Base de diseño: presentación de validación del Analista de Mercado, diapositivas 6–13, revisada el 2026-11-06; preguntas y entregables adaptados al alcance flexible solicitado. No se incorporan documentos internos ni datos reales al repositorio. Estos casos son expectativas; registrar por separado las pruebas efectivamente ejecutadas.
+
+### Prueba acotada de etapas — 2026-11-06
+
+Hilo independiente con skill candidato y referencias pertinentes, sin web, archivos reales, contactos ni instalación:
+
+- Comparación de dos fichas ficticias: mantiene mercado y compara precio/pago sin abrir otros frentes.
+- Mercado + demanda con exclusión de macro: calcula brechas de presupuesto/enganche y no asume crédito.
+- Inicio general con ubicación conocida: encuadra decisión y propone foco sin exigir producto ni abrir todo.
+- Señal hipotecaria que cruza umbral acordado: reabre escenarios pertinentes, conserva aprobación previa y no programa alertas.
+- Opciones con segmentos, costos provisionales y parámetros prediales pendientes: presenta dos alternativas condicionales, distingue brecha de presupuesto de pago diferido y no elige por la dirección ni prepara campaña.
+
+Resultado: pasa para estos casos acotados. No se ejecutaron en esta prueba los restantes casos nuevos, acceso a fuentes reales, automatizaciones ni traspaso entre plugins instalados. Validación estructural/enlaces relativos, compilación, 21 pruebas técnicas y diff sin errores pasan.

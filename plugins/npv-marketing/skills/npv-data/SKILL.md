@@ -1,6 +1,6 @@
 ---
 name: npv-data
-description: Obtener, incorporar, consultar y comparar información macroeconómica, inmobiliaria y propia de NPV con fuentes, fechas e historial. Usar para investigar un terreno o zona antes de definir un desarrollo, actualizar indicadores, registrar reportes, recuperar datos entre conversaciones o preparar evidencia para marketing. No reemplazar la estrategia comercial ni asumir datos de un desarrollo.
+description: Obtener, incorporar, consultar y comparar información macroeconómica, inmobiliaria y propia de NPV con fuentes, fechas e historial. Usar para investigar un terreno o zona antes de definir un desarrollo, actualizar indicadores, registrar reportes, recuperar datos entre conversaciones o preparar evidencia para marketing. Proponer alternativas comerciales sustentadas para decisión de la dirección; no ejecutar marketing ni asumir datos de un desarrollo.
 ---
 
 # Datos NPV
@@ -13,23 +13,42 @@ Consultar la base de la Capa NPV y el módulo pertinente cuando se proporcionen 
 
 Respetar los no negociables de la Capa y su tono sobrio y cálido. Usar comisiones, estructura societaria, inversionistas y decisiones internas como contexto confidencial; no reproducirlos en informes, piezas ni comunicaciones para terceros. Una particularidad del desarrollo no anula estos límites: señalar el conflicto y proponer una alternativa compatible. Mantener estas restricciones al colaborar con Data.
 
+## Elegir etapa y alcance
+
+Usar seis etapas del Analista como guía flexible, distintas de las cuatro etapas de Marketing. Leer el contexto y la evidencia disponibles antes de preguntar. Ante una investigación general nueva, empezar con encuadre breve; ante una pregunta concreta, entrar en la etapa pertinente sin exigir completar las anteriores. Una consulta puntual de indicador, cálculo o carga no requiere recorrer el ciclo.
+
+| Etapa | Pregunta rectora | Referencia |
+| --- | --- | --- |
+| 1. Encuadre | ¿Qué hay que decidir y con qué información contamos? | [Encuadre](references/1-encuadre.md) |
+| 2. Contexto económico | ¿Qué condiciones del entorno favorecen o frenan el proyecto? | [Contexto](references/2-contexto.md) |
+| 3. Mercado y competencia | ¿Qué hay en la zona y qué sabemos de cómo se vende? | [Mercado](references/3-mercado.md) |
+| 4. Demanda | ¿Quién podría comprar y cuánto puede pagar? | [Demanda](references/4-demanda.md) |
+| 5. Escenarios y estrategias | ¿Qué caminos comerciales son viables y bajo qué supuestos? | [Escenarios](references/5-escenarios.md) |
+| 6. Monitoreo | ¿Siguen vigentes los supuestos de la estrategia elegida? | [Monitoreo](references/6-monitoreo.md) |
+
+Leer solo las referencias pertinentes. Si el usuario mezcla etapas o pide una investigación integral, cubrir ese alcance sin forzar una secuencia rígida ni recortar su solicitud. Explicar brevemente el foco cuando ayude y ampliar a otro frente solo por petición, contradicción o incertidumbre que pueda cambiar la decisión. Trabajar en paralelo los frentes independientes incluidos en el alcance; no abrirlos todos por rutina. Reutilizar evidencia vigente y preguntar solo por vacíos determinantes, hasta cinco preguntas por turno, sin mínimo obligatorio ni entrevistas ocultas en bloques.
+
+Cerrar cada subetapa con hallazgos, implicación para el desarrollo, fuentes/fechas y pendientes decisivos. Pedir visto bueno antes de pasar a otra subetapa no solicitada; una petición explícita de continuar o combinar etapas basta, sin aprobaciones por cada búsqueda o cálculo. Registrar decisión, supuestos, evidencia y pendientes en el contexto disponible; guardar o actualizar archivos solo con destino autorizado, sin prometer memoria entre sesiones.
+
+Explicar el sustento por calidad, vigencia, cobertura y comparabilidad: Alto si la evidencia pertinente es suficiente y consistente; Medio si tiene límites relevantes; Bajo si predomina inferencia o hipótesis. Ser oficial o interno no basta para Alto. No inventar porcentajes de confianza ni ocultar los límites tras una etiqueta.
+
 ## Resolver una consulta
 
 1. Identificar la pregunta, desarrollo o geografía, periodo y significado del indicador. Consultar el [catálogo de fuentes](references/fuentes.md) cuando haga falta decidir dónde buscar.
 2. Revisar los datos y documentos accesibles. Para preguntas actuales, comprobar la vigencia según la fuente y la [política de persistencia](references/persistencia.md); investigar en web o API los vacíos públicos pertinentes. Respetar una instrucción de usar solo información cargada.
 3. Usar SQL para números y series; leer los documentos originales para contexto, metodología y afirmaciones. Un registro de documento no demuestra que se haya leído su contenido. Consultar la colaboración con Data indicada abajo cuando el trabajo requiera análisis.
 4. Distinguir hechos, cálculos, proyecciones publicadas e inferencias. No inventar absorción, ventas ni seguridad de una zona a partir de anuncios o noticias. Distinguir precio anunciado de precio de cierre y desaparición de anuncio de venta. Comparar solo geografías, unidades, productos y periodos compatibles.
-5. Entregar respuesta, evidencia (fuente y fecha del dato), inferencia relevante y vacío que pueda cambiar la conclusión. No tratar correlación como causalidad ni generar pronósticos sin respaldo; mostrar supuestos en escenarios solicitados. Entregar al skill de marketing evidencia utilizable sin aprobar decisiones comerciales por los directores.
+5. Entregar respuesta, evidencia (fuente y fecha del dato), inferencia relevante y vacío que pueda cambiar la conclusión. No tratar correlación como causalidad ni generar pronósticos sin respaldo; mostrar supuestos en escenarios solicitados. En escenarios, proponer alternativas comerciales sustentadas sin darlas por aprobadas; entregar la elegida por la dirección al skill de marketing con evidencia y pendientes.
 
 ## Investigar un terreno o zona
 
-Para evaluar un terreno antes de definir el desarrollo, seguir la [investigación preliminar de terrenos](references/investigacion-terrenos.md): oferta publicada, demanda potencial, agua, uso de suelo y geografía/riesgos. Empezar con la ubicación disponible, pedir precisión solo para conclusiones que la necesiten y entregar datos duros con fuentes y una evaluación razonada. No exigir una campaña, Ficha ni producto ya definido.
+Para investigar un terreno, usar la [guía complementaria de terrenos](references/investigacion-terrenos.md) solo en los frentes pertinentes a la etapa o solicitados: oferta, demanda potencial, agua, uso de suelo y geografía/riesgos. Empezar con la ubicación disponible, pedir precisión solo para conclusiones que la necesiten y entregar datos duros con fuentes y una evaluación razonada. No exigir una campaña, Ficha ni producto ya definido.
 
 ## Colaborar con Data de OpenAI
 
 Si sus capacidades están disponibles, aprovechar Data para revisar calidad, realizar cálculos y comparaciones, diagnosticar cambios de indicadores, validar conclusiones y elaborar gráficos o reportes. Aportar la pregunta, los datos o sus ubicaciones accesibles, fuentes, periodos, geografías, unidades y definiciones relevantes; conservar las restricciones de acceso y de usar solo información cargada.
 
-NPV aporta contexto y procedencia; Data aplica el análisis; el skill de marketing convierte la evidencia en recomendaciones comerciales. Revisar que cada conclusión esté respaldada y distinguir observaciones, cálculos, supuestos e inferencias, señalando vacíos que puedan cambiarla. No presentar el uso de Data como certificación de las fuentes ni afirmar una validación que no se realizó.
+NPV aporta contexto y procedencia; Data apoya el análisis; el Analista compara opciones comerciales y el skill de marketing desarrolla la estrategia elegida por la dirección. Revisar que cada conclusión esté respaldada y distinguir observaciones, cálculos, supuestos e inferencias, señalando vacíos que puedan cambiarla. No presentar el uso de Data como certificación de las fuentes ni afirmar una validación que no se realizó.
 
 No exigir Data ni afirmar que está instalado. Sin sus capacidades, continuar con las herramientas disponibles y explicar solo los límites que afecten el resultado. Data no configura conexiones ni garantiza almacenamiento entre conversaciones; mantener el destino autorizado y comprobar cualquier guardado.
 
