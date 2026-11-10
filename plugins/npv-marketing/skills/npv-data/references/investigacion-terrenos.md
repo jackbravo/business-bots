@@ -2,6 +2,8 @@
 
 Preparar evidencia para decidir qué oportunidades explorar y qué condicionantes resolver antes de definir un desarrollo. Investigar lo público pertinente con las herramientas disponibles; no sustituir la investigación por una lista de enlaces ni pedir al cliente datos públicos que puedan consultarse. No emitir una autorización, dictamen de factibilidad ni recomendación definitiva de compra a partir de esta revisión.
 
+Usar esta guía como complemento del alcance elegido en las seis etapas del Analista. Agua, uso de suelo y geografía/riesgos apoyan contexto local y condicionantes de producto; oferta apoya mercado y demografía apoya demanda. Consultar solo los frentes que afecten la pregunta o que el usuario haya pedido. Una solicitud integral sí cubre todos los frentes; una pregunta de competidores no exige revisar toda la factibilidad.
+
 ## Criterios NPV y contexto
 
 Consultar la base de la Capa NPV y el módulo del Analista disponibles, conforme al skill principal, antes de evaluar el terreno. Vincular los hallazgos con los criterios de selección, segmento y riesgo realmente aportados; distinguirlos de la evidencia pública y de los supuestos del análisis. No convertir preferencias cualitativas en umbrales, ponderaciones ni reglas numéricas inventadas. Si falta un criterio decisivo, pedirlo y continuar la investigación independiente; sin Capa, entregar una evaluación preliminar de oportunidades y condicionantes sin afirmar que cumple los criterios internos de NPV.
@@ -43,7 +45,7 @@ Distinguir proyectos en consulta pública de instrumentos vigentes. Si visor, do
 
 ## Cruces y evaluación
 
-Avanzar en paralelo la investigación de mercado y las verificaciones prediales independientes. La falta de polígono, factibilidad o dictamen limita las conclusiones que dependen de ellos, pero no obliga a posponer competencia ni validación de compradores. Proponer entrevistas o pruebas de conceptos como diseño exploratorio ajustable a recursos y acceso, sin imponer plazos o muestras fijos ni ejecutarlas o contactar personas sin autorización. Contrastar precios de prueba con presupuesto de compradores, alternativas disponibles y escenarios de costos/servicios; no derivarlos solo del costo ni dar por autorizado el producto.
+Dentro del alcance solicitado, avanzar en paralelo la investigación de mercado y las verificaciones prediales independientes. La falta de polígono, factibilidad o dictamen limita las conclusiones que dependen de ellos, pero no obliga a posponer competencia ni validación de compradores. Proponer entrevistas o pruebas de conceptos como diseño exploratorio ajustable a recursos y acceso, sin imponer plazos o muestras fijos ni ejecutarlas o contactar personas sin autorización. Contrastar precios de prueba con presupuesto de compradores, alternativas disponibles y escenarios de costos/servicios; no derivarlos solo del costo ni dar por autorizado el producto.
 
 Usar Data, cuando esté disponible, para calidad, cálculos, comparaciones y presentación conforme al skill principal. No exigir una herramienta específica ni un dashboard por rutina; si se pregunta qué se utilizó, distinguir guías metodológicas leídas de herramientas realmente ejecutadas y no llamar validación independiente al uso de instrucciones. Para cruces cartográficos precisos, comprobar geometrías, sistema de coordenadas y herramientas geoespaciales disponibles; usar distancias en unidades adecuadas, no grados como metros. No afirmar intersecciones, distancias exactas ni porcentajes afectados a partir de una imagen o un marcador. Si solo se logra revisión visual, describirla como indicio y precisar qué archivo o comprobación falta.
 
@@ -51,7 +53,7 @@ En cada frente distinguir: hallazgo respaldado, indicio por confirmar, informaci
 
 ## Entregable
 
-Entregar un expediente preliminar proporcional a la pregunta, en el formato solicitado; sin formato explícito, empezar con un resumen claro y tablas de evidencia. Incluir:
+Entregar los componentes pertinentes a la pregunta y etapa, en el formato solicitado; sin formato explícito, empezar con resumen claro y tablas de evidencia. El expediente completo corresponde a una petición integral; no exigir todas estas secciones por rutina:
 
 1. Ubicación y alcance estudiados, fecha de corte y conclusión preliminar con oportunidades y condicionantes concretas.
 2. Tabla de comparables y perfil de demanda potencial, con datos duros y límites de comparabilidad.
