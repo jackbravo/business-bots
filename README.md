@@ -4,10 +4,10 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 ## Catálogo
 
-| Plugin | Versión | Contenido |
-| --- | --- | --- |
-| [NPV Marketing](plugins/npv-marketing/) | 0.8.0 | Estrategia, planeación, implementación y validación de marketing. |
-| [NPV Datos](plugins/npv-data/) | 0.8.0 | Investigación de terrenos y análisis de datos trazables. |
+| Plugin | Versión | Skill | Contenido |
+| --- | --- | --- | --- |
+| [NPV Marketing](plugins/npv-marketing/) | 0.8.0 | Estrategia de Marketing | Estrategia, planeación, implementación y validación de marketing. |
+| [NPV Datos](plugins/npv-data/) | 0.8.0 | Inteligencia de Mercado | Investigación de terrenos y análisis de datos trazables. |
 
 ## Instalar e invocar en ChatGPT
 

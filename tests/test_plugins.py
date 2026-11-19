@@ -18,7 +18,11 @@ class PackageTests(unittest.TestCase):
         )
         entries = {entry["name"]: entry for entry in marketplace["plugins"]}
 
-        for name, label in (("npv-marketing", "NPV Marketing"), ("npv-data", "NPV Datos")):
+        expected = (
+            ("npv-marketing", "NPV Marketing", "Estrategia de Marketing"),
+            ("npv-data", "NPV Datos", "Inteligencia de Mercado"),
+        )
+        for name, label, skill_label in expected:
             with self.subTest(plugin=name):
                 entry = entries[name]
                 self.assertEqual(entry["source"]["path"], f"./plugins/{name}")
@@ -33,6 +37,8 @@ class PackageTests(unittest.TestCase):
                     {path.parent.name for path in skills.glob("*/SKILL.md")}, {name}
                 )
                 self.assertTrue((skills / name / "references/capa-npv.md").is_file())
+                metadata = (skills / name / "agents/openai.yaml").read_text(encoding="utf-8")
+                self.assertIn(f'  display_name: "{skill_label}"', metadata.splitlines())
 
 
 @unittest.skipIf(os.name == "nt", "El instalador usa Bash; CI lo prueba en Linux")
