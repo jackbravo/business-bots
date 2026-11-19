@@ -10,6 +10,8 @@ import re
 import sys
 from typing import Any
 
+from sync_shared import validate_shared
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
@@ -61,7 +63,7 @@ def link_target(raw: str) -> str:
     return (titled.group(1) if titled else value).strip()
 
 
-def validate_links(path: pathlib.Path) -> list[str]:
+def validate_links(path: pathlib.Path, package: pathlib.Path = ROOT) -> list[str]:
     errors: list[str] = []
     text = path.read_text(encoding="utf-8")
     for raw_target in MARKDOWN_LINK.findall(text):
@@ -69,7 +71,10 @@ def validate_links(path: pathlib.Path) -> list[str]:
         clean = target.split("#", 1)[0].strip()
         if not clean or "://" in clean or clean.startswith(("mailto:", "#")):
             continue
-        if not (path.parent / clean).resolve().exists():
+        resolved = (path.parent / clean).resolve()
+        if not resolved.is_relative_to(package):
+            errors.append(f"{path.relative_to(ROOT)}: enlace fuera del paquete: {target}")
+        elif not resolved.exists():
             errors.append(f"{path.relative_to(ROOT)}: enlace inexistente: {target}")
     return errors
 
@@ -109,6 +114,10 @@ def validate_plugin(entry: dict[str, Any], allow_cachebuster: bool) -> list[str]
         errors.append(f"{plugin_name}: falta version")
     elif "+codex." in version and not allow_cachebuster:
         errors.append(f"{plugin_name}: versión contiene un cachebuster local")
+    interface = manifest.get("interface")
+    display_name = interface.get("displayName") if isinstance(interface, dict) else None
+    if not isinstance(display_name, str) or not display_name.strip():
+        errors.append(f"{plugin_name}: falta interface.displayName")
     if not manifest.get("description"):
         errors.append(f"{plugin_name}: falta description")
     if "hooks" in manifest:
@@ -140,8 +149,8 @@ def validate_plugin(entry: dict[str, Any], allow_cachebuster: bool) -> list[str]
             errors.append(f"{skill_file.relative_to(ROOT)}: falta description")
         if "[TODO:" in skill_file.read_text(encoding="utf-8"):
             errors.append(f"{skill_file.relative_to(ROOT)}: contiene un TODO pendiente")
-        for markdown_file in sorted(skill_file.parent.rglob("*.md")):
-            errors.extend(validate_links(markdown_file))
+    for markdown_file in sorted(plugin_path.rglob("*.md")):
+        errors.extend(validate_links(markdown_file, plugin_path))
 
     return errors
 
@@ -155,7 +164,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    errors: list[str] = []
+    errors = validate_shared()
+    for path in (ROOT / "README.md", ROOT / "CONTRIBUTING.md"):
+        errors.extend(validate_links(path))
     marketplace = load_json(MARKETPLACE)
     marketplace_name = marketplace.get("name")
     if not isinstance(marketplace_name, str) or not NAME.fullmatch(marketplace_name):

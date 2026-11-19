@@ -19,6 +19,8 @@ jobs:
       - name: Validate marketplace and plugins
         run: python3 scripts/validate.py
       - name: Compile repository scripts
-        run: python3 -m py_compile scripts/*.py plugins/npv-marketing/skills/npv-data/scripts/*.py
-      - name: Test data prototype with synthetic inputs
+        run: python3 -m py_compile scripts/*.py plugins/*/skills/*/scripts/*.py
+      - name: Check installer syntax
+        run: bash -n scripts/install.sh
+      - name: Test plugin installation and data tools
         run: python3 -m unittest discover -s tests -p 'test_*.py' -v

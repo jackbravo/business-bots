@@ -6,15 +6,15 @@ Este repositorio es la fuente canónica de los plugins. Los datos de proyectos, 
 
 1. Clona el repositorio y entra en él.
 2. Ejecuta `python3 scripts/validate.py`.
-3. Instala el marketplace y el plugin:
+3. Instala el marketplace y los plugins que quieras probar:
 
    ```bash
-   bash scripts/install.sh npv-marketing
+   bash scripts/install.sh npv-marketing npv-data
    ```
 
-4. Abre un hilo nuevo de Codex para probarlo.
+4. Abre una conversación nueva de ChatGPT en modo Trabajo, escribe `@` y selecciona el plugin por su nombre. También puedes comprobar la instalación desde Codex.
 
-La instalación inicial registra este repositorio como el marketplace local `business-bots`. Para reinstalar un plugin ya registrado, usa `--update`:
+La instalación inicial registra este repositorio como el marketplace local `business-bots`. Para instalar o reinstalar un plugin cuando el marketplace ya está registrado, usa `--update`:
 
 ```bash
 bash scripts/install.sh --update npv-marketing
@@ -23,11 +23,12 @@ bash scripts/install.sh --update npv-marketing
 ## Flujo de cambios
 
 1. Actualiza `main` y crea una rama corta: `feature/...`, `fix/...` o `chore/...`.
-2. Modifica únicamente la carpeta del plugin afectado y sus pruebas.
+2. Modifica el plugin afectado y sus pruebas. Si cambias las reglas comunes de la Capa NPV, edita [`shared/npv/capa-npv.md`](shared/npv/capa-npv.md) y ejecuta `python3 scripts/sync_shared.py`. Incluye las dos copias generadas, ya que el instalador copia cada carpeta de plugin por separado.
 3. Ejecuta la validación estructural:
 
    ```bash
    python3 scripts/validate.py
+   python3 -m unittest discover -s tests -p 'test_*.py'
    ```
 
 4. Para una recarga local sin cambiar la versión estable, genera un cachebuster:
@@ -58,7 +59,7 @@ La validación normal y CI rechazan versiones `+codex.*`; únicamente `install.s
 Un cambio está listo cuando:
 
 - `python3 scripts/validate.py` termina correctamente;
-- el plugin puede reinstalarse desde `business-bots`;
+- cada plugin afectado puede instalarse por separado desde `business-bots` y aparece con su nombre en el menú de `@`;
 - el comportamiento se probó en un hilo nuevo;
 - los casos afectados tienen expectativas actualizadas;
 - el PR explica el cambio observable y sus límites;

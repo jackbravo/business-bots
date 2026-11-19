@@ -4,24 +4,34 @@ Repositorio de plugins y skills para asistentes de trabajo.
 
 ## Catálogo
 
-| Plugin | Versión | Contenido |
-| --- | --- | --- |
-| [NPV Marketing y Datos](plugins/npv-marketing/) | 0.7.0 | Marketing por etapas y prototipo de datos trazables. |
+| Plugin | Versión | Skill | Contenido |
+| --- | --- | --- | --- |
+| [NPV Marketing](plugins/npv-marketing/) | 0.8.0 | Estrategia de Marketing | Estrategia, planeación, implementación y validación de marketing. |
+| [NPV Datos](plugins/npv-data/) | 0.8.0 | Inteligencia de Mercado | Investigación de terrenos y análisis de datos trazables. |
 
-## Instalar y actualizar
+## Instalar e invocar en ChatGPT
+
+Después de registrar el repositorio con el comando de abajo, reinicia ChatGPT de escritorio. En modo Trabajo, abre el directorio de plugins, selecciona la fuente local **Business Bots** e instala **NPV Datos** o **NPV Marketing**. En una conversación nueva de modo Trabajo, escribe `@` y selecciona el plugin instalado. Puedes instalar uno solo o usar ambos en la misma conversación.
+
+Para registrar la fuente e instalar el plugin desde la terminal con Codex y Python 3:
 
 ```bash
 git clone https://github.com/jackbravo/business-bots.git
 cd business-bots
-bash scripts/install.sh npv-marketing
+bash scripts/install.sh npv-data
 ```
 
-Para actualizar una instalación existente:
+Sustituye `npv-data` por `npv-marketing` para instalar solo Marketing, o pasa ambos identificadores para instalarlos juntos.
+
+Si ya registraste Business Bots, usa `--update` para instalar o reinstalar cualquiera de los plugins sin volver a registrar la fuente. Para migrar desde **NPV Marketing y Datos**, actualiza primero `npv-marketing` y añade `npv-data` si necesitas las funciones de análisis:
 
 ```bash
 git pull --ff-only
 bash scripts/install.sh --update npv-marketing
+bash scripts/install.sh --update npv-data  # Opcional
 ```
+
+En un espacio administrado, un administrador puede importar el marketplace desde **Admin → Plugins** con la URL del repositorio y el campo de ruta vacío. Configura cada política de instalación en el espacio de trabajo. Sigue la [guía de importación de OpenAI](https://learn.chatgpt.com/docs/enterprise/plugin-management).
 
 Consultar [CONTRIBUTING.md](CONTRIBUTING.md) para validación y pruebas. Publicar el código no instala el plugin en los entornos de los usuarios.
 
@@ -42,15 +52,15 @@ El bot pregunta solo por vacíos relevantes, investiga fuentes públicas pertine
 
 Los archivos pueden estar en el proyecto, adjuntos o repositorios compartidos como Drive o Dropbox. Su acceso depende de las herramientas disponibles; el plugin no instala conectores ni credenciales. Tampoco ejecuta campañas ni administra cuentas.
 
-## Datos NPV (prototipo 0.7.0)
+## NPV Datos
 
-El segundo skill, [npv-data](plugins/npv-marketing/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Prioriza las tablas que el cliente proporcione en Drive, Dropbox o archivos adjuntos, respetando su estructura y los permisos disponibles. Para trabajo interno incluye una CLI SQLite local sin dependencias externas: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
+El skill [npv-data](plugins/npv-data/skills/npv-data/SKILL.md), obtiene y usa evidencia con fuentes, periodos y revisiones. Prioriza las tablas que el cliente proporcione en Drive, Dropbox o archivos adjuntos, respetando su estructura y los permisos disponibles. Para trabajo interno incluye una CLI SQLite local sin dependencias externas: descarga FIX, tasa objetivo y CETES de Banxico, importa CSV normalizados, registra metadatos de reportes y consulta series.
 
-Consultar [ejecución y credenciales](plugins/npv-marketing/skills/npv-data/references/ejecucion.md) antes de usarlo. Los tokens se configuran en el entorno; nunca en el chat, el repositorio ni la base. El registro documental no sube ni indexa originales: conservarlos en el repositorio autorizado y leerlos con las herramientas de archivos.
+Consultar [ejecución y credenciales](plugins/npv-data/skills/npv-data/references/ejecucion.md) antes de usarlo. Los tokens se configuran en el entorno; nunca en el chat, el repositorio ni la base. El registro documental no sube ni indexa originales: conservarlos en el repositorio autorizado y leerlos con las herramientas de archivos.
 
 Un enlace de lectura no permite editar el original: sin escritura se entrega una copia o una tabla para incorporar. SQLite no sincroniza archivos ni garantiza persistencia entre conversaciones; conservar el archivo o una exportación en un destino durable autorizado. Los adaptadores INEGI/CANADEVI quedan pendientes. Data de OpenAI puede complementar el skill cuando esté disponible; no es una dependencia instalada automáticamente.
 
-NPV aporta contexto y fuentes; Data de OpenAI, cuando está disponible, aporta análisis, validación y presentación; el Analista compara alternativas comerciales para decisión de la dirección y NPV Marketing desarrolla la estrategia elegida. La colaboración ocurre mediante las capacidades disponibles en la conversación y no requiere una conexión entre plugins. Sin Data, el trabajo continúa con las herramientas disponibles.
+NPV aporta contexto y fuentes; Data de OpenAI, cuando está disponible, aporta análisis, validación y presentación; el Analista compara alternativas comerciales para decisión de la dirección y NPV Marketing desarrolla la estrategia elegida. Para compartir evidencia entre conversaciones, prepara un resumen con fuentes y pendientes que el usuario pueda llevar a Marketing. Sin Data, el trabajo continúa con las herramientas disponibles.
 
 Ejemplos: “¿Qué fuentes necesitamos para comparar nuestro proyecto con la competencia?”, “Incorpora este reporte y conserva su fuente y fecha” o “Consulta el último FIX publicado y compáralo con el mes anterior”. Con información parcial, el skill pregunta solo por vacíos relevantes y distingue información cargada de nuevas consultas externas.
 
@@ -62,7 +72,7 @@ El Analista presenta alternativas comerciales sustentadas para decisión de la d
 
 ## Investigación preliminar de terrenos
 
-Antes de definir un desarrollo, `npv-data` puede investigar oferta publicada, demanda potencial, agua, uso de suelo y geografía/riesgos siguiendo la [guía de terrenos](plugins/npv-marketing/skills/npv-data/references/investigacion-terrenos.md). Para Jalisco incluye puntos de entrada de IIEG/INEGI, CONAGUA, municipios y CENAPRED. La evaluación utiliza la base de la Capa NPV y los criterios del Analista cuando se aportan, sin inventar umbrales ni divulgar información interna en entregas para terceros. Entrega evidencia fechada, comparables, condicionantes y una evaluación con verificaciones prioritarias; no equivale a un dictamen ni acredita viabilidad por sí sola.
+Antes de definir un desarrollo, `npv-data` puede investigar oferta publicada, demanda potencial, agua, uso de suelo y geografía/riesgos siguiendo la [guía de terrenos](plugins/npv-data/skills/npv-data/references/investigacion-terrenos.md). Para Jalisco incluye puntos de entrada de IIEG/INEGI, CONAGUA, municipios y CENAPRED. La evaluación utiliza la base de la Capa NPV y los criterios del Analista cuando se aportan, sin inventar umbrales ni divulgar información interna en entregas para terceros. Entrega evidencia fechada, comparables, condicionantes y una evaluación con verificaciones prioritarias; no equivale a un dictamen ni acredita viabilidad por sí sola.
 
 Ejemplo: “Investiga este terreno [ubicación o polígono]. Revisa oferta cercana, estadísticas de demanda potencial, agua, uso de suelo y riesgos publicados. Comparte los datos duros, sus fuentes y tu evaluación”. No hace falta contar ya con campaña, producto ni Ficha. Los cruces cartográficos y el acceso a portales dependen de las herramientas y datos disponibles; no se añaden adaptadores ni un motor GIS.
 
@@ -73,7 +83,7 @@ python3 scripts/validate.py
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-Probar los casos de [marketing](tests/behavior/npv-marketing.md) y [datos](tests/behavior/npv-data.md) en hilos nuevos. La validación estructural comprueba configuración y enlaces; no sustituye pruebas del comportamiento.
+Probar la [instalación e invocación](tests/behavior/installation.md) y los casos de [marketing](tests/behavior/npv-marketing.md) y [datos](tests/behavior/npv-data.md) en hilos nuevos. La validación estructural comprueba configuración y enlaces; no sustituye pruebas del comportamiento.
 
 El repositorio conserva instalación y validación. La versión 0.3.0 reemplaza el skill de diagnóstico anterior: actualizar referencias explícitas de `npv-diagnostico-comercial` a `npv-marketing`. Reutilizar los documentos existentes como contexto; no reiniciar el trabajo comercial.
 

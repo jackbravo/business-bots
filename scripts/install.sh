@@ -2,7 +2,7 @@
 set -euo pipefail
 
 usage() {
-  echo "Uso: bash scripts/install.sh [--update] <plugin>" >&2
+  echo "Uso: bash scripts/install.sh [--update] <plugin> [<plugin> ...]" >&2
 }
 
 update_only=false
@@ -11,8 +11,7 @@ if [[ "${1:-}" == "--update" ]]; then
   shift
 fi
 
-plugin_name="${1:-}"
-if [[ -z "$plugin_name" || $# -ne 1 ]]; then
+if [[ -z "${1:-}" ]]; then
   usage
   exit 2
 fi
@@ -33,17 +32,17 @@ if [[ "$update_only" == true ]]; then
 fi
 python3 "$repo_root/scripts/validate.py" "${validate_args[@]}"
 
-marketplace_name="$(python3 - "$marketplace_file" "$plugin_name" <<'PY'
+marketplace_name="$(python3 - "$marketplace_file" "$@" <<'PY'
 import json
 import pathlib
 import sys
 
 path = pathlib.Path(sys.argv[1])
-plugin = sys.argv[2]
 data = json.loads(path.read_text(encoding="utf-8"))
 names = {entry.get("name") for entry in data.get("plugins", [])}
-if plugin not in names:
-    raise SystemExit(f"El plugin {plugin!r} no está registrado en {path}")
+for plugin in sys.argv[2:]:
+    if plugin not in names:
+        raise SystemExit(f"El plugin {plugin!r} no está registrado en {path}")
 print(data["name"])
 PY
 )"
@@ -55,6 +54,9 @@ fi
 # Codex usa `plugin add` tanto para instalar como para reinstalar: si esta
 # referencia plugin@marketplace ya existe, vuelve a cargarla. El cachebuster
 # cambia la versión local para impedir que Codex reutilice la copia anterior.
-codex plugin add "$plugin_name@$marketplace_name"
+for plugin_name in "$@"; do
+  codex plugin add "$plugin_name@$marketplace_name"
+  echo "Instalado $plugin_name@$marketplace_name."
+done
 
-echo "Instalado $plugin_name@$marketplace_name. Abre un hilo nuevo para probar los cambios."
+echo "Abre un hilo nuevo para probar los cambios."
