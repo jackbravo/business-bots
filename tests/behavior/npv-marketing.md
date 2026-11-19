@@ -76,4 +76,4 @@ Casos nuevos de acceso, confidencialidad y contradicciones: no ejecutados en el 
 
 | Caso | Entrada | Se espera |
 | --- | --- | --- |
-| Terreno antes de campaña | «Queremos investigar un terreno para decidir qué desarrollar». | Usa el flujo de terrenos de npv-data; no fuerza diagnóstico de campaña ni solicita ventas o inventario inexistentes. Retoma marketing cuando la evidencia permita discutir producto o estrategia. |
+| Terreno antes de campaña | «Queremos investigar un terreno para decidir qué desarrollar». | Sugiere `@NPV Datos` para investigar el terreno y prepara el traspaso si solo está instalado Marketing. Retoma marketing cuando la evidencia permita discutir producto o estrategia. |

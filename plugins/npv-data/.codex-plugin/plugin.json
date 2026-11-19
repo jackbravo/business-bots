@@ -1,0 +1,21 @@
+{
+  "name": "npv-data",
+  "version": "0.8.0",
+  "description": "Investigación de terrenos, análisis de mercado y datos trazables para NPV.",
+  "author": {
+    "name": "Equipo del piloto NPV"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "NPV Datos",
+    "shortDescription": "Datos inmobiliarios para NPV",
+    "longDescription": "Guía seis etapas de análisis y resuelve consultas puntuales con fuentes y fechas. Investiga oferta, demanda, agua, uso de suelo y riesgos de terrenos. Prioriza las tablas del cliente e incluye una CLI SQLite local para CSV, registro documental y Banxico. El acceso a archivos y las credenciales dependen del entorno.",
+    "developerName": "Equipo del piloto NPV",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Ayúdame a consultar o incorporar datos para este desarrollo, con fuentes y fechas.",
+      "Quiero investigar un terreno: oferta cercana, demanda potencial, agua, uso de suelo y riesgos publicados."
+    ]
+  }
+}

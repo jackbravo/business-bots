@@ -12,7 +12,7 @@ import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
 
-SCRIPT = Path(__file__).resolve().parents[1] / "plugins/npv-marketing/skills/npv-data/scripts/npv_data.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "plugins/npv-data/skills/npv-data/scripts/npv_data.py"
 spec = importlib.util.spec_from_file_location("npv_data", SCRIPT)
 data = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(data)
